@@ -11,7 +11,6 @@ public class board_DTO {
 	
 	public board_DTO(String num, String title, String content, String category, String nick_name, String write_date,
 			String hits) {
-		super();
 		this.num = num;
 		this.title = title;
 		this.content = content;

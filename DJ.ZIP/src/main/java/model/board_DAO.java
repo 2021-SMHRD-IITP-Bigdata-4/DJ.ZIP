@@ -67,7 +67,6 @@ public class board_DAO {
 	
 	public board_DTO my_write(board_DTO dto) {
 		conn();
-		
 		try {
 			String sql = "select * from board where num = ?";
 			psmt = conn.prepareStatement(sql);

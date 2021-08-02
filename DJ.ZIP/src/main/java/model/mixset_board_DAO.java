@@ -70,7 +70,6 @@ public class mixset_board_DAO {
 	
 	public mixset_board_DTO my_mixset_write(mixset_board_DTO dto) {
 		conn();
-		
 		try {
 			String sql = "select * from mixset_board where num = ?";
 			psmt = conn.prepareStatement(sql);

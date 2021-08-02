@@ -15,7 +15,6 @@ public class mixset_board_DTO {
 	
 	public mixset_board_DTO(String title, String content, String write_date, String nick_name, String hits, String num,
 			String file_name, String music_length, String genre_name, String img_name) {
-		super();
 		this.title = title;
 		this.content = content;
 		this.write_date = write_date;
