@@ -127,7 +127,6 @@
 .u-section-1 .u-group-2 {
   width: 834px;
   min-height: 310px;
-  height: auto;
   box-shadow: 2px 2px 8px 0 rgba(128,128,128,1);
   margin: 16px auto 60px;
 }
@@ -252,7 +251,6 @@
 
   .u-section-1 .u-group-2 {
     margin-top: 11px;
-    height: auto;
   }
 }
 
