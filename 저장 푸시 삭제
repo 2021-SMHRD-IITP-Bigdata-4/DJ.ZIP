@@ -1,0 +1,2 @@
+$ git reset bfca97e --hard
+$ git push origin -f
