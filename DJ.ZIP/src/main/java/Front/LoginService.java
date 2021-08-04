@@ -17,8 +17,8 @@ public class LoginService implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("EUC-KR");
-		String id = request.getParameter("username");
-		String pw = request.getParameter("password");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 
 		member_DTO dto = new member_DTO(id, pw);
 		member_DAO dao = new member_DAO();
@@ -31,7 +31,7 @@ public class LoginService implements Command {
 		} else {
 			System.out.print("로그인 실패ㅜㅜ");
 		}
-		response.sendRedirect("Home.html");
+		response.sendRedirect("Home.jsp");
 	}
 
 }
