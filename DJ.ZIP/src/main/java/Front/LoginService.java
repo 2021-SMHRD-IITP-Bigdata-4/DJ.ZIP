@@ -31,7 +31,8 @@ public class LoginService implements Command {
 		} else {
 			System.out.print("로그인 실패ㅜㅜ");
 		}
-		response.sendRedirect("Home.jsp");
+//		response.sendRedirect("Home.jsp");
+		response.sendRedirect("http://localhost:8085/DJ.ZIP/Home.jsp");
 	}
 
 }

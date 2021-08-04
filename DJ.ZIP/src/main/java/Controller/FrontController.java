@@ -22,7 +22,7 @@ public class FrontController extends HttpServlet {
 		String path = request.getContextPath();
 		String reqURI = request.getRequestURI();
 		String resultURI = reqURI.substring(path.length()+1);
-		System.out.println(resultURI + reqURI);
+//		System.out.println(resultURI + reqURI);
 		
 		Command com = null;
 		
