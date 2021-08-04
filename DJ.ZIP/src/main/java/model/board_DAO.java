@@ -47,15 +47,12 @@ public class board_DAO {
 	public int write(board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into board values(?,?,?,?,?,?,?)";
+			String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate,'0')";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getNum());
-			psmt.setString(2, dto.getTitle());
-			psmt.setString(3, dto.getContent());
-			psmt.setString(4, dto.getCategory());
-			psmt.setString(5, dto.getNick_name());
-			psmt.setString(6, dto.getWrite_date());
-			psmt.setString(7, dto.getHits());
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getCategory());
+			psmt.setString(4, dto.getNick_name());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

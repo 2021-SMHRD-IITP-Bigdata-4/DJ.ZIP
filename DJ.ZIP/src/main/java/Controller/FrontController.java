@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Front.BoardWriteService;
 import Front.JoinService;
 import Front.LoginService;
 import Front.LogoutService;
@@ -41,8 +42,12 @@ public class FrontController extends HttpServlet {
 			
 			com = new UpdateService();
 			
+		}else if(resultURI.equals("BoardWriteService.do")) {
+			
+			com = new BoardWriteService();
+			
 		}
 		com.execute(request, response);
 	}
-
+	
 }
