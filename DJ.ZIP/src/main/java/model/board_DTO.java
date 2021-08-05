@@ -20,16 +20,12 @@ public class board_DTO {
 		this.hits = hits;
 	}
 
-
-
 	public board_DTO(String title, String content, String category, String nick_name) {
 		this.title = title;
 		this.content = content;
 		this.category = category;
 		this.nick_name = nick_name;
 	}
-
-
 
 	public String getNum() {
 		return num;

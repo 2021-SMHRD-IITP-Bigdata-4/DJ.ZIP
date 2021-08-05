@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class board_DAO {
 
@@ -12,9 +13,10 @@ public class board_DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
-	
+
 	board_DTO writeDto = null;
-	
+	ArrayList<board_DTO> list = null;
+
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -30,7 +32,7 @@ public class board_DAO {
 
 	public void close() {
 		try {
-			if(rs != null){
+			if (rs != null) {
 				rs.close();
 			}
 			if (psmt != null) {
@@ -43,11 +45,119 @@ public class board_DAO {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public ArrayList<board_DTO> SelectAll() {
+		conn();
+		String sql = "select * from board";
+		list = new ArrayList<board_DTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String writer = rs.getString(3);
+				String fileName = rs.getString(4);
+				String content = rs.getString(5);
+				String day = rs.getString(6);
+
+				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+				list.add(writeDto);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
+
+	public board_DTO selectOne(String num1) {
+		conn();
+
+		String sql = "select * from board where num =?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num1);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String writer = rs.getString(3);
+				String fileName = rs.getString(4);
+				String content = rs.getString(5);
+				String day = rs.getString(6);
+
+				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return writeDto;
+	}
+	public board_DTO selectGroup(String category) {
+		conn();
+		
+		String sql = "select * from board where category =?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, category);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String writer = rs.getString(3);
+				String fileName = rs.getString(4);
+				String content = rs.getString(5);
+				String day = rs.getString(6);
+				
+				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return writeDto;
+	}
+	public board_DTO selectSearch(String search) {
+		conn();
+		
+		String sql = "select * from board where content like'%?%'";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, search);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String writer = rs.getString(3);
+				String fileName = rs.getString(4);
+				String content = rs.getString(5);
+				String day = rs.getString(6);
+				
+				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return writeDto;
+	}
+
 	public int write(board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate,'0')";
+			String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
@@ -61,7 +171,7 @@ public class board_DAO {
 		}
 		return cnt;
 	}
-	
+
 	public board_DTO my_write(board_DTO dto) {
 		conn();
 		try {
@@ -69,8 +179,8 @@ public class board_DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getNum());
 			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
 				String content = rs.getString(3);
@@ -78,7 +188,7 @@ public class board_DAO {
 				String nick_name = rs.getString(5);
 				String write_date = rs.getString(6);
 				String hits = rs.getString(7);
-				
+
 				writeDto = new board_DTO(num, title, content, category, nick_name, write_date, hits);
 			}
 		} catch (Exception e) {
@@ -88,22 +198,38 @@ public class board_DAO {
 		}
 		return writeDto;
 	}
-	
+
 	public int update(board_DTO dto) {
 		conn();
-	try {
-		String sql = "update board set title = ?, content = ?, category = ? where num = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, dto.getTitle());
-		psmt.setString(2, dto.getContent());
-		psmt.setString(3, dto.getCategory());
-		cnt = psmt.executeUpdate();
-		
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}finally {
-		close();
+		try {
+			String sql = "update board set title = ?, content = ?, category = ? where num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getCategory());
+			psmt.setString(3, dto.getNum());
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
+
+	public int delete(String num) {
+		conn();
+		String sql = "delete from board where num = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 		return cnt;
 	}
 }
