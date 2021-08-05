@@ -334,7 +334,6 @@
 .u-section-1 .u-group-5 {
   width: 76px;
   min-height: 27px;
-  height: auto;
   margin: 0 auto;
 }
 
@@ -469,10 +468,6 @@
   .u-section-1 .u-line-3 {
     margin-right: initial;
     margin-left: initial;
-  }
-
-  .u-section-1 .u-group-5 {
-    height: auto;
   }
 }
 

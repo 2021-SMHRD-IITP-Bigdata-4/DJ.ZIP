@@ -14,7 +14,6 @@
 .u-section-1 .u-group-1 {
   width: 800px;
   min-height: 426px;
-  height: auto;
   margin: 30px auto 60px;
 }
 
@@ -71,7 +70,6 @@
   .u-section-1 .u-group-1 {
     min-height: 561px;
     margin-top: 42px;
-    height: auto;
   }
 
   .u-section-1 .u-form-1 {

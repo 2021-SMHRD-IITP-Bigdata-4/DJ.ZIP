@@ -71,7 +71,6 @@
 .u-section-1 .u-group-1 {
   width: 336px;
   min-height: 729px;
-  height: auto;
   margin: 73px auto 60px;
 }
 
@@ -172,10 +171,6 @@
 
   .u-section-1 .u-layout-cell-4 {
     min-height: 37px;
-  }
-
-  .u-section-1 .u-group-1 {
-    height: auto;
   }
 
   .u-section-1 .u-form-1 {

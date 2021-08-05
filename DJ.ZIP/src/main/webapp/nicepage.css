@@ -34080,11 +34080,11 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 126px;
+  min-height: 128px;
 }
 
 .u-header .u-menu-1 {
-  margin: 44px 0 0 auto;
+  margin: 45px 0 0 auto;
 }
 
 .u-header .u-nav-1 {
@@ -34098,12 +34098,26 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-nav-2 {
   font-size: 1rem;
   letter-spacing: 0px;
+  text-transform: none;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+}
+
+.u-header .u-nav-3 {
+  font-size: 1rem;
+  letter-spacing: 0px;
+}
+
+.u-header .u-nav-4 {
+  font-size: 1rem;
+  letter-spacing: 0px;
+  text-transform: none;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
 }
 
 .u-header .u-text-1 {
   font-family: "Alfa Slab One";
   font-size: 3rem;
-  margin: -57px auto 0 0;
+  margin: -58px 969px 0 0;
 }
 
 .u-header .u-btn-1 {
@@ -34112,28 +34126,51 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-group-1 {
-  width: 155px;
-  min-height: 26px;
-  margin: -12px 18px 11px auto;
+  width: 403px;
+  min-height: 45px;
+  margin: -18px 22px 0 auto;
 }
 
-.u-header .u-icon-1 {
-  width: 26px;
-  height: 26px;
-  background-image: none;
-  text-transform: uppercase;
-  margin: 0 auto 0 0;
+.u-header .u-container-layout-1 {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .u-header .u-text-2 {
-  font-size: 0.875rem;
-  font-weight: 700;
-  margin: -24px auto 0 33px;
+  margin: 8px 0 0;
 }
+@media (max-width: 1199px) {
+  .u-header .u-text-1 {
+    margin-top: -58px;
+    margin-right: 769px;
+  }
 
+  .u-header .u-group-1 {
+    width: 403px;
+    margin-top: -18px;
+    min-height: 45px;
+  }
+}
+@media (max-width: 991px) {
+  .u-header .u-text-1 {
+    margin-right: 549px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-text-1 {
+    margin-right: 369px;
+  }
+}
+@media (max-width: 575px) {
+  .u-header .u-text-1 {
+    margin-right: 169px;
+  }
 
-
-
+  .u-header .u-group-1 {
+    width: 340px;
+    margin-right: 0;
+  }
+}
 .u-footer {
   background-image: none;
 }
@@ -34146,6 +34183,11 @@ a.u-link.u-text-hover-grey-90:hover {
   background-image: none;
   font-family: "Alfa Slab One";
   margin: 40px auto 0;
+}
+
+.u-footer .u-btn-1 {
+  background-image: none;
+  padding: 0;
 }
 
 .u-footer .u-text-2 {
