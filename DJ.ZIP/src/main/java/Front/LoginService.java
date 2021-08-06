@@ -1,6 +1,7 @@
 package Front;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,10 +29,11 @@ public class LoginService implements Command {
 			System.out.print("로그인 성공!");
 			HttpSession session = request.getSession();
 			session.setAttribute("info", loginDto);
+			response.sendRedirect("Home.jsp?nick_name=" + URLEncoder.encode(loginDto.getNick_name(), "EUC-KR"));
 		} else {
 			System.out.print("로그인 실패ㅜㅜ");
+			response.sendRedirect("LoginFail.jsp");
 		}
-		response.sendRedirect("Home.html");
 	}
 
 }

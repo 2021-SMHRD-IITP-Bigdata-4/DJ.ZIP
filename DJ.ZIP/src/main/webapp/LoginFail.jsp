@@ -97,6 +97,9 @@
                 <label for="name-2252" class="u-form-control-hidden u-label"></label>
                 <input type="text" placeholder="비밀번호" id="name-2252" name="pw" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="" autofocus="autofocus">
               </div>
+              
+                	<div class = "login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div><br>
+                        
               <div class="u-align-center u-form-group u-form-submit">
                 <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-1">로그인</a>
                 <input type="submit" value="submit" class="u-form-control-hidden">

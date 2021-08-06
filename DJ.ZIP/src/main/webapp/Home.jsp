@@ -1,3 +1,4 @@
+<%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -31,7 +32,10 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
-       <% String nick_name = (String)session.getAttribute("nick_name"); %>
+       	
+       	<% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+       	<% String nick_name = request.getParameter("nick_name"); %>
+       
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
             <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -83,9 +87,10 @@
           <div class="u-container-layout u-container-layout-1">
           
           <!-- 로그인시 닉네임 출력 -->
-            <p class="u-text u-text-2">ㅇㅇ<span style="font-weight: 700;"></span>ㅇ님&nbsp;<span style="font-weight: 700;"></span>환영합니다
-            
-            
+          <%if(info != null) {%>
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=nick_name%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다
+		  <%}%>
+		  
             </p>
           </div>
         </div>
