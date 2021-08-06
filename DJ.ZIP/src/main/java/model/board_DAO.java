@@ -57,12 +57,12 @@ public class board_DAO {
 			while (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
-				String writer = rs.getString(3);
-				String fileName = rs.getString(4);
-				String content = rs.getString(5);
-				String day = rs.getString(6);
+				String content = rs.getString(3);
+				String category = rs.getString(4);
+				String id = rs.getString(5);
+				String write_date = rs.getString(6);
 
-				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+				writeDto = new board_DTO(num, title, content, category, content, id, write_date);
 				list.add(writeDto);
 
 			}
@@ -101,31 +101,34 @@ public class board_DAO {
 		}
 		return writeDto;
 	}
-	public board_DTO selectGroup(String category) {
+	public ArrayList<board_DTO> selectGroup(String category) {
 		conn();
-		
 		String sql = "select * from board where category =?";
+		list = new ArrayList<board_DTO>();
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, category);
 			rs = psmt.executeQuery();
 			
-			if (rs.next()) {
+			while (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
 				String writer = rs.getString(3);
 				String fileName = rs.getString(4);
 				String content = rs.getString(5);
 				String day = rs.getString(6);
-				
+
 				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+				list.add(writeDto);
+
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return writeDto;
+		return list;
 	}
 	public board_DTO selectSearch(String search) {
 		conn();
@@ -162,7 +165,7 @@ public class board_DAO {
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
 			psmt.setString(3, dto.getCategory());
-			psmt.setString(4, dto.getNick_name());
+			psmt.setString(4, dto.getId());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

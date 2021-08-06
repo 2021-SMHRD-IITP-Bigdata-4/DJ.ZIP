@@ -1,3 +1,6 @@
+<%@page import="model.board_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.board_DAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -28,6 +31,14 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
+        
+        <%
+		String info = (String)session.getAttribute("info");
+        ArrayList<board_DTO> list = (ArrayList<board_DTO>)session.getAttribute("list");
+       	board_DAO dao = new board_DAO();
+		ArrayList<board_DTO> list1 = dao.SelectAll();
+			
+	%>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
             <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -39,16 +50,16 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-font-oswald u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Home.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DJ-LESSON.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="개인정보수정.html">개인정보수정</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">레슨목록</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">LIKE MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">내가 쓴글</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">내가 쓴글</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -56,54 +67,48 @@
               <div class="u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJ-LESSON.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="개인정보수정.html">개인정보수정</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link">레슨목록</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">LIKE MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">내가 쓴글</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">내가 쓴글</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
 </li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <p class="u-custom-font u-text u-text-default u-text-1">
+        <p class="u-custom-font u-text u-text-1">
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-10 u-text-hover-grey-10 u-text-white u-btn-1" href="Home.html" data-page-id="904221268">DJ.ZIP</a>
         </p>
-        <div class="u-align-center u-container-style u-group u-group-1">
-          <div class="u-container-layout"><span class="u-icon u-icon-circle u-spacing-2 u-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 53 53" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4a9f"></use></svg><svg class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" id="svg-4a9f" style="enable-background:new 0 0 53 53;"><path style="fill:#E7ECED;" d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
-	c6.454,0,12.367-2.31,16.964-6.144c-0.424-0.358-0.884-0.68-1.394-0.934l-8.467-4.233c-1.094-0.547-1.785-1.665-1.785-2.888v-3.322
-	c0.238-0.271,0.51-0.619,0.801-1.03c1.154-1.63,2.027-3.423,2.632-5.304c1.086-0.335,1.886-1.338,1.886-2.53v-3.546
-	c0-0.78-0.347-1.477-0.886-1.965v-5.126c0,0,1.053-7.977-9.75-7.977s-9.75,7.977-9.75,7.977v5.126
-	c-0.54,0.488-0.886,1.185-0.886,1.965v3.546c0,0.934,0.491,1.756,1.226,2.231c0.886,3.857,3.206,6.633,3.206,6.633v3.24
-	C20.296,39.899,19.65,40.986,18.613,41.552z"></path><g><path style="fill:#556080;" d="M26.953,0.004C12.32-0.246,0.254,11.414,0.004,26.047C-0.138,34.344,3.56,41.801,9.448,46.76
-		c0.385-0.336,0.798-0.644,1.257-0.894l7.907-4.313c1.037-0.566,1.683-1.653,1.683-2.835v-3.24c0,0-2.321-2.776-3.206-6.633
-		c-0.734-0.475-1.226-1.296-1.226-2.231v-3.546c0-0.78,0.347-1.477,0.886-1.965v-5.126c0,0-1.053-7.977,9.75-7.977
-		s9.75,7.977,9.75,7.977v5.126c0.54,0.488,0.886,1.185,0.886,1.965v3.546c0,1.192-0.8,2.195-1.886,2.53
-		c-0.605,1.881-1.478,3.674-2.632,5.304c-0.291,0.411-0.563,0.759-0.801,1.03V38.8c0,1.223,0.691,2.342,1.785,2.888l8.467,4.233
-		c0.508,0.254,0.967,0.575,1.39,0.932c5.71-4.762,9.399-11.882,9.536-19.9C53.246,12.32,41.587,0.254,26.953,0.004z"></path>
-</g></svg></span>
-            <p class="u-text u-text-default u-text-2">OOO님 환영합니다</p>
+        <div class="u-align-right u-container-style u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <% if(info != null){%>
+            <p class="u-text u-text-2">ㅇㅇ<span style="font-weight: 700;"></span><%=info.getBytes() %>님&nbsp;<span style="font-weight: 700;"></span>환영합니다
+            </p>
+		  <%}%>
           </div>
         </div>
       </div></header>
     <section class="u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-b9a6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">Community</h4>
+        <form action="CategoryService.do" method="post">
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">전체</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">국외음악</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">국내음악</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">리뷰</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">공지</a>
+            <input type="submit" name="전체" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1" value="전체">
+            <input type="submit" name="국내음악" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2" value="국내음악">
+            <input type="submit" name="국외음악" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3" value="국외음악">
+            <input type="submit" name="리뷰" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4" value="리뷰">
+            <input type="submit" name="공지" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5" value="공지">
           </div>
         </div>
+        </form>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
         <h5 class="u-text u-text-default u-text-2">카테고리 명 </h5>
         <form action="#" method="get" class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
@@ -140,14 +145,41 @@
                           <td class="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-grey-25 u-table-cell u-table-cell-5">날짜</td>
                           <td class="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-grey-25 u-table-cell u-table-cell-6">조회수</td>
                         </tr>
+                        <!--게시물 출력-->
+                        
+                        <%for(int i =0; i<list1.size(); i++){ %>
                         <tr style="height: 37px;">
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getCategory() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.html?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getId() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getWrite_date() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
                         </tr>
+                        <%} %>
+                        <%if(list != null) { %>
+					<%for(int i =0; i<list.size(); i++){ %>
+                        <tr style="height: 37px;">
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getCategory() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getTitle() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getId() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getWrite_date() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getHits() %></td>
+                        </tr>
+                        <%}} %>
+                                                
+                      <%--   <%if(list != null) { %>
+					<%for(int i =0; i<list.size(); i++){ %>
+					<tr style="height: 37px;">
+						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.html?num=<%=list.get(i).getCategory() %>"><%=list.get(i).getTitle() %></a></td>
+						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getNick_name() %></td>
+						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getWrite_date() %></td>
+						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getHits() %></td>
+					</tr>
+				
+				<%} }%> --%>
                       </tbody>
                     </table>
                   </div>
@@ -166,16 +198,6 @@
         </h1>
         <p class="u-text u-text-default u-text-2">광주광역시 동구 예술길 31-15 3층 (주)스마트인재개발원</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+    
   </body>
 </html>
