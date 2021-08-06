@@ -34,7 +34,6 @@
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
        	
        	<% member_DTO info = (member_DTO)session.getAttribute("info"); %>
-       	<% String nick_name = request.getParameter("nick_name"); %>
        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -103,10 +102,9 @@
           
           <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=nick_name%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
 		  <%}%>
-		  
-            </p>
+            
           </div>
         </div>
       </div></header> 
