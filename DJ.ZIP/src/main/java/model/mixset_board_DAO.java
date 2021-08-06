@@ -47,18 +47,15 @@ public class mixset_board_DAO {
 	public int mixset_write(mixset_board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into mixset_board values(?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into mixset_board values(mixset_seq,?,?,?,?,?,?,?,default,default)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
-			psmt.setString(3, dto.getWrite_date());
-			psmt.setString(4, dto.getNick_name());
-			psmt.setString(5, dto.getHits());
-			psmt.setString(6, dto.getNum());
-			psmt.setString(7, dto.getFile_name());
-			psmt.setString(8, dto.getMusic_length());
-			psmt.setString(9, dto.getGenre_name());
-			psmt.setString(10, dto.getImg_name());
+			psmt.setString(3, dto.getId());
+			psmt.setString(4, dto.getFile_name());
+			psmt.setString(5, dto.getMusic_length());
+			psmt.setString(6, dto.getGenre_name());
+			psmt.setString(7, dto.getImg_name());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -88,7 +85,7 @@ public class mixset_board_DAO {
 				String genre_name = rs.getString(9);
 				String img_name = rs.getString(10);
 				
-				mixset_writeDto = new mixset_board_DTO(title, content, write_date, nick_name, hits, num, file_name, music_length, genre_name, img_name);
+//				mixset_writeDto = new mixset_board_DTO(title, content, write_date, nick_name, hits, num, file_name, music_length, genre_name, img_name);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

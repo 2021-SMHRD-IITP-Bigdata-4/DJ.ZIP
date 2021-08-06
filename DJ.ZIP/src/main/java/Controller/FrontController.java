@@ -13,6 +13,7 @@ import Front.CategoryService;
 import Front.JoinService;
 import Front.LoginService;
 import Front.LogoutService;
+import Front.MixsetWriteService;
 import Front.UpdateService;
 
 @WebServlet("*.do")
@@ -76,6 +77,10 @@ public class FrontController extends HttpServlet {
 		} else if (resultURI.equals("CategoryService.do")) {
 
 			com = new CategoryService();
+
+		} else if (resultURI.equals("MixsetWriteService.do")) {
+
+			com = new MixsetWriteService();
 
 		}
 		
