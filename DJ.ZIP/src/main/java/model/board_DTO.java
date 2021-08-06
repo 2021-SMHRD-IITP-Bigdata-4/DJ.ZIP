@@ -5,26 +5,26 @@ public class board_DTO {
 	private String title;
 	private String content;
 	private String category;
-	private String nick_name;
+	private String id;
 	private String write_date;
 	private String hits;
 	
-	public board_DTO(String num, String title, String content, String category, String nick_name, String write_date,
+	public board_DTO(String num, String title, String content, String category, String id, String write_date,
 			String hits) {
 		this.num = num;
 		this.title = title;
 		this.content = content;
 		this.category = category;
-		this.nick_name = nick_name;
+		this.id = id;
 		this.write_date = write_date;
 		this.hits = hits;
 	}
 
-	public board_DTO(String title, String content, String category, String nick_name) {
+	public board_DTO(String title, String content, String category, String id) {
 		this.title = title;
 		this.content = content;
 		this.category = category;
-		this.nick_name = nick_name;
+		this.id = id;
 	}
 
 	public String getNum() {
@@ -59,12 +59,12 @@ public class board_DTO {
 		this.category = category;
 	}
 
-	public String getNick_name() {
-		return nick_name;
+	public String getId() {
+		return id;
 	}
 
-	public void setNick_name(String nick_name) {
-		this.nick_name = nick_name;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getWrite_date() {

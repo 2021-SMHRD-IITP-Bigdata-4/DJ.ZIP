@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Front.BoardUpdateService;
 import Front.BoardWriteService;
+import Front.CategoryService;
 import Front.JoinService;
 import Front.LoginService;
 import Front.LogoutService;
@@ -72,8 +73,14 @@ public class FrontController extends HttpServlet {
 
 			com = new BoardUpdateService();
 
+		} else if (resultURI.equals("CategoryService.do")) {
+
+			com = new CategoryService();
+
 		}
-				com.execute(request, response);
+		
+		com.execute(request, response);
+		
 	}
 
 }
