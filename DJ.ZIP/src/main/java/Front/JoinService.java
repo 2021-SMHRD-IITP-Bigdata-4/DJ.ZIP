@@ -33,10 +33,10 @@ public class JoinService implements Command {
 			System.out.println("회원가입성공!");
 			HttpSession session = request.getSession();
 			session.setAttribute("nick_name", nick_name);
-			response.sendRedirect("Home.html");
+			response.sendRedirect("Home.jsp");
 		}else {
 			System.out.println("회원가입실패!");
-			response.sendRedirect("Home.html");
+			response.sendRedirect("Home.jsp");
 		}
 		
 	}
