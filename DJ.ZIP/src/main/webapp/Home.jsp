@@ -62,7 +62,7 @@
 	</li></ul>
 	          </div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
 	</li></ul>
 	          </div>
 <%}%>         
@@ -87,7 +87,7 @@
 	</li></ul>
 	</div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
 	</li></ul>
 	</div>
 <%}%>
@@ -101,7 +101,7 @@
         <div class="u-align-right u-container-style u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
           
-          <!-- 로그인시 닉네임 출력 -->
+          <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
             <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=nick_name%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다
 		  <%}%>

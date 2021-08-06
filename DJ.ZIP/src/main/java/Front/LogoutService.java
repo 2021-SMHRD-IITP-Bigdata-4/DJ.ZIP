@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import Controller.Command;
 
 public class LogoutService implements Command {
-
+//·Î±×¾Æ¿ô
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

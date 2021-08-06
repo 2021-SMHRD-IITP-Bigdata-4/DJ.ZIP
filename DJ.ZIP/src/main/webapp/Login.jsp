@@ -107,7 +107,7 @@
             </form>
           </div>
           <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-white u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-body-color u-btn-2">ID/PW 찾기</a>
-          <a href="Join1.html" data-page-id="2686012162" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-white u-btn u-button-style u-login-control u-login-create-account u-none u-text-body-color u-btn-3">회원가입</a>
+          <a href="Join2.html" data-page-id="2686012162" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-white u-btn u-button-style u-login-control u-login-create-account u-none u-text-body-color u-btn-3">회원가입</a>
         </div>
       </div>
     </section>
