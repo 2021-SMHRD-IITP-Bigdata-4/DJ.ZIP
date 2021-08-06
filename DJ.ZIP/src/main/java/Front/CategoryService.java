@@ -18,47 +18,49 @@ public class CategoryService implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
-		String all = request.getParameter("전체");
-		String koreaMisic = request.getParameter("국내음악");
-		String foreignMisic = request.getParameter("국외음악");
-		String review = request.getParameter("리뷰");
-		String notice = request.getParameter("공지");
+		String cate = request.getParameter("cate");
 
-		System.out.println(all);
-		System.out.println(koreaMisic);
-		System.out.println(foreignMisic);
-		System.out.println(review);
-		System.out.println(notice);
+		System.out.println(cate);
+
 		
-		board_DAO dao = new board_DAO();
-		ArrayList<board_DTO> selectList = null;
-		
-		if (all != null) {
-			
-			selectList = dao.selectGroup(all);
+//		board_DAO dao = new board_DAO();
+//		ArrayList<board_DTO> selectList = null;
+//		String category = null;
+//		
+//		if (all != null) {
+//			
+//			selectList = dao.selectGroup(all);
+//			category = "전체";
+//			
+//		} else if (koreaMisic != null) {
+//			
+//			selectList = dao.selectGroup(koreaMisic);
+//			category = "국내음악";
+//
+//		} else if (foreignMisic != null) {
+//			
+//			selectList = dao.selectGroup(foreignMisic);
+//			category = "국외음악";
+//
+//		} else if (review != null) {
+//			
+//			selectList = dao.selectGroup(review);
+//			category = "리뷰";
+//
+//		} else {
+//			
+//			selectList = dao.selectGroup(notice);
+//			category = "공지";
+//
+//		}
 
-		} else if (koreaMisic != null) {
-			
-			selectList = dao.selectGroup(koreaMisic);
-
-		} else if (foreignMisic != null) {
-			
-			selectList = dao.selectGroup(foreignMisic);
-
-		} else if (review != null) {
-			
-			selectList = dao.selectGroup(review);
-
-		} else {
-			
-			selectList = dao.selectGroup(notice);
-
-		}
-
-		if (selectList != null) {
+		if (cate != null) {
 			System.out.print("카테고리별 출력 성공!");
-			HttpSession session = request.getSession();
-			session.setAttribute("list", selectList);
+			
+			 HttpSession session = request.getSession();
+			 session.setAttribute("list",cate);
+		
+			
 		} else {
 			System.out.print("카테고리별 출력 실패ㅜㅜ");
 		}

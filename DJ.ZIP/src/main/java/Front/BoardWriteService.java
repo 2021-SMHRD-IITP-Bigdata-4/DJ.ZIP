@@ -20,14 +20,14 @@ public class BoardWriteService implements Command {
 		String title = request.getParameter("name");
 		String category = request.getParameter("select");
 		String content = request.getParameter("message");
-		String nick_name = request.getParameter("nick_name");
+		String id = request.getParameter("ID");
 
 		System.out.println(title);
 		System.out.println(category);
 		System.out.println(content);
-		System.out.println(nick_name);
+		System.out.println(id);
 
-		board_DTO dto = new board_DTO(title, content, category, nick_name);
+		board_DTO dto = new board_DTO(title, content, category, id);
 		board_DAO dao = new board_DAO();
 		int cnt = dao.write(dto);
 
