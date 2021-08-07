@@ -12,6 +12,7 @@ import Front.BoardUpdateService;
 import Front.BoardWriteService;
 import Front.CategoryService;
 import Front.JoinService;
+import Front.LessonWriteService;
 import Front.LoginService;
 import Front.LogoutService;
 import Front.MixsetWriteService;
@@ -87,6 +88,8 @@ public class FrontController extends HttpServlet {
 
 			com = new BoardSearchService();
 
+		} else if (resultURI.equals("LessonWriteService.do")) {
+			com = new LessonWriteService();
 		}
 
 		com.execute(request, response);

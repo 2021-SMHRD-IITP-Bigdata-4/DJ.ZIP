@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
+  <meta charset="EUC-KR">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="DJ.ZIP">
@@ -29,15 +30,14 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
-        
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
-        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
             <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+<% member_DTO info = (member_DTO)session.getAttribute("info");  %>
 </symbol>
+
 </defs></svg>
             </a>
           </div>
@@ -46,21 +46,15 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
-<%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">ë ˆìŠ¨ëª©ë¡</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">ë‚´ê°€ ì“´ê¸€</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	          </div>
-<%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	          </div>
-<%}%>  
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">·¹½¼¸ñ·Ï</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">³»°¡ ¾´±Û</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+</li></ul>
+          </div>
           <div class="u-custom-menu u-nav-container-collapse">
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-sidenav-overflow">
@@ -69,21 +63,15 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
-<%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link">ë ˆìŠ¨ëª©ë¡</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">ë‚´ê°€ ì“´ê¸€</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	</div>
-<%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	</div>
-<%}%>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link">·¹½¼¸ñ·Ï</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">³»°¡ ¾´±Û</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+</li></ul>
+              </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
@@ -93,12 +81,10 @@
         </p>
         <div class="u-align-right u-container-style u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            
-            <!-- ë¡œê·¸ì¸ ì‹œ ë‹‰ë„¤ìž„ ì¶œë ¥ -->
+            <!-- ·Î±×ÀÎ ½Ã ´Ð³×ÀÓ Ãâ·Â -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>ë‹˜&nbsp;<span style="font-weight: 700;"></span>í™˜ì˜í•©ë‹ˆë‹¤</p>
-		  <%}%>
-            
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>´Ô&nbsp;<span style="font-weight: 700;"></span>È¯¿µÇÕ´Ï´Ù</p>
+        <%}%>
           </div>
         </div>
       </div></header>
@@ -107,20 +93,20 @@
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">DJ LESSON</h4>
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">ì „ì²´</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">ì„œìš¸</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">ì¸ì²œ</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">ëŒ€ì „</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">ì„¸ì¢…</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">ë¶€ì‚°</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">ìš¸ì‚°</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">ëŒ€êµ¬</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-9">ì œì£¼</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">ê²½ê¸°ë„</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">ì¶©ì²­ë„</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">ì „ë¼ë„</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">ê²½ìƒë„</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">ê°•ì›ë„</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">ÀüÃ¼</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">¼­¿ï</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">ÀÎÃµ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">´ëÀü</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">¼¼Á¾</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">ºÎ»ê</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">¿ï»ê</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">´ë±¸</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-9">Á¦ÁÖ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">°æ±âµµ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">ÃæÃ»µµ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">Àü¶óµµ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">°æ»óµµ</a>
+            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">°­¿øµµ</a>
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
@@ -135,8 +121,8 @@
               </button>
               <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
             </form>
-            <h5 class="u-text u-text-default u-text-2">ì¹´í…Œê³ ë¦¬ ëª… </h5>
-            <a href="https://nicepage.com/k/apple-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">ê¸€ ìž‘ì„±</a>
+            <h5 class="u-text u-text-default u-text-2">Ä«Å×°í¸® ¸í </h5>
+            <a href="DJLessonWriter.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">±Û ÀÛ¼º</a>
           </div>
         </div>
         <div class="u-list u-list-1">
@@ -146,65 +132,69 @@
           <div class="u-container-layout u-container-layout-3">
             <h1 class="u-text u-text-default u-text-3">WRITE LESSON&nbsp;</h1>
             <div class="u-align-center u-container-style u-expanded-width u-group u-group-4">
+            <form action="LessonWriterService.do" method="post">
               <div class="u-container-layout u-container-layout-4">
-                <h5 class="u-text u-text-default u-text-4">ë©”ì¸ ì´ë¯¸ì§€ íŒŒì¼ ì²¨ë¶€</h5>
-                <a href="https://nicepage.com/c/gallery-html-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">íŒŒì¼ì²¨ë¶€</a>
+                <h5 class="u-text u-text-default u-text-4">¸ÞÀÎ ÀÌ¹ÌÁö ÆÄÀÏ Ã·ºÎ</h5><br>
+                <input type="file" name="imgfile" accept="image/*" value="image">
               </div>
+              
             </div>
           </div>
         </div>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
+          <form  method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
             <div class="u-form-group u-form-name u-form-group-1">
-              <label for="name-3b9a" class="u-label u-label-1">ê¸€ ì œëª©</label>
+              <label for="name-3b9a" class="u-label u-label-1">±Û Á¦¸ñ</label>
               <input type="text" id="name-3b9a" name="LessonTitle" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" required="" maxlength="100">
             </div>
             <div class="u-form-group u-form-select u-form-group-2">
-              <label for="select-7dfb" class="u-label u-label-2">ì§€ì—­</label>
+              <label for="select-7dfb" class="u-label u-label-2">Áö¿ª</label>
               <div class="u-form-select-wrapper">
                 <select id="select-7dfb" name="select" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-2">
-                  <option value="ì„œìš¸">ì„œìš¸</option>
-                  <option value="ì¸ì²œ">ì¸ì²œ</option>
-                  <option value="ëŒ€ì „">ëŒ€ì „</option>
-                  <option value="ì„¸ì¢…">ì„¸ì¢…</option>
-                  <option value="ë¶€ì‚°">ë¶€ì‚°</option>
-                  <option value="ìš¸ì‚°">ìš¸ì‚°</option>
-                  <option value="ëŒ€êµ¬">ëŒ€êµ¬</option>
-                  <option value="ì œì£¼">ì œì£¼</option>
-                  <option value="ê²½ê¸°">ê²½ê¸°</option>
-                  <option value="ì¶©ì³¥">ì¶©ì³¥</option>
-                  <option value="ì „ë¼">ì „ë¼</option>
-                  <option value="ê²½ìƒ">ê²½ìƒ</option>
-                  <option value="ê°•ì›">ê°•ì›</option>
+                  <option value="¼­¿ï">¼­¿ï</option>
+                  <option value="ÀÎÃµ">ÀÎÃµ</option>
+                  <option value="´ëÀü">´ëÀü</option>
+                  <option value="¼¼Á¾">¼¼Á¾</option>
+                  <option value="ºÎ»ê">ºÎ»ê</option>
+                  <option value="¿ï»ê">¿ï»ê</option>
+                  <option value="´ë±¸">´ë±¸</option>
+                  <option value="Á¦ÁÖ">Á¦ÁÖ</option>
+                  <option value="°æ±â">°æ±â</option>
+                  <option value="ÃæÃ»">ÃæÃ»</option>
+                  <option value="Àü¶ó">Àü¶ó</option>
+                  <option value="°æ»ó">°æ»ó</option>
+                  <option value="°­¿ø">°­¿ø</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>
             <div class="u-form-group u-form-message u-form-group-3">
-              <label for="message-3b9a" class="u-label u-label-3">ë ˆìŠ¨ ì„¤ëª…</label>
+              <label for="message-3b9a" class="u-label u-label-3">·¹½¼ ¼³¸í</label>
               <textarea rows="15" cols="50" id="message-3b9a" name="Lesson" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-3" required="" autofocus="autofocus"></textarea>
             </div>
             <div class="u-form-group u-form-textarea u-form-group-4">
-              <label for="textarea-c5a6" class="u-label u-label-4">í¬íŠ¸í´ë¦¬ì˜¤</label>
-              <textarea rows="15" cols="50" id="textarea-c5a6" name="textarea" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-4" required=""></textarea>
+              <label for="textarea-c5a6" class="u-label u-label-4">Æ÷Æ®Æú¸®¿À</label>
+              <textarea rows="15" cols="50" id="textarea-c5a6" name="portpol" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-4" required=""></textarea>
             </div>
             <div class="u-form-group u-form-textarea u-form-group-5">
-              <label for="textarea-da7c" class="u-label u-label-5">ìž¥ì†Œ</label>
-              <textarea rows="4" cols="50" id="textarea-da7c" name="textarea-1" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-5" required=""></textarea>
+              <label for="textarea-da7c" class="u-label u-label-5">Àå¼Ò</label>
+              <textarea rows="4" cols="50" id="textarea-da7c" name="area" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-5" required=""></textarea>
             </div>
             <div class="u-form-group u-form-textarea u-form-group-6">
-              <label for="textarea-a316" class="u-label u-label-6">ì·¨ì†Œ ë° í™˜ë¶ˆê·œì •</label>
-              <textarea rows="7" cols="50" id="textarea-a316" name="textarea-2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
+              <label for="textarea-a316" class="u-label u-label-6">Ãë¼Ò ¹× È¯ºÒ±ÔÁ¤</label>
+              <textarea rows="7" cols="50" id="textarea-a316" name="cancel" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
             </div>
             <div class="u-align-center u-form-group u-form-submit">
-              <a href="#" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">ê¸€ ìž‘ì„±<br>
+              <a href="#" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">±Û ÀÛ¼º<br>
               </a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">
+        
           </form>
+          
         </div>
       </div>
     </section>
@@ -214,18 +204,8 @@
         <h1 class="u-custom-font u-text u-text-default u-text-1">
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-15 u-text-hover-grey-15 u-text-white u-btn-1" href="Home.html" data-page-id="904221268">DJ.ZIP</a>
         </h1>
-        <p class="u-text u-text-default u-text-2">ê´‘ì£¼ê´‘ì—­ì‹œ ë™êµ¬ ì˜ˆìˆ ê¸¸ 31-15 3ì¸µ (ì£¼)ìŠ¤ë§ˆíŠ¸ì¸ìž¬ê°œë°œì›</p>
+        <p class="u-text u-text-default u-text-2">±¤ÁÖ±¤¿ª½Ã µ¿±¸ ¿¹¼ú±æ 31-15 3Ãþ (ÁÖ)½º¸¶Æ®ÀÎÀç°³¹ß¿ø</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+    
   </body>
 </html>

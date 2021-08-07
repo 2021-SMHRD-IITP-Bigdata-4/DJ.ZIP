@@ -14,4 +14,4 @@ drop table member cascade constraints;
 
 insert into member values('song','5462','mush','song2319','1','4478','cat');
 
-select * from member;
+select lesson_title, from lesson;

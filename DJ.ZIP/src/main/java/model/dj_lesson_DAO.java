@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class dj_lesson_DAO {
 	
@@ -12,6 +13,7 @@ public class dj_lesson_DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
+	ArrayList<dj_lesson_DTO> list = null;
 	
 	dj_lesson_DTO lesson_writeDto = null;
 	
@@ -51,7 +53,7 @@ public class dj_lesson_DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getNum());
 			psmt.setString(2, dto.getLesson_title());
-			psmt.setString(3, dto.getNick_name());
+			psmt.setString(3, dto.getId());
 			psmt.setString(4, dto.getLesson_info());
 			psmt.setString(5, dto.getWrite_date());
 			psmt.setString(6, dto.getLocation_name());
@@ -66,32 +68,33 @@ public class dj_lesson_DAO {
 		return cnt;
 	}
 	
-	public dj_lesson_DTO my_lesson_write(dj_lesson_DTO dto) {
+	public ArrayList<dj_lesson_DTO> my_lesson_write() {
 		conn();
+		list= new ArrayList<dj_lesson_DTO>();
 		try {
-			String sql = "select * from dj_lesson where num = ?";
+			String sql = "select * from lesson";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getNum());
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
 				String num = rs.getString(1);
 				String lesson_title = rs.getString(2);
-				String nick_name = rs.getString(3);
+				String id = rs.getString(3);
 				String lesson_info = rs.getString(4);
 				String write_date = rs.getString(5);
 				String location_name = rs.getString(6);
 				String portfolio = rs.getString(7);
 				String spot = rs.getString(8);
 				
-				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, nick_name, lesson_info, write_date, location_name, portfolio, spot);
+				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, write_date, location_name, portfolio, spot);
+				list.add(lesson_writeDto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return lesson_writeDto;
+		return list;
 	}
 	
 	public int update(dj_lesson_DTO dto) {
