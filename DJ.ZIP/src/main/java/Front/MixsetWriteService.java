@@ -36,7 +36,7 @@ public class MixsetWriteService implements Command {
 		String title = request.getParameter("title");
 		String genre_name = request.getParameter("select");
 		String content = request.getParameter("content");
-		String id = request.getParameter("id");
+		String id = request.getParameter("ID");
 		String imgName = URLEncoder.encode(multi.getFilesystemName("imgfile"), "EUC-KR");
 		String fileName = URLEncoder.encode(multi.getFilesystemName("file"), "EUC-KR");
 

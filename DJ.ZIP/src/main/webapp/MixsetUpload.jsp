@@ -123,7 +123,7 @@
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
         <h5 class="u-text u-text-default u-text-2">MIXSET/MUSIC ¾÷·Îµå</h5>
         <div class="u-border-2 u-border-grey-75 u-container-style u-group u-radius-10 u-shape-round u-group-2">
-          <form action="MixsetWriteService.do" method="post" enctype="multipart/form-data">
+          <form action="MixsetWriteService.do?ID=<%=info.getID() %>" method="post" enctype="multipart/form-data">
           <div class="u-container-layout u-container-layout-2">
             <img class="u-image u-image-round u-radius-10 u-image-1" src="images/d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
            <br>
@@ -138,7 +138,7 @@
                 </div>
                 
                 <div>
-                <select name="select">
+                <select name="select" size="1">
                 <option value="HOUSE">HOUSE</option>
                 <option value="HARD">HARD</option>
                 <option value="D N B">D N B</option>
@@ -161,10 +161,10 @@
                   </a>
                   <input type="submit" value="submit" class="u-form-control-hidden">
                 </div>
+              </form>
                 <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                 <input type="hidden" value="" name="recaptchaResponse">
-              </form>
             </div>
           </div>
         </div>

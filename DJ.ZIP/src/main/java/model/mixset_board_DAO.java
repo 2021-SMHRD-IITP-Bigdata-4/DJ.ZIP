@@ -47,7 +47,7 @@ public class mixset_board_DAO {
 	public int mixset_write(mixset_board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into mixset_board values(mixset_seq,?,?,?,?,null,?,?,default,default)";
+			String sql = "insert into mixset values(mixset_seq.nextval,?,?,?,?,null,?,?,default,default)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
@@ -67,7 +67,7 @@ public class mixset_board_DAO {
 	public mixset_board_DTO my_mixset_write(mixset_board_DTO dto) {
 		conn();
 		try {
-			String sql = "select * from mixset_board where num = ?";
+			String sql = "select * from mixset where num = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getNum());
 			rs = psmt.executeQuery();
@@ -97,7 +97,7 @@ public class mixset_board_DAO {
 	public int update(mixset_board_DTO dto) {
 		conn();
 	try {
-		String sql = "update mixset_board set title = ?, content = ?, file_name = ?, music_length = ?, genre_name = ?, img_name = ? where num = ?";
+		String sql = "update mixset set title = ?, content = ?, file_name = ?, music_length = ?, genre_name = ?, img_name = ? where num = ?";
 		psmt = conn.prepareStatement(sql);
 		psmt.setString(1, dto.getTitle());
 		psmt.setString(2, dto.getContent());
