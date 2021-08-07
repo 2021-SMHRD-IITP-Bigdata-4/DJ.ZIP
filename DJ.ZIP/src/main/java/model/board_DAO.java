@@ -160,7 +160,7 @@ public class board_DAO {
 	public int write(board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into board values(board_seq.nextval,?,?,?,?,sysdate)";
+			String sql = "insert into board  values(board_seq.nextval,?,?,?,?,sysdate,default,default)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());

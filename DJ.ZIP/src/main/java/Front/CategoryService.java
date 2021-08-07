@@ -23,42 +23,14 @@ public class CategoryService implements Command {
 		System.out.println(cate);
 
 		
-//		board_DAO dao = new board_DAO();
-//		ArrayList<board_DTO> selectList = null;
-//		String category = null;
-//		
-//		if (all != null) {
-//			
-//			selectList = dao.selectGroup(all);
-//			category = "전체";
-//			
-//		} else if (koreaMisic != null) {
-//			
-//			selectList = dao.selectGroup(koreaMisic);
-//			category = "국내음악";
-//
-//		} else if (foreignMisic != null) {
-//			
-//			selectList = dao.selectGroup(foreignMisic);
-//			category = "국외음악";
-//
-//		} else if (review != null) {
-//			
-//			selectList = dao.selectGroup(review);
-//			category = "리뷰";
-//
-//		} else {
-//			
-//			selectList = dao.selectGroup(notice);
-//			category = "공지";
-//
-//		}
+		board_DAO dao = new board_DAO();
+		ArrayList<board_DTO> selectList = dao.selectGroup(cate);
 
-		if (cate != null) {
+		if (selectList != null) {
 			System.out.print("카테고리별 출력 성공!");
 			
 			 HttpSession session = request.getSession();
-			 session.setAttribute("list",cate);
+			 session.setAttribute("list",selectList);
 		
 			
 		} else {
