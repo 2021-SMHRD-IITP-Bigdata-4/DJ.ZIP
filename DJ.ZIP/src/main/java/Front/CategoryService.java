@@ -24,19 +24,25 @@ public class CategoryService implements Command {
 
 		
 		board_DAO dao = new board_DAO();
-		ArrayList<board_DTO> selectList = dao.selectGroup(cate);
+		ArrayList<board_DTO> selectList = null;
 
+		if(cate.equals("전체")) {
+			selectList = dao.SelectAll();
+		}else {
+			selectList = dao.selectGroup(cate);
+		}
+		
+		
+		
 		if (selectList != null) {
 			System.out.print("카테고리별 출력 성공!");
-			
 			 HttpSession session = request.getSession();
 			 session.setAttribute("list",selectList);
-		
-			
+			 response.sendRedirect("CommunityList.jsp");
 		} else {
 			System.out.print("카테고리별 출력 실패ㅜㅜ");
+			response.sendRedirect("CommunityList.jsp");
 		}
-		response.sendRedirect("CommunityList.jsp");
 	}
 
 }

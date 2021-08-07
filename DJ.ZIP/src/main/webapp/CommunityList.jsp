@@ -35,8 +35,8 @@
         
         <%
         member_DTO info = (member_DTO)session.getAttribute("info");
-        String list = (String)session.getAttribute("list");
-/*         ArrayList<board_DTO> list = (ArrayList<board_DTO>)session.getAttribute("list"); */
+       /*  String list = (String)session.getAttribute("list"); */
+		ArrayList<board_DTO> list = (ArrayList<board_DTO>)session.getAttribute("list");
        	board_DAO dao = new board_DAO();
 		ArrayList<board_DTO> list1 = dao.SelectAll();
 			
@@ -108,6 +108,7 @@
           </div>
         </div>
       </div></header>
+      <!-- 카테고리별 보여주기 버튼 -->
     <section class="u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-b9a6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">Community</h4>
@@ -161,8 +162,7 @@
                           <td class="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-grey-25 u-table-cell u-table-cell-6">조회수</td>
                         </tr>
                         <!--게시물 출력-->
-                        
-                        <%for(int i =0; i<list1.size(); i++){ %>
+                             <%--   <%for(int i =0; i<list1.size(); i++){ %>
                         <tr style="height: 37px;">
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getCategory() %></td>
@@ -171,19 +171,30 @@
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getWrite_date() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
                         </tr>
-                        <%} %>
-                        <%-- <%if(list != null) { %>
-					<%for(int i =0; i<list.size(); i++){ %>
+                        <%} %>  --%>
+                        <%System.out.print(list); %>
+                        <%if(list != null) { %>
+						<%for(int i =0; i<list.size(); i++){ %>
                         <tr style="height: 37px;">
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getCategory() %></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getTitle() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></a></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getId() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getWrite_date() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getHits() %></td>
                         </tr>
-                        <%}} %> --%>
-                                                
+                        <%} }else{ %>
+                               <%for(int i =0; i<list1.size(); i++){ %>
+                        <tr style="height: 37px;">
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getCategory() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getId() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getWrite_date() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
+                        </tr>
+                        <%} }%> 
+                                        
                       <%--   <%if(list != null) { %>
 					<%for(int i =0; i<list.size(); i++){ %>
 					<tr style="height: 37px;">

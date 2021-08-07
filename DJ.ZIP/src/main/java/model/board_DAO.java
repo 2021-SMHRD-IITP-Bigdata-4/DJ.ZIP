@@ -120,7 +120,6 @@ public class board_DAO {
 
 				writeDto = new board_DTO(num, title, content, cate, id, write_date);
 				list.add(writeDto);
-
 			}
 			
 		} catch (SQLException e) {
