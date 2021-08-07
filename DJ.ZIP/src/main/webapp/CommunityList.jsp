@@ -36,6 +36,7 @@
     <%
         member_DTO info = (member_DTO)session.getAttribute("info");
 		ArrayList<board_DTO> list = (ArrayList<board_DTO>)session.getAttribute("list");
+		ArrayList<board_DTO> search = (ArrayList<board_DTO>)session.getAttribute("search");
        	board_DAO dao = new board_DAO();
 		ArrayList<board_DTO> list1 = dao.SelectAll();
 		String cate = request.getParameter("cate");
@@ -137,7 +138,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-9868" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg>
             </span>
           </button>
-          <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
+          <input class="u-search-input" type="text" name="search" value="" placeholder="Search">
         </form>
         <% if(info != null){%>
         <a href="CommunityWrite.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">글 작성</a>
@@ -167,17 +168,8 @@
                           <td class="u-align-center u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-grey-25 u-table-cell u-table-cell-6">조회수</td>
                         </tr>
                         <!--게시물 출력-->
-                             <%--   <%for(int i =0; i<list1.size(); i++){ %>
-                        <tr style="height: 37px;">
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getCategory() %></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getId() %></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getWrite_date() %></td>
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
-                        </tr>
-                        <%} %>  --%>
-                        <%System.out.print(list); %>
+            
+                       	<%if(search == null) { %>
                         <%if(list != null) { %>
 						<%for(int i =0; i<list.size(); i++){ %>
                         <tr style="height: 37px;">
@@ -198,19 +190,18 @@
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getWrite_date() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
                         </tr>
-                        <%} }%> 
+                        <%} } }else{%> 
+                        <%for(int i =0; i<search.size(); i++){ %>
+                        <tr style="height: 37px;">
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getCategory() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></a></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getId() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getWrite_date() %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getHits() %></td>
+                        </tr>
+                        <%}}%>
                                         
-                      <%--   <%if(list != null) { %>
-					<%for(int i =0; i<list.size(); i++){ %>
-					<tr style="height: 37px;">
-						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
-						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getCategory() %>"><%=list.get(i).getTitle() %></a></td>
-						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getNick_name() %></td>
-						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getWrite_date() %></td>
-						<td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getHits() %></td>
-					</tr>
-				
-				<%} }%> --%>
                       </tbody>
                     </table>
                   </div>

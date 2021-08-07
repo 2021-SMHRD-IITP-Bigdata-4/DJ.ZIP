@@ -2,6 +2,7 @@ package Front;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,7 @@ public class BoardSearchService implements Command {
 		String search = request.getParameter("search");
 		
 		board_DAO dao = new board_DAO();
-		board_DTO selectSearch = dao.selectSearch(search);
+		ArrayList<board_DTO> selectSearch = dao.selectSearch(search);
 		
 		if (selectSearch != null) {
 			System.out.print("검색 성공!");

@@ -58,11 +58,11 @@ public class board_DAO {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
 				String content = rs.getString(3);
-				String category = rs.getString(4);
+				String cate = rs.getString(4);
 				String id = rs.getString(5);
 				String write_date = rs.getString(6);
 
-				writeDto = new board_DTO(num, title, content, category, content, id, write_date);
+				writeDto = new board_DTO(num, title, content, cate, id, write_date);
 				list.add(writeDto);
 
 			}
@@ -101,6 +101,7 @@ public class board_DAO {
 		}
 		return writeDto;
 	}
+
 	public ArrayList<board_DTO> selectGroup(String category) {
 		conn();
 		String sql = "select * from board where category =?";
@@ -109,7 +110,7 @@ public class board_DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, category);
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
@@ -121,7 +122,7 @@ public class board_DAO {
 				writeDto = new board_DTO(num, title, content, cate, id, write_date);
 				list.add(writeDto);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -129,31 +130,35 @@ public class board_DAO {
 		}
 		return list;
 	}
-	public board_DTO selectSearch(String search) {
+
+	public ArrayList<board_DTO> selectSearch(String search) {
 		conn();
-		
-		String sql = "select * from board where content like'%?%'";
+
+		String sql = "select * from board where id =?";
+		list = new ArrayList<board_DTO>();
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, search);
 			rs = psmt.executeQuery();
-			
-			if (rs.next()) {
+
+			while (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
 				String content = rs.getString(3);
 				String cate = rs.getString(4);
 				String id = rs.getString(5);
 				String write_date = rs.getString(6);
-				
+
 				writeDto = new board_DTO(num, title, content, cate, id, write_date);
+				list.add(writeDto);
 			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return writeDto;
+		return list;
 	}
 
 	public int write(board_DTO dto) {
