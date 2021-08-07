@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+
 
 public class member_DAO {
 	
@@ -12,6 +15,8 @@ public class member_DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
+	member_DTO dto = null;
+	ArrayList<member_DTO> list = null;
 	
 	member_DTO loginDto = null;
 	
@@ -116,4 +121,32 @@ public class member_DAO {
 		return cnt;
 	}
 	
+	public ArrayList<member_DTO> SelectAll() {
+		conn();
+		
+		String sql = "select * from member";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			list = new ArrayList<member_DTO>();
+			
+			while(rs.next()) {
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String nick_name = rs.getString(3);
+				String email = rs.getString(4);
+				String dj_career = rs.getString(5);
+				String tel = rs.getString(6);
+				String file_name = rs.getString(7);
+				
+				dto = new member_DTO(id, pw, nick_name, email, dj_career, tel, file_name);
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+	}
 }
