@@ -47,13 +47,12 @@ public class mixset_board_DAO {
 	public int mixset_write(mixset_board_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into mixset_board values(mixset_seq,?,?,?,?,?,?,?,default,default)";
+			String sql = "insert into mixset_board values(mixset_seq,?,?,?,?,null,?,?,default,default)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
 			psmt.setString(3, dto.getId());
 			psmt.setString(4, dto.getFile_name());
-			psmt.setString(5, dto.getMusic_length());
 			psmt.setString(6, dto.getGenre_name());
 			psmt.setString(7, dto.getImg_name());
 			cnt = psmt.executeUpdate();

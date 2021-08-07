@@ -131,7 +131,7 @@
           </button>
           <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
         </form>
-        <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
+        <a href="MixsetUpload.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
         <div class="u-border-2 u-border-grey-75 u-container-style u-group u-shape-rectangle u-group-2">
           <div class="u-container-layout u-container-layout-2">
             <div class="u-container-style u-group u-group-3">
