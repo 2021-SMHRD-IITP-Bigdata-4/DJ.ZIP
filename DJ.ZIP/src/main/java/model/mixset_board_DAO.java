@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 
 public class mixset_board_DAO {
 
@@ -12,8 +14,9 @@ public class mixset_board_DAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
-	
+	ArrayList<mixset_board_DTO> list = null;
 	mixset_board_DTO mixset_writeDto = null;
+	
 	
 	public void conn() {
 		try {
@@ -92,6 +95,39 @@ public class mixset_board_DAO {
 			close();
 		}
 		return mixset_writeDto;
+	}
+	
+	public ArrayList<mixset_board_DTO> SelectAll() {
+		conn();
+		
+		String sql = "select * from mixset";
+		// list 선언만 된 상태에도 list.add하면 에러안남(주의)
+		list = new ArrayList<mixset_board_DTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int num = rs.getInt(1);
+				String title = rs.getString(2);
+				String content = rs.getString(3);
+				String id = rs.getString(4);
+				String file_name = rs.getString(5);
+				String music_length = rs.getString(6);
+				String genre_name = rs.getString(7);
+				String img_name = rs.getString(8);
+				String write_date = rs.getString(9);
+				String hits = rs.getString(10);
+				
+				mixset_writeDto = new mixset_board_DTO(title, id, img_name);
+				list.add(mixset_writeDto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
 	}
 	
 	public int update(mixset_board_DTO dto) {

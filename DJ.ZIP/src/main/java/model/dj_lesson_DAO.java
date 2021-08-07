@@ -70,20 +70,20 @@ public class dj_lesson_DAO {
 	
 	public ArrayList<dj_lesson_DTO> my_lesson_write() {
 		conn();
+		String sql = "select * from lesson";
 		list= new ArrayList<dj_lesson_DTO>();
 		try {
-			String sql = "select * from lesson";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				String num = rs.getString(1);
 				String lesson_title = rs.getString(2);
 				String id = rs.getString(3);
 				String lesson_info = rs.getString(4);
-				String write_date = rs.getString(5);
-				String location_name = rs.getString(6);
-				String portfolio = rs.getString(7);
+				String write_date = rs.getString(6);
+				String location_name = rs.getString(7);
+				String portfolio = rs.getString(5);
 				String spot = rs.getString(8);
 				
 				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, write_date, location_name, portfolio, spot);

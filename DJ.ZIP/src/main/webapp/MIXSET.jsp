@@ -1,3 +1,6 @@
+<%@page import="model.mixset_board_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.mixset_board_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +33,10 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <% member_DTO info = (member_DTO)session.getAttribute("info");
+        mixset_board_DAO dao = new mixset_board_DAO();
+        ArrayList<mixset_board_DTO> list = dao.SelectAll();
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -131,23 +137,34 @@
           </button>
           <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
         </form>
-        <a href="MixsetUpload.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
+        <a href="MixsetUpload1.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
+        <%if(list != null){%>
+					<%for(int i=0; i<list.size(); i++){ %>
         <div class="u-border-2 u-border-grey-75 u-container-style u-group u-shape-rectangle u-group-2">
+        
           <div class="u-container-layout u-container-layout-2">
             <div class="u-container-style u-group u-group-3">
               <div class="u-container-layout u-container-layout-3">
-                <h6 class="u-text u-text-default u-text-3">글제목</h6>
-                <p class="u-text u-text-default u-text-grey-50 u-text-4">글쓴이</p>
+                <h6 class="u-text u-text-default u-text-3"><%=list.get(i).getTitle() %></h6>
+                <p class="u-text u-text-default u-text-grey-50 u-text-4"><%=list.get(i).getId() %></p>
               </div>
             </div>
-            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251"><span class="u-border-2 u-border-grey-75 u-icon u-icon-circle u-spacing-10 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 494.148 494.148" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2c6d"></use></svg><svg class="u-svg-content" viewBox="0 0 494.148 494.148" x="0px" y="0px" id="svg-2c6d" style="enable-background:new 0 0 494.148 494.148;"><g><g><path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124    c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884    C432.632,229.572,422.964,213.288,405.284,201.188z"></path>
+            <div align="center">
+              <audio src="./music/Anne Marie - 2002.mp3" width='400'></audio>
+            </div>
+            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
+            
 </g>
 </g></svg></span>
             <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">LIKE</a>
-            <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">SHARE</a><span class="u-border-2 u-border-grey-75 u-icon u-icon-circle u-spacing-10 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 47.607 47.607" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cb69"></use></svg><svg class="u-svg-content" viewBox="0 0 47.607 47.607" x="0px" y="0px" id="svg-cb69" style="enable-background:new 0 0 47.607 47.607;"><g><path d="M17.991,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631C4.729,2.969,7.698,0,11.36,0   l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path><path d="M42.877,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631   C29.616,2.969,32.585,0,36.246,0l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path>
+            <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">SHARE</a>
 </g></svg></span>
           </div>
+          <br>
+         
         </div>
+          
+           <%}} %>
       </div>
     </section>
     

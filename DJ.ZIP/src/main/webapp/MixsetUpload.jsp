@@ -123,8 +123,8 @@
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
         <h5 class="u-text u-text-default u-text-2">MIXSET/MUSIC 업로드</h5>
         <div class="u-border-2 u-border-grey-75 u-container-style u-group u-radius-10 u-shape-round u-group-2">
-          <form action="MixsetWriteService.do?ID=<%=info.getID() %>" method="post" enctype="multipart/form-data">
           <div class="u-container-layout u-container-layout-2">
+          <form action="MixsetWriteService.do?ID=<%=info.getID() %>" method ="post" enctype="multipart/form-data">
             <img class="u-image u-image-round u-radius-10 u-image-1" src="images/d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
            <br>
             이미지 <input type="file" name="imgfile"accept="image/*" value="image">
@@ -132,9 +132,9 @@
             음악 <input type="file" name="file" accept="/*">
             
             <div class="u-form u-form-1">
-                <div class="u-form-email u-form-group">
-                  <label for="email-3138" class="u-form-control-hidden u-label"></label>
-                  <input type="text" placeholder="글 제목" id="email-3138" name="title" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                <div class="u-form-name u-form-group">
+                  <label for="email-3138" class="u-label-3 u-label">글 제목</label>
+                  <input type="text" id="email-3138" name="title" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                 </div>
                 
                 <div>
@@ -153,19 +153,19 @@
                 </div>
                 
                 <div class="u-form-group u-form-message">
-                  <label for="message-3138" class="u-form-control-hidden u-label"></label>
-                  <textarea placeholder="글 내용" rows="4" cols="50" id="message-3138" name="content" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
+                  <label for="message-3138" class="u-label u-label-3">글 내용</label>
+                  <textarea rows="4" cols="50" id="message-3138" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
                 </div>
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-14">글 등록<br>
                   </a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
+                  <input type="submit" value="submit1" class="u-form-control-hidden">
                 </div>
-              </form>
                 <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                 <input type="hidden" value="" name="recaptchaResponse">
             </div>
+              </form>
           </div>
         </div>
       </div>

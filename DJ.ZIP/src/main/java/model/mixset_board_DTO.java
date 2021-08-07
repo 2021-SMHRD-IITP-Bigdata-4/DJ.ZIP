@@ -15,6 +15,13 @@ public class mixset_board_DTO {
 	
 	
 	
+	public mixset_board_DTO(String title, String id, String img_name) {
+		super();
+		this.title = title;
+		this.id = id;
+		this.img_name = img_name;
+	}
+
 	public mixset_board_DTO(String title, String content, String id, String file_name, String genre_name,
 			String img_name) {
 		super();

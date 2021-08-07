@@ -157,15 +157,19 @@
         <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
+                <%if(list != null){%>
+					<%for(int i=0; i<list.size(); i++){ %>
               <div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
-                
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
-                  <h3 class="u-align-center u-text u-text-default u-text-3"><%=list.get(1).getLesson_title() %></h3>
-                  <p class="u-align-center u-text u-text-default u-text-4">장소 명</p>
+                  <h4 class="u-align-center u-text u-text-default u-text-3"><%=list.get(i).getLesson_title() %></h4>
+                  <p class="u-align-center u-text u-text-default u-text-4"><%=list.get(i).getLocation_name() %></p>
                   <a href="https://nicepage.com/k/adult-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용 보기</a>
                 </div>
               </div>
+					<%if(i%4==0){%>
+					<p></p>
+                <%}} }%>
               <div class="u-container-style u-layout-cell u-size-14-sm u-size-14-xs u-size-15-lg u-size-15-xl u-size-30-md u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-4"></div>
               </div>
