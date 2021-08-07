@@ -14,6 +14,7 @@ public class BoardDeleteService implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("EUC-KR");
 
 		String num = request.getParameter("num");

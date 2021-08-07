@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Front.BoardDeleteService;
 import Front.BoardSearchService;
 import Front.BoardUpdateService;
 import Front.BoardWriteService;
@@ -58,7 +59,7 @@ public class FrontController extends HttpServlet {
 
 		} else if (resultURI.equals("BoardDeleteService.do")) {
 
-			com = new BoardUpdateService();
+			com = new BoardDeleteService();
 
 		} else if (resultURI.equals("Board_replyWriteDeleteService.do")) {
 

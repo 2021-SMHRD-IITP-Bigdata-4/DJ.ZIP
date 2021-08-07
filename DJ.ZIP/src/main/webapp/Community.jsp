@@ -1,3 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.board_reply_DTO"%>
+<%@page import="model.board_reply_DAO"%>
+<%@page import="model.board_DAO"%>
+<%@page import="model.board_DTO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +35,15 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <%
+        member_DTO info = (member_DTO)session.getAttribute("info"); 
+        String num1 = request.getParameter("num");
+        board_DAO dao = new board_DAO();
+        board_DTO selectOne = dao.selectOne(num1);
+        
+        board_reply_DAO dao1 = new board_reply_DAO();
+        ArrayList<board_reply_DTO> list = dao1.SelectAll();
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -96,7 +109,7 @@
             
             <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getID()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
 		  <%}%>
 		  
           </div>
@@ -106,25 +119,40 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <h2 class="u-text u-text-default u-text-1">[카테고리] 글제목</h2>
-            <p class="u-text u-text-default u-text-2">닉네임 | 작성날짜 | 댓글 수 | 추천 수</p>
+            <h2 class="u-text u-text-default u-text-1"><%=selectOne.getTitle() %></h2>
+            <p class="u-text u-text-default u-text-2"><%=selectOne.getId() %> | <%=selectOne.getWrite_date() %> | <%=selectOne.getHits() %> | <%=selectOne.getRecom() %></p>
             <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
           </div>
         </div>
+<%--         <%System.out.println(selectOne.getWrite_date()); %> --%>
+
         <div class="u-container-style u-group u-shape-rectangle u-group-2">
           <div class="u-container-layout u-container-layout-2">
-            <p class="u-text u-text-3">글내용</p>
+            <p class="u-text u-text-3"><%=selectOne.getContent() %></p>
           </div>
         </div>
         <div class="u-container-style u-group u-shape-rectangle u-group-3">
           <div class="u-container-layout u-container-layout-3">
             <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-            <a href="https://nicepage.com/joomla-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-1">목록</a>
-            <a href="https://nicepage.com/joomla-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-2">수정</a>
-            <a href="https://nicepage.com/joomla-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-3">삭제</a>
+            <a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-1">목록</a>
+            <a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-2">수정</a>
+			<a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-3">삭제</a>
+      <!--       
+            글수정
+            <form action="BoardUpdate.do?num1=" method="post">
+            <input type="submit" value="수정" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-2">
+            </form>
+            
+            
+            글삭제
+            <form action="BoardDelete.do?num1=" method="post" >
+            <input type="submit" value="삭제" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-3">
+            </form>
+            
+             -->
             <div class="u-container-style u-group u-group-4">
               <div class="u-container-layout">
-                <p class="u-text u-text-4">0</p><span class="u-icon u-icon-circle u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-987a"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-987a" style="enable-background:new 0 0 512 512;"><g><g><path d="M503.562,272.168c0-25.965-21.124-47.088-47.088-47.088h-16.03h-69.345c13.222-23.935,20.253-46.525,20.253-77.724v-5.042    c0-0.003,0-0.005,0-0.008c-0.005-16.782-6.491-32.607-18.267-44.559c-11.769-11.945-27.482-18.669-44.245-18.931    c-0.16-0.002-0.321-0.004-0.481-0.004c-16.247,0-30.455,12.922-31.789,29.023c-6.361,76.781-80.346,116.349-129.835,140.415    v-7.945c0-8.3-6.729-15.028-15.028-15.028H23.466c-8.3,0-15.028,6.729-15.028,15.028v256.48c0,8.299,6.729,15.028,15.028,15.028    h96.18c18.422,0,34.396-10.639,42.129-26.091C215.299,508.972,261.799,512,315.199,512c9.121,0,18.452-0.088,28.046-0.179    c10.609-0.1,21.579-0.204,33.079-0.204h47.515c25.965,0,47.088-21.124,47.088-47.088c0-8.73-2.388-16.912-6.545-23.929    c13.529-8.283,22.575-23.199,22.575-40.191c0-8.73-2.387-16.912-6.545-23.929c13.529-8.283,22.575-23.199,22.575-40.191    c0-12.228-4.687-23.379-12.356-31.758C498.635,296.085,503.562,284.694,503.562,272.168z M136.678,464.724    c0,9.392-7.64,17.032-17.032,17.032h-17.032v-49.092c0-8.3-6.729-15.028-15.028-15.028c-8.299,0-15.028,6.729-15.028,15.028    v49.092H38.495V255.332h98.184V464.724z M424.414,319.256h16.03h15.455c9.392,0,17.032,7.64,17.032,17.032    s-7.64,17.032-17.032,17.032h-15.455h-0.575h-15.455c-8.3,0-15.028,6.729-15.028,15.028s6.729,15.028,15.028,15.028h15.455    c9.392,0,17.032,7.64,17.032,17.032s-7.64,17.032-17.032,17.032h-16.03c-8.3,0-15.028,6.729-15.028,15.028    c0,8.299,6.729,15.028,15.028,15.028c9.392,0,17.032,7.64,17.032,17.032c0,9.392-7.64,17.032-17.032,17.032h-47.515    c-11.642,0-22.684,0.104-33.363,0.206c-66.992,0.633-116.21,1.101-176.029-26.674V281.537h-0.001    c1.564-0.756,3.169-1.531,4.806-2.32c26.125-12.596,61.904-29.846,92.668-55.973c37.661-31.986,58.562-69.981,62.119-112.929    c0.042-0.51,1.022-1.449,1.829-1.449c0.005,0,0.011,0,0.016,0c18.156,0.284,32.927,15.293,32.927,33.457v5.032    c0,31.24-8.147,51.006-25.188,77.724h-23.904c-8.3,0-15.028,6.729-15.028,15.028c0,8.3,6.729,15.028,15.028,15.028h32.167    c0.015,0,0.03,0,0.045,0h96.028h16.03c9.392,0,17.032,7.64,17.032,17.032c0,9.392-7.64,17.032-17.032,17.032h-16.03h-16.03    c-8.3,0-15.028,6.729-15.028,15.028C409.386,312.527,416.115,319.256,424.414,319.256z"></path>
+                <p class="u-text u-text-4"><%=selectOne.getRecom() %></p><span class="u-icon u-icon-circle u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-987a"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-987a" style="enable-background:new 0 0 512 512;"><g><g><path d="M503.562,272.168c0-25.965-21.124-47.088-47.088-47.088h-16.03h-69.345c13.222-23.935,20.253-46.525,20.253-77.724v-5.042    c0-0.003,0-0.005,0-0.008c-0.005-16.782-6.491-32.607-18.267-44.559c-11.769-11.945-27.482-18.669-44.245-18.931    c-0.16-0.002-0.321-0.004-0.481-0.004c-16.247,0-30.455,12.922-31.789,29.023c-6.361,76.781-80.346,116.349-129.835,140.415    v-7.945c0-8.3-6.729-15.028-15.028-15.028H23.466c-8.3,0-15.028,6.729-15.028,15.028v256.48c0,8.299,6.729,15.028,15.028,15.028    h96.18c18.422,0,34.396-10.639,42.129-26.091C215.299,508.972,261.799,512,315.199,512c9.121,0,18.452-0.088,28.046-0.179    c10.609-0.1,21.579-0.204,33.079-0.204h47.515c25.965,0,47.088-21.124,47.088-47.088c0-8.73-2.388-16.912-6.545-23.929    c13.529-8.283,22.575-23.199,22.575-40.191c0-8.73-2.387-16.912-6.545-23.929c13.529-8.283,22.575-23.199,22.575-40.191    c0-12.228-4.687-23.379-12.356-31.758C498.635,296.085,503.562,284.694,503.562,272.168z M136.678,464.724    c0,9.392-7.64,17.032-17.032,17.032h-17.032v-49.092c0-8.3-6.729-15.028-15.028-15.028c-8.299,0-15.028,6.729-15.028,15.028    v49.092H38.495V255.332h98.184V464.724z M424.414,319.256h16.03h15.455c9.392,0,17.032,7.64,17.032,17.032    s-7.64,17.032-17.032,17.032h-15.455h-0.575h-15.455c-8.3,0-15.028,6.729-15.028,15.028s6.729,15.028,15.028,15.028h15.455    c9.392,0,17.032,7.64,17.032,17.032s-7.64,17.032-17.032,17.032h-16.03c-8.3,0-15.028,6.729-15.028,15.028    c0,8.299,6.729,15.028,15.028,15.028c9.392,0,17.032,7.64,17.032,17.032c0,9.392-7.64,17.032-17.032,17.032h-47.515    c-11.642,0-22.684,0.104-33.363,0.206c-66.992,0.633-116.21,1.101-176.029-26.674V281.537h-0.001    c1.564-0.756,3.169-1.531,4.806-2.32c26.125-12.596,61.904-29.846,92.668-55.973c37.661-31.986,58.562-69.981,62.119-112.929    c0.042-0.51,1.022-1.449,1.829-1.449c0.005,0,0.011,0,0.016,0c18.156,0.284,32.927,15.293,32.927,33.457v5.032    c0,31.24-8.147,51.006-25.188,77.724h-23.904c-8.3,0-15.028,6.729-15.028,15.028c0,8.3,6.729,15.028,15.028,15.028h32.167    c0.015,0,0.03,0,0.045,0h96.028h16.03c9.392,0,17.032,7.64,17.032,17.032c0,9.392-7.64,17.032-17.032,17.032h-16.03h-16.03    c-8.3,0-15.028,6.729-15.028,15.028C409.386,312.527,416.115,319.256,424.414,319.256z"></path>
 </g>
 </g><g><g><path d="M472.307,111.062h-32.06c-8.3,0-15.028,6.729-15.028,15.028c0,8.299,6.729,15.028,15.028,15.028h32.06    c8.3,0,15.028-6.729,15.028-15.028C487.335,117.791,480.607,111.062,472.307,111.062z"></path>
 </g>
@@ -146,7 +174,7 @@
                 <div class="u-container-layout u-container-layout-5">
                   <div class="u-expanded-width u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="197" data-image-height="197"></div>
                   <div class="u-image u-image-circle u-preserve-proportions u-image-2" alt="" data-image-width="197" data-image-height="197"></div>
-                  <h6 class="u-align-center u-text u-text-5">닉네임</h6>
+                  <h6 class="u-align-center u-text u-text-5"><%=selectOne.getId() %></h6>
                   <div class="u-form u-form-1">
                     <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
                       <div class="u-form-group u-form-message">
@@ -176,21 +204,25 @@
           </div>
         </div>
         <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-2">
+        <!-- 댓글출력 -->
+        <%for(int i=0; i<list.size();i++){ %>
           <div class="u-layout">
             <div class="u-layout-row">
               <div class="u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-23 u-layout-cell-3">
                 <div class="u-container-layout u-container-layout-7">
                   <div class="u-image u-image-circle u-preserve-proportions u-image-3" alt="" data-image-width="197" data-image-height="197"></div>
-                  <p class="u-text u-text-default u-text-7">닉네임</p>
+                  <p class="u-text u-text-default u-text-7"><%=list.get(i).getId() %></p>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-shape-rectangle u-size-37 u-layout-cell-4">
                 <div class="u-container-layout u-valign-middle u-container-layout-8">
-                  <p class="u-text u-text-8">댓글내용</p>
+                  <p class="u-text u-text-8"><%=list.get(i).getContent() %></p>
                 </div>
               </div>
             </div>
           </div>
+          <%} %>
+          
         </div>
       </div>
     </section>

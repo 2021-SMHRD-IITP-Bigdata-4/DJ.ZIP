@@ -16,10 +16,10 @@ public class BoardUpdateService implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
+		String num = request.getParameter("num");
 		String title = request.getParameter("name");
 		String category = request.getParameter("select");
 		String content = request.getParameter("message");
-		String num = request.getParameter("num");
 
 		System.out.println(title);
 		System.out.println(category);
@@ -32,10 +32,10 @@ public class BoardUpdateService implements Command {
 
 		if (cnt > 0) {
 			System.out.println("커뮤니티글수정성공!");
-			response.sendRedirect("CommunityList.jsp");
+			response.sendRedirect("Community.jsp?num="+num);
 		} else {
 			System.out.println("커뮤니티글수정실패!");
-			response.sendRedirect("CommunityList.jsp");
+			response.sendRedirect("Community.jsp");
 		}
 	}
 

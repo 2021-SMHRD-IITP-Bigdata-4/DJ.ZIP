@@ -8,6 +8,7 @@ public class board_DTO {
 	private String id;
 	private String write_date;
 	private String hits;
+	private String recom;
 	
 	public board_DTO(String num, String title, String content, String category, String id, String write_date,
 			String hits) {
@@ -18,6 +19,18 @@ public class board_DTO {
 		this.id = id;
 		this.write_date = write_date;
 		this.hits = hits;
+	}
+
+	public board_DTO(String num, String title, String content, String category, String id, String write_date,
+			String hits, String recom) {
+		this.num = num;
+		this.title = title;
+		this.content = content;
+		this.category = category;
+		this.id = id;
+		this.write_date = write_date;
+		this.hits = hits;
+		this.recom = recom;
 	}
 
 	public board_DTO(String num, String title, String content, String category, String id, String write_date) {
@@ -91,5 +104,15 @@ public class board_DTO {
 	public void setHits(String hits) {
 		this.hits = hits;
 	}
+
+	public String getRecom() {
+		return recom;
+	}
+
+	public void setRecom(String recom) {
+		this.recom = recom;
+	}
+
+
 	
 }
