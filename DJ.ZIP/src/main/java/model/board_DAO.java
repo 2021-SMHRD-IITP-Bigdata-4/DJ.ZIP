@@ -141,12 +141,12 @@ public class board_DAO {
 			if (rs.next()) {
 				String num = rs.getString(1);
 				String title = rs.getString(2);
-				String writer = rs.getString(3);
-				String fileName = rs.getString(4);
-				String content = rs.getString(5);
-				String day = rs.getString(6);
+				String content = rs.getString(3);
+				String cate = rs.getString(4);
+				String id = rs.getString(5);
+				String write_date = rs.getString(6);
 				
-				writeDto = new board_DTO(num, title, content, fileName, content, writer, day);
+				writeDto = new board_DTO(num, title, content, cate, id, write_date);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

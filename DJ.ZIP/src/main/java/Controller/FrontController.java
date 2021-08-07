@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Front.BoardSearchService;
 import Front.BoardUpdateService;
 import Front.BoardWriteService;
 import Front.CategoryService;
@@ -61,7 +62,7 @@ public class FrontController extends HttpServlet {
 		} else if (resultURI.equals("Board_replyWriteDeleteService.do")) {
 
 			com = new BoardUpdateService();
-			
+
 		} else if (resultURI.equals("Board_replyUpdateService.do")) {
 
 			com = new BoardUpdateService();
@@ -69,7 +70,7 @@ public class FrontController extends HttpServlet {
 		} else if (resultURI.equals("Board_replyDeleteService.do")) {
 
 			com = new BoardUpdateService();
-		
+
 		} else if (resultURI.equals("BoardDeleteService.do")) {
 
 			com = new BoardUpdateService();
@@ -82,10 +83,14 @@ public class FrontController extends HttpServlet {
 
 			com = new MixsetWriteService();
 
+		} else if (resultURI.equals("BoardSearchService.do")) {
+
+			com = new BoardSearchService();
+
 		}
-		
+
 		com.execute(request, response);
-		
+
 	}
 
 }

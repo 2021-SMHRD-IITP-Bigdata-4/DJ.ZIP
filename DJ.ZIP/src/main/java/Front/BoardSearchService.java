@@ -2,7 +2,6 @@ package Front;
 
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,35 +12,26 @@ import Controller.Command;
 import model.board_DAO;
 import model.board_DTO;
 
-public class CategoryService implements Command {
+public class BoardSearchService implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("EUC-KR");
-		String cate = request.getParameter("cate");
-
-		System.out.println(cate);
-
+		String search = request.getParameter("search");
 		
 		board_DAO dao = new board_DAO();
-		ArrayList<board_DTO> selectList = null;
-
-		if(cate.equals("전체")) {
-			selectList = dao.SelectAll();
-		}else {
-			selectList = dao.selectGroup(cate);
-		}
+		board_DTO selectSearch = dao.selectSearch(search);
 		
-		if (selectList != null) {
-			System.out.print("카테고리별 출력 성공!");
+		if (selectSearch != null) {
+			System.out.print("검색 성공!");
 			 HttpSession session = request.getSession();
-			 session.setAttribute("list",selectList);
-			 response.sendRedirect("CommunityList.jsp?cate="+ URLEncoder.encode(cate, "EUC-KR"));
+			 session.setAttribute("search",selectSearch);
+			 response.sendRedirect("CommunityList.jsp");
 		} else {
-			System.out.print("카테고리별 출력 실패ㅜㅜ");
+			System.out.print("검색 실패ㅜㅜ");
 			response.sendRedirect("CommunityList.jsp");
 		}
+		
 	}
 
 }

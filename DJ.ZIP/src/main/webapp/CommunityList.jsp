@@ -33,13 +33,12 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <%
+    <%
         member_DTO info = (member_DTO)session.getAttribute("info");
-       /*  String list = (String)session.getAttribute("list"); */
 		ArrayList<board_DTO> list = (ArrayList<board_DTO>)session.getAttribute("list");
        	board_DAO dao = new board_DAO();
 		ArrayList<board_DTO> list1 = dao.SelectAll();
-			
+		String cate = request.getParameter("cate");
 	%>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -124,8 +123,14 @@
         </div>
         </form>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
-        <h5 class="u-text u-text-default u-text-2">카테고리명</h5>
-        <form action="#" method="get" class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
+        
+        
+        <%if(cate != null) { %>
+        <h5 class="u-text u-text-default u-text-2"><%=cate %></h5>
+        <%}else{ %>
+        <h5 class="u-text u-text-default u-text-2">전체</h5>
+        <%} %>
+        <form action="BoardSearchService.do" method="post" class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
           <button class="u-search-button" type="submit">
             <span class="u-search-icon u-spacing-10">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9868"></use></svg>
