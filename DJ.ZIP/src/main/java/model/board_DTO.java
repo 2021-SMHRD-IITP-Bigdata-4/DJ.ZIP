@@ -42,6 +42,15 @@ public class board_DTO {
 		this.write_date = write_date;
 	}
 
+	public board_DTO(String num, String title, String content, String category, String id) {
+		super();
+		this.num = num;
+		this.title = title;
+		this.content = content;
+		this.category = category;
+		this.id = id;
+	}
+
 	public board_DTO(String title, String content, String category, String id) {
 		this.title = title;
 		this.content = content;

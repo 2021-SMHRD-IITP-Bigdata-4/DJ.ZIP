@@ -20,6 +20,12 @@ public class board_reply_DTO {
 		this.content = content;
 	}
 
+	public board_reply_DTO(String id, String content, String num) {
+		this.id = id;
+		this.content = content;
+		this.num = num;
+	}
+
 	public String getR_num() {
 		return r_num;
 	}

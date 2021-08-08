@@ -20,13 +20,14 @@ public class BoardUpdateService implements Command {
 		String title = request.getParameter("name");
 		String category = request.getParameter("select");
 		String content = request.getParameter("message");
+		String id = request.getParameter("id");
 
+		System.out.println(num);
 		System.out.println(title);
 		System.out.println(category);
 		System.out.println(content);
-		System.out.println(num);
 
-		board_DTO dto = new board_DTO(title, content, category, num);
+		board_DTO dto = new board_DTO(num, title, content, category, id);
 		board_DAO dao = new board_DAO();
 		int cnt = dao.update(dto);
 

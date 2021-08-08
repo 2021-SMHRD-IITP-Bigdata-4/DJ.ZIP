@@ -216,7 +216,7 @@ public class board_DAO {
 			psmt.setString(1, dto.getTitle());
 			psmt.setString(2, dto.getContent());
 			psmt.setString(3, dto.getCategory());
-			psmt.setString(3, dto.getNum());
+			psmt.setString(4, dto.getNum());
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {

@@ -46,12 +46,13 @@ public class board_reply_DAO {
 		}
 	}
 
-	public ArrayList<board_reply_DTO> SelectAll() {
+	public ArrayList<board_reply_DTO> SelectAll(String num) {
 		conn();
-		String sql = "select * from board";
+		String sql = "select * from board_reply where num =?";
 		list = new ArrayList<board_reply_DTO>();
 		try {
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
@@ -59,9 +60,9 @@ public class board_reply_DAO {
 				String id = rs.getString(2);
 				String content = rs.getString(3);
 				String write_date = rs.getString(4);
-				String num = rs.getString(5);
+				String num1 = rs.getString(5);
 
-				writeDto = new board_reply_DTO(r_num, id, content, write_date, num);
+				writeDto = new board_reply_DTO(r_num, id, content, write_date, num1);
 				list.add(writeDto);
 
 			}
@@ -77,10 +78,11 @@ public class board_reply_DAO {
 	public int write(board_reply_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into board_reply values(board_reply_seq.nextval,?,?,sysdate)";
+			String sql = "insert into board_reply values(board_reply_seq.nextval,?,?,sysdate,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getNum());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

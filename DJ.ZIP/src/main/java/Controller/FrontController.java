@@ -11,6 +11,7 @@ import Front.BoardDeleteService;
 import Front.BoardSearchService;
 import Front.BoardUpdateService;
 import Front.BoardWriteService;
+import Front.Board_replyWriteService;
 import Front.CategoryService;
 import Front.JoinService;
 import Front.LessonWriteService;
@@ -61,9 +62,9 @@ public class FrontController extends HttpServlet {
 
 			com = new BoardDeleteService();
 
-		} else if (resultURI.equals("Board_replyWriteDeleteService.do")) {
+		} else if (resultURI.equals("Board_replyWriteService.do")) {
 
-			com = new BoardUpdateService();
+			com = new Board_replyWriteService();
 
 		} else if (resultURI.equals("Board_replyUpdateService.do")) {
 

@@ -42,7 +42,7 @@
         board_DTO selectOne = dao.selectOne(num1);
         
         board_reply_DAO dao1 = new board_reply_DAO();
-        ArrayList<board_reply_DTO> list = dao1.SelectAll();
+        ArrayList<board_reply_DTO> list = dao1.SelectAll(num1);
         %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -135,8 +135,10 @@
           <div class="u-container-layout u-container-layout-3">
             <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
             <a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-1">목록</a>
-            <a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-2">수정</a>
-			<a href="CommunityList.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-3">삭제</a>
+            <%if (selectOne.getId().equals(info.getID())){ %>
+            <a href="CommunityUpdate.jsp?num=<%=num1 %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-2">수정</a>
+			<%} %>
+			<a href="BoardDeleteService.do?num=<%=num1 %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-1 u-radius-6 u-btn-3">삭제</a>
       <!--       
             글수정
             <form action="BoardUpdate.do?num1=" method="post">
@@ -176,6 +178,22 @@
                   <div class="u-image u-image-circle u-preserve-proportions u-image-2" alt="" data-image-width="197" data-image-height="197"></div>
                   <h6 class="u-align-center u-text u-text-5"><%=selectOne.getId() %></h6>
                   <div class="u-form u-form-1">
+                <%--   <%if(info != null) {%>
+                    <form action="Board_replyWriteService.do?<%=info.getID() %>" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
+                      <div class="u-form-group u-form-message">
+                        <label for="message-6bbc" class="u-form-control-hidden u-label"></label>
+                        <textarea placeholder="댓글 입력" rows="4" cols="50" id="message-6bbc" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
+                      </div>
+                      <div class="u-align-right u-form-group u-form-submit">
+                        <a href="Board_replyWriteService.do?<%=num1 %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-4">댓글 달기<br>
+                        </a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                      <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                      <input type="hidden" value="" name="recaptchaResponse">
+                    </form>
+                    <%}else {%>
                     <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
                       <div class="u-form-group u-form-message">
                         <label for="message-6bbc" class="u-form-control-hidden u-label"></label>
@@ -190,14 +208,42 @@
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
+                    <%} %> --%>
+                    
                   </div>
                 </div>
               </div>
+              <!-- 추천수 -->
               <div class="u-container-style u-layout-cell u-size-44 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-6">
                   <p class="u-text u-text-6">COMMNET()</p><span class="u-icon u-icon-circle u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.012 512.012" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-12a5"></use></svg><svg class="u-svg-content" viewBox="0 0 512.012 512.012" id="svg-12a5"><g><path d="m333.201 115.038c-28.905-59.021-89.37-98.042-157.193-98.042-97.047 0-176 78.505-176 175 0 26.224 5.63 51.359 16.742 74.794l-16.451 82.265c-2.094 10.472 7.144 19.728 17.618 17.656l83.279-16.465c11.213 5.319 22.813 9.364 34.732 12.151-26.717-126.541 69.199-245.321 197.273-247.359z"></path><path d="m495.266 394.79c2.874-6.061 5.373-12.237 7.511-18.514h-.549c37.448-109.917-41.305-225.441-157.567-231.066-.002-.006-.003-.012-.005-.018-100.036-4.61-183.148 75.486-183.148 174.804 0 96.414 78.361 174.857 174.743 174.997 26.143-.035 51.201-5.663 74.568-16.747 91.207 18.032 84.094 16.75 86.189 16.75 9.479 0 16.56-8.686 14.709-17.941z"></path>
 </g></svg></span>
                   <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
+                   <%if(info != null) {%>
+                    <form action="Board_replyWriteService.do?num=<%=num1 %>" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
+                      <div class="u-form-group u-form-message">
+                        <label for="message-6bbc" class="u-form-control-hidden u-label"></label>
+                        <input type="text"  placeholder="댓글 입력" rows="4" cols="50" id="message-6bbc" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-align-right u-form-group u-form-submit">
+                   
+                        <input type="hidden" name="id" value="<%=info.getID() %>" class="u-form-control-hidden">
+                        <input type="submit" value="댓글 달기" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-4">
+                      </div>
+                    </form>
+                    <%}else {%>
+                     <form action="Board_replyWriteService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
+                      <div class="u-form-group u-form-message">
+                        <label for="message-6bbc" class="u-form-control-hidden u-label"></label>
+                        <input type="text" placeholder="댓글 입력" rows="4" cols="50" id="message-6bbc" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                      </div>
+                      <div class="u-align-right u-form-group u-form-submit">
+                        <a href="Board_replyWriteService.do" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-4">댓글 달기<br>
+                        </a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                      </div>
+                    </form>
+                    <%} %>
                 </div>
               </div>
             </div>
@@ -205,6 +251,8 @@
         </div>
         <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-2">
         <!-- 댓글출력 -->
+     <%--    <%System.out.println(list.get(1).getId()); %>
+        <%System.out.println(list.get(1).getContent()); %> --%>
         <%for(int i=0; i<list.size();i++){ %>
           <div class="u-layout">
             <div class="u-layout-row">
@@ -221,7 +269,7 @@
               </div>
             </div>
           </div>
-          <%} %>
+      <%} %>
           
         </div>
       </div>
