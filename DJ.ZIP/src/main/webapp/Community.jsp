@@ -176,6 +176,7 @@
                 <div class="u-container-layout u-container-layout-5">
                   <div class="u-expanded-width u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="197" data-image-height="197"></div>
                   <div class="u-image u-image-circle u-preserve-proportions u-image-2" alt="" data-image-width="197" data-image-height="197"></div>
+                  <img alt="프로필사진 없음" src="./img/<%=info.getFile_name() %>" name="profile">
                   <h6 class="u-align-center u-text u-text-5"><%=selectOne.getId() %></h6>
                   <div class="u-form u-form-1">
                 <%--   <%if(info != null) {%>
