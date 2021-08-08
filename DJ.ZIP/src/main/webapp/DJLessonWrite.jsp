@@ -1,3 +1,6 @@
+<%@page import="model.dj_lesson_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.dj_lesson_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -35,7 +38,10 @@
             <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-<% member_DTO info = (member_DTO)session.getAttribute("info");  %>
+  <% member_DTO info = (member_DTO)session.getAttribute("info");
+        dj_lesson_DAO dao = new dj_lesson_DAO();
+        ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
+        %>
 </symbol>
 
 </defs></svg>
@@ -135,7 +141,7 @@
             <form action="LessonWriterService.do" method="POST">
               <div class="u-container-layout u-container-layout-4">
                 <h5 class="u-text u-text-default u-text-4">메인 이미지 파일 첨부</h5><br>
-                <input type="file" name="imgfile" accept="image/*" value="image">
+                <input type="file" name="img" accept="image/*" value="image">
               </div>
               
             </div>
@@ -185,7 +191,7 @@
               <textarea rows="7" cols="50" id="textarea-a316" name="cancel" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
             </div>
             <div class="u-align-center u-form-group u-form-submit">
-              <a href="#" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">글 작성<br>
+              <a href="DJLessonPage.jsp" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">글 작성<br>
               </a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
