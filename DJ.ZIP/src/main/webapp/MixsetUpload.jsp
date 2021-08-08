@@ -159,11 +159,11 @@
                 <div class="u-align-center u-form-group u-form-submit">
                   <a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-14">±Û µî·Ï<br>
                   </a>
-                  <input type="submit" value="submit1" class="u-form-control-hidden">
+                  <input type="submit" value="submit" class="u-form-control-hidden">
                 </div>
                 <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse">
+                <input type="hidden" value="hidden" name="recaptchaResponse">
             </div>
               </form>
           </div>

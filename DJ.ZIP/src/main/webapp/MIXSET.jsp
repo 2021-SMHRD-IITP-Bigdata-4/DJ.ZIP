@@ -137,7 +137,7 @@
           </button>
           <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
         </form>
-        <a href="MixsetUpload1.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
+        <a href="MixsetUpload.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
         <%if(list != null){%>
 					<%for(int i=0; i<list.size(); i++){ %>
         <div class="u-border-2 u-border-grey-75 u-container-style u-group u-shape-rectangle u-group-2">

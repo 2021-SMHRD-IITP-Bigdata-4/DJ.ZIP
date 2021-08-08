@@ -56,8 +56,8 @@ public class mixset_board_DAO {
 			psmt.setString(2, dto.getContent());
 			psmt.setString(3, dto.getId());
 			psmt.setString(4, dto.getFile_name());
-			psmt.setString(6, dto.getGenre_name());
-			psmt.setString(7, dto.getImg_name());
+			psmt.setString(5, dto.getGenre_name());
+			psmt.setString(6, dto.getImg_name());
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
