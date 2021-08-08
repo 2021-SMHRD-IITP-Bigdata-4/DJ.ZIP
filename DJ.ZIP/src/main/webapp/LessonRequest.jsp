@@ -1,3 +1,6 @@
+<%@page import="model.dj_lesson_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.dj_lesson_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +33,15 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+       <% member_DTO info = (member_DTO)session.getAttribute("info");
+        dj_lesson_DAO dao = new dj_lesson_DAO();
+        ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
+
+        
+        
+        
+        
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -149,9 +160,9 @@
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-3">
-                      <h3 class="u-custom-font u-font-oswald u-text u-text-3">[지역]글 제목</h3>
+                      <h3 class="u-custom-font u-font-oswald u-text u-text-3"><%= list.get(0).getLesson_title() %></h3>
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-                      <p class="u-text u-text-4">글쓴이 | 날짜</p>
+                      <p class="u-text u-text-4"><%=list.get(0).getId()+" | "+ list.get(0).getWrite_date()%></p>
                     </div>
                   </div>
                 </div>
@@ -163,7 +174,7 @@
                       <img class="u-image u-image-default u-image-1" src="images/8c76c73bc23cc9796bbbbeacc52faa4a1b4e511718b2d265aa1d9a6702b3df8855b54532c80b9f6c6054cd94b9fb42bf3b4e034aae24c942ee9968_1280.jpg" alt="" data-image-width="1280" data-image-height="720">
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                       <h5 class="u-custom-font u-font-oswald u-text u-text-default u-text-5">레슨 장소</h5>
-                      <p class="u-text u-text-6">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+                      <p class="u-text u-text-6"><%=list.get(0).getLocation_name() %></p>
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-31 u-layout-cell-3">
@@ -206,16 +217,6 @@
         </h1>
         <p class="u-text u-text-default u-text-2">광주광역시 동구 예술길 31-15 3층 (주)스마트인재개발원</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+    
   </body>
 </html>

@@ -132,7 +132,7 @@
           <div class="u-container-layout u-container-layout-3">
             <h1 class="u-text u-text-default u-text-3">WRITE LESSON&nbsp;</h1>
             <div class="u-align-center u-container-style u-expanded-width u-group u-group-4">
-            <form action="LessonWriterService.do" method="post">
+            <form action="LessonWriterService.do" method="POST">
               <div class="u-container-layout u-container-layout-4">
                 <h5 class="u-text u-text-default u-text-4">메인 이미지 파일 첨부</h5><br>
                 <input type="file" name="imgfile" accept="image/*" value="image">
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="u-form u-form-1">
-          <form  method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
+          <form   class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form" redirect="true">
             <div class="u-form-group u-form-name u-form-group-1">
               <label for="name-3b9a" class="u-label u-label-1">글 제목</label>
               <input type="text" id="name-3b9a" name="LessonTitle" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" required="" maxlength="100">
