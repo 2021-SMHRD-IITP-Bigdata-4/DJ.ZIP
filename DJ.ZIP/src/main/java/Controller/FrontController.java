@@ -92,8 +92,11 @@ public class FrontController extends HttpServlet {
 			com = new BoardSearchService();
 
 		} else if (resultURI.equals("LessonWriteService.do")) {
+			
 			com = new LessonWriteService();
+			
 		} else if (resultURI.equals("LessonCate.do")) {
+			
 			com = new LessonCate();
 		}
 		com.execute(request, response);
