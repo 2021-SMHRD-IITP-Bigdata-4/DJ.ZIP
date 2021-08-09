@@ -17,14 +17,25 @@ public class BoardRecomService implements Command {
 
 		request.setCharacterEncoding("EUC-KR");
 		String num = request.getParameter("num");
-		String recom = request.getParameter("recom");
-
-		System.out.println(num);
-		System.out.println(recom);
-
-		recom += 1;
+		String recom2 = request.getParameter("recom");
 		
-		System.out.println(recom);
+		
+		System.out.println(num);
+		System.out.println(recom2);
+		
+		
+		 if(recom2 == null) { recom2 = "0"; }
+		 
+		
+		int recom1 = Integer.parseInt(recom2);
+		
+		recom1 += 1;
+		
+//		System.out.println(recom1);
+		
+		String recom = String.valueOf(recom1);
+		
+//		System.out.println(recom);
 		
 		board_DTO dto = new board_DTO(num, recom);
 		board_DAO dao = new board_DAO();

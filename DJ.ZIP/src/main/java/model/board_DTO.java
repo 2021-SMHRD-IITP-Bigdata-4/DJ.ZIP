@@ -15,6 +15,12 @@ public class board_DTO {
 		this.recom = recom;
 	}
 
+	public board_DTO(String num, String id, String hits) {
+		this.num = num;
+		this.id = id;
+		this.hits = hits;
+	}
+
 	public board_DTO(String num, String title, String content, String category, String id, String write_date,
 			String hits) {
 		this.num = num;

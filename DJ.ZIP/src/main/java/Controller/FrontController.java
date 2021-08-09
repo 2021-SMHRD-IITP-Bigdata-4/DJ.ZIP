@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Front.BoardDeleteService;
+import Front.BoardRecomService;
 import Front.BoardSearchService;
 import Front.BoardUpdateService;
 import Front.BoardWriteService;
@@ -93,18 +94,23 @@ public class FrontController extends HttpServlet {
 			com = new BoardSearchService();
 
 		} else if (resultURI.equals("LessonWriteService.do")) {
-			
+
 			com = new LessonWriteService();
-			
+
 		} else if (resultURI.equals("LessonCate.do")) {
-			
+
 			com = new LessonCate();
-			
+
 		} else if (resultURI.equals("like_listDeleteService.do")) {
-		
+
 			com = new like_listDeleteService();
-		} 
-		
+
+		} else if (resultURI.equals("BoardRecomService.do")) {
+
+			com = new BoardRecomService();
+			
+		}
+
 		com.execute(request, response);
 
 	}

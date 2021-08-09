@@ -256,4 +256,19 @@ public class board_DAO {
 		}
 		return cnt;
 	}
+	public int hits(board_DTO dto) {
+		conn();
+		try {
+			String sql = "update board set hits = ? where num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getHits());
+			psmt.setString(2, dto.getNum());
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 }
