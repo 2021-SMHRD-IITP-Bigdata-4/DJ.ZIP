@@ -1,3 +1,6 @@
+<%@page import="model.board_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.board_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -33,7 +36,11 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
        	
-       	<% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+       	<%
+       	member_DTO info = (member_DTO)session.getAttribute("info");
+       	board_DAO dao = new board_DAO();
+       	ArrayList<board_DTO> list = dao.BoardRank();
+       	%>
        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -198,6 +205,7 @@
     </section>
     <section class="u-align-center u-clearfix u-section-4" id="sec-040d">
       <div class="u-clearfix u-sheet u-sheet-1">
+      <!-- 커뮤니티 조회수 5개 출력 -->
         <h1 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">Coummunity</h1>
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity u-table-entity-1">
@@ -210,7 +218,7 @@
             </colgroup>
             <thead class="u-black u-table-header u-table-header-1">
               <tr style="height: 27px;">
-                <th class="u-align-center u-border-1 u-border-black u-table-cell">번호</th>
+                <th class="u-align-center u-border-1 u-border-black u-table-cell">순위</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">카테고리</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">제목</th>
                 <th class="u-align-center u-border-1 u-border-black u-table-cell">글쓴이</th>
@@ -218,14 +226,16 @@
               </tr>
             </thead>
             <tbody class="u-table-body">
+            <%for(int i=0; i<list.size();i++){ %>
               <tr style="height: 32px;">
-                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">1</td>
-                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">음악</td>
-                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Description</td>
+                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getCategory() %></td>
+                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></td>
+                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getId() %></td>
+                <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getWrite_date() %></td>
               </tr>
-              <tr style="height: 32px;">
+              <%} %>
+             <!--  <tr style="height: 32px;">
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">2</td>
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">음악</td>
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"></td>
@@ -252,7 +262,7 @@
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"></td>
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"></td>
                 <td class="u-align-center u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell"></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -269,16 +279,6 @@ background-color: #000000 !important
         </h1>
         <p class="u-text u-text-default u-text-2">광주광역시 동구 예술길 31-15 3층 (주)스마트인재개발원</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-mockup" target="_blank">
-        <span>Website Mockup</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
-        <span>HTML Designer</span>
-      </a>. 
-    </section>
+   
   </body>
 </html>

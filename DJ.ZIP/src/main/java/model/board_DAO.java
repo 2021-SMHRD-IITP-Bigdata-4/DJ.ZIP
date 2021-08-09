@@ -1,5 +1,6 @@
 package model;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -270,5 +271,34 @@ public class board_DAO {
 			close();
 		}
 		return cnt;
+	}
+	
+	public ArrayList<board_DTO> BoardRank() {
+		conn();
+		String sql = "select * from board where rownum <=5 order by hits desc ";
+		list = new ArrayList<board_DTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String content = rs.getString(3);
+				String cate = rs.getString(4);
+				String id = rs.getString(5);
+				String write_date = rs.getString(6);
+
+				writeDto = new board_DTO(num, title, content, cate, id, write_date);
+				list.add(writeDto);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
 	}
 }

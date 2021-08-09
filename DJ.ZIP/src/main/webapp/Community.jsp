@@ -50,11 +50,11 @@
         String hits = String.valueOf(hits1);
         board_DTO dto = new board_DTO(num1, info.getID(), hits);
         int cnt = dao.hits(dto);
-        if (cnt > 0) {
+       /*  if (cnt > 0) {
 			System.out.println("커뮤니티조회수성공!");
 		} else {
 			System.out.println("커뮤니티조회수실패!");
-		}
+		} */
         
         %>
         
@@ -133,7 +133,7 @@
         <div class="u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
             <h2 class="u-text u-text-default u-text-1"><%=selectOne.getTitle() %></h2>
-            <p class="u-text u-text-default u-text-2"><%=selectOne.getId() %> | <%=selectOne.getWrite_date() %> | <%=hits1 %> | <%=selectOne.getRecom() %></p>
+            <p class="u-text u-text-default u-text-2">작성자 <%=selectOne.getId() %> | 작성일자 <%=selectOne.getWrite_date() %> | 조회수 <%=hits1 %> | 추천수 <%=selectOne.getRecom() %></p>
             <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
           </div>
         </div>
