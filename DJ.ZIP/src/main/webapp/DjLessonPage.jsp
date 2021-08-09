@@ -37,6 +37,7 @@
         <% member_DTO info = (member_DTO)session.getAttribute("info");
         dj_lesson_DAO dao = new dj_lesson_DAO();
         ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
+       	String Lscate= request.getParameter("Lscate");
 
         
         
@@ -118,6 +119,7 @@
     <section class="u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-b9a6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">DJ LESSON</h4>
+        <form action="LessonCate.do" method ="post">
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
             <input type="submit" name="Lscate" value="전체" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
@@ -136,6 +138,7 @@
             <input type="submit" value="강원도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">
           </div>
         </div>
+        </form>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
         <div class="u-container-style u-group u-shape-rectangle u-group-2">
           <div class="u-container-layout u-container-layout-2">
@@ -148,8 +151,8 @@
               </button>
               <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
             </form>
-            <%if(cate =! null){ %>
-            <h5 class="u-text u-text-default u-text-2"><%=Lscate %> %> </h5>
+            <%if(Lscate != null){ %>
+            <h5 class="u-text u-text-default u-text-2"><%=Lscate %></h5>
             <%}else{ %>
             <h5 class="u-text u-text-default u-text-2">전체 </h5>
             <%} %>

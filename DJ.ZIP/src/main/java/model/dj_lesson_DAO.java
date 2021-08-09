@@ -116,4 +116,35 @@ public class dj_lesson_DAO {
 	}
 		return cnt;
 	}
+	
+	public ArrayList<dj_lesson_DTO> LselectGroup(String Lscate) {
+		conn();
+		String sql = "select * from lesson where Location_Name =?";
+		list = new ArrayList<dj_lesson_DTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, Lscate);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String num = rs.getString(1);
+				String lesson_title = rs.getString(2);
+				String id = rs.getString(3);
+				String lesson_info = rs.getString(4);
+				String write_date = rs.getString(6);
+				String location_name = rs.getString(7);
+				String portfolio = rs.getString(5);
+				String spot = rs.getString(8);
+
+				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, write_date, location_name, portfolio, spot);
+				list.add(lesson_writeDto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
 }
