@@ -14,6 +14,7 @@ import Front.BoardWriteService;
 import Front.Board_replyWriteService;
 import Front.CategoryService;
 import Front.JoinService;
+import Front.LessonCate;
 import Front.LessonWriteService;
 import Front.LoginService;
 import Front.LogoutService;
@@ -92,8 +93,9 @@ public class FrontController extends HttpServlet {
 
 		} else if (resultURI.equals("LessonWriteService.do")) {
 			com = new LessonWriteService();
+		} else if (resultURI.equals("LessonCate.do")) {
+			com = new LessonCate();
 		}
-
 		com.execute(request, response);
 
 	}
