@@ -145,7 +145,8 @@
           <div class="u-container-layout u-container-layout-2">
             <div class="u-container-style u-group u-group-3">
               <div class="u-container-layout u-container-layout-3">
-                <h6 class="u-text u-text-default u-text-3"><%=list.get(i).getTitle() %></h6>
+              <%System.out.print(list.get(i).getNum()); %>
+                <h6 class="u-text u-text-default u-text-3"><a href="MixSetIn.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></h6>
                 <p class="u-text u-text-default u-text-grey-50 u-text-4"><%=list.get(i).getId() %></p>
               </div>
             </div>

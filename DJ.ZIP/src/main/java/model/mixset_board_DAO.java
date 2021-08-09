@@ -108,20 +108,22 @@ public class mixset_board_DAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				int num = rs.getInt(1);
-				String title = rs.getString(2);
-				String content = rs.getString(3);
-				String id = rs.getString(4);
-				String file_name = rs.getString(5);
-				String music_length = rs.getString(6);
-				String genre_name = rs.getString(7);
-				String img_name = rs.getString(8);
-				String write_date = rs.getString(9);
-				String hits = rs.getString(10);
+				String num = rs.getString(1);
+	            String title = rs.getString(2);
+	            String content = rs.getString(3);
+	            String id = rs.getString(4);
+	            String file_name = rs.getString(5);
+	            String music_length = rs.getString(6);
+	            String genre_name = rs.getString(7);
+	            String img_name = rs.getString(8);
+	            String write_date = rs.getString(9);
+	            String hits = rs.getString(10);
+	            
+	            mixset_writeDto = new mixset_board_DTO(num, title, content, id, file_name, music_length, genre_name, img_name, write_date, hits);
+	            list.add(mixset_writeDto);
+	            
+	         }
 				
-				mixset_writeDto = new mixset_board_DTO(title, id, img_name);
-				list.add(mixset_writeDto);
-			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
@@ -151,6 +153,36 @@ public class mixset_board_DAO {
 		return cnt;
 	}
 	
-	
+	public mixset_board_DTO selectOne(String num1) {
+	      conn();
+	      
+	      String sql = "select * from mixset where num=?";
+	      try {
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, num1);
+	         rs = psmt.executeQuery();
+	         
+	         if(rs.next()) {
+	            String num = rs.getString(1);
+	            String title = rs.getString(2);
+	            String content = rs.getString(3);
+	            String id = rs.getString(4);
+	            String file_name = rs.getString(5);
+	            String music_length = rs.getString(6);
+	            String genre_name = rs.getString(7);
+	            String img_name = rs.getString(8);
+	            String write_date = rs.getString(9);
+	            String hits = rs.getString(10);
+	            
+	            mixset_writeDto = new mixset_board_DTO(num, title, content, id, file_name, music_length, genre_name, img_name, write_date, hits);
+	            
+	         }
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }finally {
+	         close();
+	      }
+	      return mixset_writeDto;
+	   }
 	
 }

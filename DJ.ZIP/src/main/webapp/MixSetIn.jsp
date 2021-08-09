@@ -1,3 +1,5 @@
+<%@page import="model.mixset_board_DAO"%>
+<%@page import="model.mixset_board_DTO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +32,13 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <% 
+        	member_DTO info = (member_DTO)session.getAttribute("info"); 
+        	String num = request.getParameter("num");
+        	mixset_board_DAO dao = new mixset_board_DAO();
+        	mixset_board_DTO selectOne = dao.selectOne(num);
+        
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
