@@ -175,8 +175,7 @@
               <div class="u-container-style u-layout-cell u-size-16 u-layout-cell-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
                 <div class="u-container-layout u-container-layout-5">
                   <div class="u-expanded-width u-image u-image-circle u-preserve-proportions u-image-1" alt="" data-image-width="197" data-image-height="197"></div>
-                  <div class="u-image u-image-circle u-preserve-proportions u-image-2" alt="" data-image-width="197" data-image-height="197"></div>
-                  <img alt="프로필사진 없음" src="./img/<%=info.getFile_name() %>" name="profile">
+                  <img alt="프로필사진 없음" src="./img/<%=info.getFile_name() %>" name="profile" data-image-width="197" data-image-height="197" class="u-image u-image-circle u-preserve-proportions u-image-2">
                   <h6 class="u-align-center u-text u-text-5"><%=selectOne.getId() %></h6>
                   <div class="u-form u-form-1">
                 <%--   <%if(info != null) {%>
@@ -259,7 +258,7 @@
             <div class="u-layout-row">
               <div class="u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-23 u-layout-cell-3">
                 <div class="u-container-layout u-container-layout-7">
-                  <div class="u-image u-image-circle u-preserve-proportions u-image-3" alt="" data-image-width="197" data-image-height="197"></div>
+                   <img alt="프로필사진 없음" src="./img/<%=info.getFile_name() %>" name="profile" data-image-width="197" data-image-height="197" class="u-image u-image-circle u-preserve-proportions u-image-3">
                   <p class="u-text u-text-default u-text-7"><%=list.get(i).getId() %></p>
                 </div>
               </div>
