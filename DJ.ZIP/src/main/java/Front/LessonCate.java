@@ -21,6 +21,8 @@ public class LessonCate implements Command {
 		request.setCharacterEncoding("EUC-KR");
 		String Lscate = request.getParameter("Lscate");
 		
+		System.out.print(Lscate);
+		
 		dj_lesson_DAO dao = new dj_lesson_DAO();
 		ArrayList<dj_lesson_DTO> LselectList = null;
 		
@@ -29,6 +31,7 @@ public class LessonCate implements Command {
 		}else {
 			LselectList = dao.LselectGroup(Lscate);
 		}
+		
 		if(LselectList != null) {
 			System.out.print("카테고리별 출력 성공!");
 			HttpSession session =request.getSession();

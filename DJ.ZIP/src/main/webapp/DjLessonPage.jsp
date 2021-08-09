@@ -39,7 +39,7 @@
         ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
        	String Lscate= request.getParameter("Lscate");
 
-        
+       	ArrayList<dj_lesson_DTO> LsList = (ArrayList<dj_lesson_DTO>)session.getAttribute("LsList");
         
         
         
@@ -167,9 +167,20 @@
         <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
-                <%if(list != null){%>
-					<%for(int i=0; i<list.size(); i++){ %>
-              <div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
+                
+            <%if(LsList != null){ %>
+			<%for(int i =LsList.size()-1;i>=0;i--){%>
+			<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
+                <div class="u-container-layout u-valign-bottom u-container-layout-3">
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
+                  <h4 class="u-align-center u-text u-text-default u-text-3"><%=LsList.get(i).getLesson_title() %></h4>
+                  <p class="u-align-center u-text u-text-default u-text-4"><%=LsList.get(i).getLocation_name() %></p>
+                  <input type="submit" value="내용보기" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">
+                </div>
+              </div>
+			<%}}else{%>
+			<%for(int i =list.size()-1;i>=0;i--){%>
+				<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=list.get(i).getLesson_title() %></h4>
@@ -177,9 +188,8 @@
                   <input type="submit" value="내용보기" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">
                 </div>
               </div>
-					<%if(i%4==0){%>
-					<p></p>
-                <%}} }%>
+			<%}}%>
+              
               <div class="u-container-style u-layout-cell u-size-14-sm u-size-14-xs u-size-15-lg u-size-15-xl u-size-30-md u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-4"></div>
               </div>
