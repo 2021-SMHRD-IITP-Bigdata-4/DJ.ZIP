@@ -150,4 +150,7 @@ public class mixset_board_DAO {
 	}
 		return cnt;
 	}
+	
+	
+	
 }

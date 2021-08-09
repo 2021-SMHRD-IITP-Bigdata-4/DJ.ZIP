@@ -16,7 +16,9 @@ public class member_DAO {
 	PreparedStatement psmt = null;
 	int cnt = 0;
 	member_DTO dto = null;
+	mixset_board_DTO dto1 = null;
 	ArrayList<member_DTO> list = null;
+	ArrayList<mixset_board_DTO> list1 = null;
 	
 	member_DTO loginDto = null;
 	
@@ -149,4 +151,30 @@ public class member_DAO {
 		}
 		return list;
 	}
+	
+	public ArrayList<mixset_board_DTO> likeList(mixset_board_DTO dto) {
+		conn();
+		try {
+		String sql = "select m.genre_name, m.title, m.id, m.hits from like_list l, mixset m where like_list.id = mixset.id and like_list.id = ?";
+		psmt = conn.prepareStatement(sql);
+		psmt.setString(1, dto.getId());
+		rs = psmt.executeQuery();
+		list1 = new ArrayList<mixset_board_DTO>();
+		
+		while(rs.next()) {
+			String genre_name = rs.getString(1);
+			String title = rs.getString(2);
+			String id = rs.getString(3);
+			String hits = rs.getString(4);
+			
+			dto1 = new mixset_board_DTO(title, id, hits, genre_name);
+			list1.add(dto1);
+		}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list1;
+    }
 }
