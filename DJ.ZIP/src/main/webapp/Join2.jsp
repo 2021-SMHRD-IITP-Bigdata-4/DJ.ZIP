@@ -103,10 +103,10 @@
         </div>
       </div></header>
     <section class="u-align-center u-clearfix u-section-1" id="sec-6e34">
+          <form action="JoinService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true" enctype="multipart/form-data">
       <div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <p class="u-custom-font u-font-oswald u-text u-text-default u-text-1">JOIN</p>
         <div class="u-form u-form-1">
-          <form action="JoinService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true" enctype="multipart/form-data">
             <div class="u-form-group u-form-group-1">
               <label for="text-c521" class="u-custom-font u-label u-text-font u-label-1">아이디</label>
               <input type="text" id="text-c521" name="id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
@@ -146,7 +146,7 @@
             
             <div class="u-form-group u-form-group-8">
             	<label for="text-b2ba" class="u-custom-font u-label u-text-font u-label-9">프로필</label>
-     			<input type="file" name="imgfile" accept="image/*" value="image">
+     			<input type="file" name="imgfile" accept="image/*">
      		</div>
      		
             <div class="u-align-center u-form-checkbox u-form-group u-form-submit">
@@ -156,9 +156,9 @@
             <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
             <input type="hidden" value="" name="recaptchaResponse">
             <a href="JoinService.do" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-text-active-grey-10 u-text-hover-grey-10 u-btn-1">회원가입</a>
-          </form>
         </div>
       </div>
+          </form>
     </section>
     
     

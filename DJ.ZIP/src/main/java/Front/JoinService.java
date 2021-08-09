@@ -1,6 +1,7 @@
 package Front;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import Controller.Command;
 import model.member_DAO;
@@ -20,19 +24,28 @@ public class JoinService implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String nick_name = request.getParameter("nick_name");
-		String email = request.getParameter("email");
-		String dj_career = request.getParameter("dj_career");
-		String tel = request.getParameter("tel");
-		String file_name = request.getParameter("imgfile");
+		
+		String saveDri1 = request.getServletContext().getRealPath("profile");
+		// Æú´õ¸í
+		System.out.println(saveDri1);
+		
+		int maxSize = 5 * 1024 * 1024;
+		MultipartRequest multi = new MultipartRequest(request, saveDri1, maxSize, "EUC-KR", new DefaultFileRenamePolicy());
+		
+		String id = multi.getParameter("id");
+		String pw = multi.getParameter("pw");
+		String nick_name = multi.getParameter("nick_name");
+		String dj_career = multi.getParameter("dj_career");
+		String email = multi.getParameter("email");
+		String tel = multi.getParameter("tel");
+		String file_name = URLEncoder.encode(multi.getFilesystemName("imgfile"), "EUC-KR");
+		
 		
 		System.out.println(id);
 		System.out.println(pw);
 		System.out.println(nick_name);
-		System.out.println(email);
 		System.out.println(dj_career);
+		System.out.println(email);
 		System.out.println(tel);
 		System.out.println(file_name);
 		
