@@ -8,7 +8,7 @@ public class member_DTO {
 	private String dj_career;
 	private String tel;
 	private String file_name;
-	
+
 	
 	
 	public member_DTO(String iD, String pW, String nick_name, String email, String dj_career, String tel,
@@ -21,7 +21,7 @@ public class member_DTO {
 		this.tel = tel;
 		this.file_name = file_name;
 	}
-	
+
 	public member_DTO(String iD, String pW) {
 		ID = iD;
 		PW = pW;

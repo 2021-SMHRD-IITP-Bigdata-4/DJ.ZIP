@@ -58,8 +58,8 @@ public class member_DAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getID());
 			psmt.setString(2, dto.getPW());
-			psmt.setString(3, dto.getEmail());
-			psmt.setString(4, dto.getNick_name());
+			psmt.setString(3, dto.getNick_name());
+			psmt.setString(4, dto.getEmail());
 			psmt.setString(5, dto.getDj_career());
 			psmt.setString(6, dto.getTel());
 			psmt.setString(7, dto.getFile_name());
@@ -152,12 +152,12 @@ public class member_DAO {
 		return list;
 	}
 	
-	public ArrayList<mixset_board_DTO> likeList(mixset_board_DTO dto) {
+	public ArrayList<mixset_board_DTO> likeList(String id1) {
 		conn();
 		try {
-		String sql = "select m.genre_name, m.title, m.id, m.hits from like_list l, mixset m where like_list.id = mixset.id and like_list.id = ?";
+		String sql = "select m.genre_name, m.title, m.id, m.hits from like_list l, mixset m where l.num = m.num and l.id = ?";
 		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, dto.getId());
+		psmt.setString(1, id1);
 		rs = psmt.executeQuery();
 		list1 = new ArrayList<mixset_board_DTO>();
 		
