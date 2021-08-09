@@ -10,6 +10,11 @@ public class board_DTO {
 	private String hits;
 	private String recom;
 	
+	public board_DTO(String num, String recom) {
+		this.num = num;
+		this.recom = recom;
+	}
+
 	public board_DTO(String num, String title, String content, String category, String id, String write_date,
 			String hits) {
 		this.num = num;

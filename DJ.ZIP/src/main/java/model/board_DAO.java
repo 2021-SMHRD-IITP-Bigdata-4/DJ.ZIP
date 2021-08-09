@@ -241,4 +241,19 @@ public class board_DAO {
 		}
 		return cnt;
 	}
+	public int recom(board_DTO dto) {
+		conn();
+		try {
+			String sql = "update board set recom = ? where num = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getRecom());
+			psmt.setString(2, dto.getNum());
+			cnt = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 }
