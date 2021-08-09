@@ -193,13 +193,15 @@
                     <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell-4">眉农</td>
                   </tr>
                   <% if(info != null) {%>
+                  <form action = "like_listDeleteService.do?id=<%=info.getID() %>" method = "post">
                    <%if(list1 != null) {%>
 			  		 <%for(int i=0; i<list1.size(); i++) {%>
                   <tr style="height: 32px;">
                     <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell"><%=list1.get(i).getGenre_name() %></td>
                     <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell"><a href="MixSetIn.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a></td>
                     <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell"><%=list1.get(i).getId() %></td>
-                    <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell"><input type="checkbox" name =""></td>
+                    <%System.out.print(list1.get(i).getNum()); %>
+                    <td class="u-align-center u-border-3 u-border-no-left u-border-no-right u-border-white u-table-cell u-table-cell"><input type="checkbox" name = "num1" value = "<%=list1.get(i).getNum()%>"></td>
                   </tr>
                   <%}}} %>
                 </tbody>
@@ -207,7 +209,9 @@
             </div>
           </div>
         </div>
-        <a href="https://nicepage.com/k/prescription-medicine-html-templates" class="u-active-grey-75 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">昏力</a>
+        <!-- <a href="like_listDeleteService.do" >昏力</a> -->
+        <input type="submit" value = "昏力" class="u-active-grey-75 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
+      </form>
       </div>
     </section>
     
