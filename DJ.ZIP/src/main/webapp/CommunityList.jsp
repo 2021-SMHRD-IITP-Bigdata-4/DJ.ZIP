@@ -171,9 +171,9 @@
             
                        	<%if(search == null) { %>
                         <%if(list != null) { %>
-						<%for(int i =0; i<list.size(); i++){ %>
+						<%for(int i =list.size()-1; i>=0; i--){ %>
                         <tr style="height: 37px;">
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=(list.size())-i %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getCategory() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></a></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getId() %></td>
@@ -181,9 +181,9 @@
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list.get(i).getHits() %></td>
                         </tr>
                         <%} }else{ %>
-                               <%for(int i =0; i<list1.size(); i++){ %>
+                               <%for(int i =list1.size()-1; i>=0; i--){ %>
                         <tr style="height: 37px;">
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=(list1.size())-i %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getCategory() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getId() %></td>
@@ -191,9 +191,9 @@
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=list1.get(i).getHits() %></td>
                         </tr>
                         <%} } }else{%> 
-                        <%for(int i =0; i<search.size(); i++){ %>
+                        <%for(int i =search.size()-1; i>=0; i--){ %>
                         <tr style="height: 37px;">
-                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=i+1 %></td>
+                          <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=(search.size())-i %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getCategory() %></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></a></td>
                           <td class="u-border-2 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell"><%=search.get(i).getId() %></td>
