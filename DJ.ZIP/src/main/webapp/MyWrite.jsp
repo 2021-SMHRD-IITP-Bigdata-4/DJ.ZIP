@@ -1,3 +1,8 @@
+<%@page import="model.mixset_board_DTO"%>
+<%@page import="model.mixset_board_DAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.board_DTO"%>
+<%@page import="model.board_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +35,13 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <%  
+        	member_DTO info = (member_DTO)session.getAttribute("info"); 
+			board_DAO dao = new board_DAO();
+			ArrayList<board_DTO> list = dao.SelectAll();
+			mixset_board_DAO dao1 = new mixset_board_DAO();
+		    ArrayList<mixset_board_DTO> list1 = dao1.SelectAll();
+		%>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -42,8 +53,8 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-font-oswald u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+            <ul class="u-custom-font u-font-oswald u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Home.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 <%if(info != null) {%>
@@ -65,8 +76,8 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DjLessonPage.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 <%if(info != null) {%>
@@ -89,7 +100,7 @@
           </div>
         </nav>
         <p class="u-custom-font u-text u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-10 u-text-hover-grey-10 u-text-white u-btn-1" href="Home.jsp" data-page-id="904221268">DJ.ZIP</a>
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-10 u-text-hover-grey-10 u-text-white u-btn-1" href="Home.html" data-page-id="904221268">DJ.ZIP</a>
         </p>
         <div class="u-align-right u-container-style u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
@@ -150,56 +161,44 @@
                 <td class="u-align-center u-black u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-4">글쓴이</td>
                 <td class="u-align-center u-black u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-5">날짜</td>
               </tr>
-              <tr style="height: 26px;">
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"></td>
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"></td>
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"></td>
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"></td>
-                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"></td>
-              </tr>
+              <%if(info != null) {%>
+              <%if(list != null) {%>
+			  	<%for(int i=0; i<list.size(); i++) {%>
+			  		<%if(list.get(i).getId().equals(info.getID())) {%>
+		              <tr style="height: 26px;">
+		                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"><%=i+1 %></td>
+		                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"><%=list.get(i).getCategory() %></td>
+		                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"><a href="Community.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></a></td>
+		                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"><%=list.get(i).getId() %></td>
+		                <td class="u-align-center u-border-1 u-border-grey-dark-1 u-table-cell"><%=list.get(i).getWrite_date() %></td>
+		              </tr>
+		        <%}}}} %>
             </tbody>
           </table>
         </div>
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-7">MY MIXSET/MUSIC</h4>
         <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div><!--post_details--><!--post_details_options_json--><!--{"source":""}--><!--/post_details_options_json--><!--blog_post-->
+        
         <div class="u-container-style u-post-details u-post-details-1">
+        <%if(info != null) {%>
+              <%if(list1 != null) {%>
+			  	<%for(int i=0; i<list1.size(); i++) {%>
+			  		<%if(list1.get(i).getId().equals(info.getID())) {%>
           <div class="u-container-layout u-container-layout-5"><!--blog_post_image-->
             <img alt="" class="u-blog-control u-image u-image-default u-image-1" src="images/pexels-photo-167467.jpeg"><!--/blog_post_image--><!--blog_post_header-->
             <h2 class="u-blog-control u-text u-text-8">
-              <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content-->제목<!--/blog_post_header_content--></a>
+              <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content--><a href="MixSetIn.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a><!--/blog_post_header_content--></a>
             </h2><!--/blog_post_header--><!--blog_post_content-->
-            <div class="u-align-justify u-blog-control u-post-content u-text u-text-9"><!--blog_post_content_content-->작성자<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
+            <div class="u-align-justify u-blog-control u-post-content u-text u-text-9"><!--blog_post_content_content--><%=list1.get(i).getId()%><!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
             <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1"><!--blog_post_metadata_date-->
-              <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Thu Aug 05 2021<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
-              <span class="u-meta-category u-meta-icon"><!--blog_post_metadata_category_content-->Category<!--/blog_post_metadata_category_content--></span><!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
-              <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
+              <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content--><%=list1.get(i).getWrite_date()%><!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
+              <span class="u-meta-category u-meta-icon"><!--blog_post_metadata_category_content--><%=list1.get(i).getGenre_name()%><!--/blog_post_metadata_category_content--></span><!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
+              <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content--><%=list1.get(i).getHits()%><!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
             </div><!--/blog_post_metadata-->
           </div>
+        <%}}}} %>
         </div><!--/blog_post--><!--/post_details--><!--post_details--><!--post_details_options_json--><!--{"source":""}--><!--/post_details_options_json--><!--blog_post-->
-        <div class="u-container-style u-post-details u-post-details-2">
-          <div class="u-container-layout u-container-layout-6"><!--blog_post_image-->
-            <img alt="" class="u-blog-control u-image u-image-default u-image-2" src="images/pexels-photo-167467.jpeg"><!--/blog_post_image--><!--blog_post_header-->
-            <h2 class="u-blog-control u-text u-text-10">
-              <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content-->제목<!--/blog_post_header_content--></a>
-            </h2><!--/blog_post_header--><!--blog_post_content-->
-            <div class="u-align-justify u-blog-control u-post-content u-text u-text-11"><!--blog_post_content_content-->작성자<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
-            <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-2"><!--blog_post_metadata_date-->
-              <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Thu Aug 05 2021<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
-              <span class="u-meta-category u-meta-icon"><!--blog_post_metadata_category_content-->Category<!--/blog_post_metadata_category_content--></span><!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
-              <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
-            </div><!--/blog_post_metadata-->
-            <div class="u-container-style u-post-details u-post-details-3">
-              <div class="u-container-layout u-container-layout-7"><!--blog_post_image-->
-                <img alt="" class="u-blog-control u-image u-image-default u-image-3" src="images/pexels-photo-167467.jpeg"><!--/blog_post_image--><!--blog_post_header-->
-                <h2 class="u-blog-control u-text u-text-12">
-                  <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content-->제목<!--/blog_post_header_content--></a>
-                </h2><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-align-justify u-blog-control u-post-content u-text u-text-13"><!--blog_post_content_content-->작성자<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
-                <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-3"><!--blog_post_metadata_date-->
-                  <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Thu Aug 05 2021<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date--><!--blog_post_metadata_category-->
-                  <span class="u-meta-category u-meta-icon"><!--blog_post_metadata_category_content-->Category<!--/blog_post_metadata_category_content--></span><!--/blog_post_metadata_category--><!--blog_post_metadata_comments-->
-                  <span class="u-meta-comments u-meta-icon"><!--blog_post_metadata_comments_content-->Comments (0)<!--/blog_post_metadata_comments_content--></span><!--/blog_post_metadata_comments-->
-                </div><!--/blog_post_metadata-->
+             
               </div>
             </div>
           </div>
@@ -210,7 +209,7 @@
     
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-text-1">
-          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-15 u-text-hover-grey-15 u-text-white u-btn-1" href="Home.jsp" data-page-id="904221268">DJ.ZIP</a>
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-15 u-text-hover-grey-15 u-text-white u-btn-1" href="Home.html" data-page-id="904221268">DJ.ZIP</a>
         </h1>
         <p class="u-text u-text-default u-text-2">광주광역시 동구 예술길 31-15 3층 (주)스마트인재개발원</p>
       </div></footer>
