@@ -39,8 +39,8 @@
         ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
 		
         dj_lesson_DTO LselectOne = dao.LselectOne(num2);
-       
-       	String Lscate= request.getParameter("Lscate");
+        
+       	String Lscate= request.getParameter("location");
 
        	ArrayList<dj_lesson_DTO> LsList = (ArrayList<dj_lesson_DTO>)session.getAttribute("LsList");
         
@@ -217,7 +217,7 @@
             <a href="DjLessonPage.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">목록</a>
             <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-17">삭제</a>
             <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-18">수정</a>
-            <a href="LessonRequest.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
+            <a href="LessonRequest.jsp?num=<%=num2 %>&location=<%=Lscate%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
               <span style="font-size: 1.875rem;">레슨 신청</span>
               <br>
             </a>

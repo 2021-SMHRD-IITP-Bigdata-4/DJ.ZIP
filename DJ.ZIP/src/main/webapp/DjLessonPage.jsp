@@ -185,7 +185,7 @@
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=list.get(i).getLesson_title() %></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=list.get(i).getLocation_name() %></p>
-                  <a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
+                  <a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>&location=<%=list.get(i).getLocation_name() %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
                 </div>
               </div>
 			<%}}%>

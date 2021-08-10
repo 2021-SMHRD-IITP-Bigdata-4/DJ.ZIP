@@ -36,9 +36,9 @@
        <% member_DTO info = (member_DTO)session.getAttribute("info");
         dj_lesson_DAO dao = new dj_lesson_DAO();
         ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
-
-        
-        
+		String num3 = request.getParameter("num");
+		String locate = request.getParameter("location");
+       	dj_lesson_DTO LselectOne = dao.LselectOne(num3);
         
         
         %>
@@ -118,20 +118,20 @@
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">DJ LESSON</h4>
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">전체</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">서울</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">인천</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">대전</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">세종</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">부산</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">울산</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">대구</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-9">제주</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">경기도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">충청도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">전라도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">경상도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">강원도</a>
+           <input type="submit" name="Lscate" value="전체" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
+            <input type="submit" name="Lscate"value="서울"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">
+            <input type="submit" name="Lscate"value="인천"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">
+            <input type="submit" name="Lscate"value="대전"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">
+            <input type="submit" name="Lscate"value="세종"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">
+            <input type="submit" name="Lscate"value="부산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">
+            <input type="submit" name="Lscate"value="울산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">
+            <input type="submit" value="대구" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">
+            <input type="submit" value="제주" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover -grey-70 u-radius-6 u-btn-9">
+            <input type="submit" value="경기도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">
+            <input type="submit" value="충청도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">
+            <input type="submit" value="전라도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">
+            <input type="submit" value="경상도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">
+            <input type="submit" value="강원도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
@@ -146,7 +146,7 @@
               </button>
               <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
             </form>
-            <h5 class="u-text u-text-default u-text-2">카테고리 명 </h5>
+            <h5 class="u-text u-text-default u-text-2"><%=locate %> </h5>
             <a href="https://nicepage.com/k/apple-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">글 작성</a>
           </div>
         </div>
@@ -160,9 +160,9 @@
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-3">
-                      <h3 class="u-custom-font u-font-oswald u-text u-text-3"><%= list.get(0).getLesson_title() %></h3>
+                      <h3 class="u-custom-font u-font-oswald u-text u-text-3"><%= LselectOne.getLesson_title() %></h3>
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-                      <p class="u-text u-text-4"><%=list.get(0).getId()+" | "+ list.get(0).getWrite_date()%></p>
+                      <p class="u-text u-text-4"><%=LselectOne.getId()+" | "+ LselectOne.getWrite_date()%></p>
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,7 @@
                       <img class="u-image u-image-default u-image-1" src="images/8c76c73bc23cc9796bbbbeacc52faa4a1b4e511718b2d265aa1d9a6702b3df8855b54532c80b9f6c6054cd94b9fb42bf3b4e034aae24c942ee9968_1280.jpg" alt="" data-image-width="1280" data-image-height="720">
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                       <h5 class="u-custom-font u-font-oswald u-text u-text-default u-text-5">레슨 장소</h5>
-                      <p class="u-text u-text-6"><%=list.get(0).getLocation_name() %></p>
+                      <p class="u-text u-text-6"><%=LselectOne.getLocation_name() %></p>
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-31 u-layout-cell-3">
