@@ -49,7 +49,7 @@
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="LessonList.jsp">레슨목록</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp">LIKE MIXSET</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">내가 쓴글</a>
 	</li></ul>
 	</div>
@@ -72,7 +72,7 @@
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp">레슨목록</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp">LIKE MIXSET</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">내가 쓴글</a>
 	</li></ul>
 	</div>
@@ -120,7 +120,7 @@
               </div>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-3">
                 <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-middle u-container-layout-3">
-                  <h1 class="u-text u-text-default u-text-4"><a href = "Like-Mixset.jsp">Like MIXSET</a></h1>
+                  <h1 class="u-text u-text-default u-text-4"><a href = "Like-Mixset.jsp?id=<%=info.getID()%>">Like MIXSET</a></h1>
                 </div>
               </div>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-4">
