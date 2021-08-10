@@ -79,7 +79,7 @@
               <div class="u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DjLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 <%if(info != null) {%>
@@ -157,7 +157,7 @@
             <h5 class="u-text u-text-default u-text-2">전체 </h5>
             <%} %>
             <% if(info != null){%>
-            <a href="DJLessonWrite.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">글 작성</a>
+            <a href="DJLessonWrite.jsp?id=<%=info.getID() %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">글 작성</a>
             <%} %>
           </div>
         </div>
@@ -172,7 +172,7 @@
 			<%for(int i =LsList.size()-1;i>=0;i--){%>
 			<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
-                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./Lessonimg/<%=LsList.get(i).getImg_file() %>" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=LsList.get(i).getLesson_title() %></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=LsList.get(i).getLocation_name() %></p>
                   <a href="DJLessonOutput.jsp?num=<%=LsList.get(i).getNum()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
@@ -182,7 +182,7 @@
 			<%for(int i =list.size()-1;i>=0;i--){%>
 				<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
-                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="<%=list.get(i).getImg_file() %>" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=list.get(i).getLesson_title() %></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=list.get(i).getLocation_name() %></p>
                   <a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>&location=<%=list.get(i).getLocation_name() %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>

@@ -8574,7 +8574,7 @@ section.u-image,
 .u-valign-middle,
 .u-valign-top,
 .u-valign-bottom {
-  display: flex;
+  
   flex-direction: column;
 }
 @media (min-width: 1200px) {

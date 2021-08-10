@@ -191,7 +191,7 @@
                             <input type="text" id="text-6f74" name="LessonTime" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                           </div>
                           <div class="u-align-center u-form-group u-form-submit">
-                            <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-16">레슨신청하기<br>
+                            <input type="submit" value="레슨신청하기" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-16">
                             </a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                           </div>

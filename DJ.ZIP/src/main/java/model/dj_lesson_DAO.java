@@ -50,16 +50,23 @@ public class dj_lesson_DAO {
 	public int lesson_write(dj_lesson_DTO dto) {
 		conn();
 		try {
-			String sql = "insert into dj_lesson values(?,?,?,?,?,?,?)";
+			String sql = "insert into lesson values(lesson_seq.nextval,?,?,?,?,default,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getNum());
-			psmt.setString(2, dto.getLesson_title());
-			psmt.setString(3, dto.getId());
-			psmt.setString(4, dto.getLesson_info());
-			psmt.setString(5, dto.getWrite_date());
-			psmt.setString(6, dto.getLocation_name());
-			psmt.setString(7, dto.getPortfolio());
-			psmt.setString(8, dto.getSpot());
+			
+			psmt.setString(1, dto.getLesson_title());
+			psmt.setString(2, dto.getId());
+			psmt.setString(3, dto.getLesson_info());
+			psmt.setString(4, dto.getPortfolio());
+			psmt.setString(5, dto.getLocation_name());
+			psmt.setString(6, dto.getSpot());
+			psmt.setString(7, dto.getWeek());
+			psmt.setString(8, dto.getHour());
+			psmt.setString(9, dto.getImg_file());
+			psmt.setString(10, dto.getCancel());
+			
+			
+			
+			
 			cnt = psmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,8 +93,11 @@ public class dj_lesson_DAO {
 				String write_date = rs.getString(6);
 				String location_name = rs.getString(7);
 				String spot = rs.getString(8);
-
-				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, portfolio, write_date, location_name, spot);
+				String week = rs.getString(9);
+				String hour = rs.getString(10);
+				String img_file = rs.getString(11);
+				String cancel = rs.getString(12);
+				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, portfolio, write_date, location_name, spot, week, hour, img_file, cancel);
 				list.add(lesson_writeDto);
 			}
 
