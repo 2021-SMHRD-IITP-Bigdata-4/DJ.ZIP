@@ -10,6 +10,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import Controller.Command;
+import model.dj_lesson_DTO;
 
 public class LessonWriteService implements Command {
 
@@ -32,11 +33,7 @@ public class LessonWriteService implements Command {
 		String area = multi.getParameter("area");
 		String cancel = multi.getParameter("cancel");
 	
-		System.out.println(LessonTitle);
-		System.out.println(Lesson);
-		System.out.println(portpol);
-		System.out.println(area);
-		System.out.println(cancel);
+		
 	
 	}
 

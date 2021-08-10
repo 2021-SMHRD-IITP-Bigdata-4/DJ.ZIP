@@ -130,7 +130,7 @@
             <input type="submit" name="Lscate"value="부산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">
             <input type="submit" name="Lscate"value="울산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">
             <input type="submit" value="대구" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">
-            <input type="submit" value="제주" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover -grey-70 u-radius-6 u-btn-9">
+            <input type="submit" value="제주" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-9">
             <input type="submit" value="경기도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">
             <input type="submit" value="충청도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">
             <input type="submit" value="전라도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">
@@ -175,7 +175,7 @@
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=LsList.get(i).getLesson_title() %></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=LsList.get(i).getLocation_name() %></p>
-                  <input type="submit" value="내용보기" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">
+                  <a href="DJLessonOutput.jsp?num=<%=LsList.get(i).getNum()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
                 </div>
               </div>
 			<%}}else{%>
@@ -185,7 +185,7 @@
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251">
                   <h4 class="u-align-center u-text u-text-default u-text-3"><%=list.get(i).getLesson_title() %></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=list.get(i).getLocation_name() %></p>
-                  <input type="submit" value="내용보기" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">
+                  <a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
                 </div>
               </div>
 			<%}}%>

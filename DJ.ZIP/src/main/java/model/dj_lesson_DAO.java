@@ -16,6 +16,7 @@ public class dj_lesson_DAO {
 	ArrayList<dj_lesson_DTO> list = null;
 	
 	dj_lesson_DTO lesson_writeDto = null;
+	dj_lesson_DTO dto =null;
 	
 	public void conn() {
 		try {
@@ -149,6 +150,33 @@ public class dj_lesson_DAO {
 		return list;
 	}
 	
-	
+	public dj_lesson_DTO LselectOne(String num2) {
+		conn();
+
+		String sql = "select * from lesson where num =?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num2);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				String num = rs.getString(1);
+				String title = rs.getString(2);
+				String content = rs.getString(3);
+				String cate = rs.getString(4);
+				String id = rs.getString(5);
+				String write_date = rs.getString(6);
+				String hits = rs.getString(7);
+				String recom = rs.getString(8);
+
+				dto = new dj_lesson_DTO(num, title, id, id, hits, write_date, cate, recom);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return dto;
+	}
 }
 

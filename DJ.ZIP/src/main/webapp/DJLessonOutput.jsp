@@ -34,10 +34,15 @@
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
         <% member_DTO info = (member_DTO)session.getAttribute("info");
+        String num2 = request.getParameter("num");
         dj_lesson_DAO dao = new dj_lesson_DAO();
         ArrayList<dj_lesson_DTO> list = dao.my_lesson_write();
+		
+        dj_lesson_DTO LselectOne = dao.LselectOne(num2);
+       
+       	String Lscate= request.getParameter("Lscate");
 
-        
+       	ArrayList<dj_lesson_DTO> LsList = (ArrayList<dj_lesson_DTO>)session.getAttribute("LsList");
         
         
         
@@ -54,7 +59,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-font-oswald u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DjLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 <%if(info != null) {%>
@@ -118,20 +123,20 @@
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">DJ LESSON</h4>
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">전체</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">서울</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">인천</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">대전</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">세종</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">부산</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">울산</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">대구</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-9">제주</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">경기도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">충청도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">전라도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">경상도</a>
-            <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">강원도</a>
+             <input type="submit" name="Lscate" value="전체" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
+            <input type="submit" name="Lscate"value="서울"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">
+            <input type="submit" name="Lscate"value="인천"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">
+            <input type="submit" name="Lscate"value="대전"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">
+            <input type="submit" name="Lscate"value="세종"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">
+            <input type="submit" name="Lscate"value="부산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">
+            <input type="submit" name="Lscate"value="울산"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">
+            <input type="submit" value="대구" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">
+            <input type="submit" value="제주" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover -grey-70 u-radius-6 u-btn-9">
+            <input type="submit" value="경기도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">
+            <input type="submit" value="충청도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">
+            <input type="submit" value="전라도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">
+            <input type="submit" value="경상도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">
+            <input type="submit" value="강원도" name="Lscate" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
@@ -146,7 +151,11 @@
               </button>
               <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
             </form>
-            <h5 class="u-text u-text-default u-text-2">카테고리 명 </h5>
+           <%if(Lscate != null){ %>
+            <h5 class="u-text u-text-default u-text-2"><%=Lscate %></h5>
+            <%}else{ %>
+            <h5 class="u-text u-text-default u-text-2">전체 </h5>
+            <%} %>
             <% if(info != null){%>
             <a href="https://nicepage.com/k/apple-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">글 작성</a>
             <%} %>
@@ -162,9 +171,9 @@
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-3">
-                      <h3 class="u-custom-font u-font-oswald u-text u-text-3">><%= list.get(0).getLesson_title() %></h3>
+                      <h3 class="u-custom-font u-font-oswald u-text u-text-3">><%=LselectOne.getLesson_title() %></h3>
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-                      <p class="u-text u-text-4"><%=list.get(0).getId() +" | "+ list.get(0).getWrite_date() %> </p>
+                      <p class="u-text u-text-4"><%=LselectOne.getId() +" | "+ LselectOne.getWrite_date() %> </p>
                     </div>
                   </div>
                 </div>
@@ -176,13 +185,13 @@
                       <img class="u-image u-image-default u-image-1" src="images/8c76c73bc23cc9796bbbbeacc52faa4a1b4e511718b2d265aa1d9a6702b3df8855b54532c80b9f6c6054cd94b9fb42bf3b4e034aae24c942ee9968_1280.jpg" alt="" data-image-width="1280" data-image-height="720">
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                       <h5 class="u-custom-font u-font-oswald u-text u-text-default u-text-5">레슨 장소</h5>
-                      <p class="u-text u-text-6"><%= list.get(0).getLocation_name() %></p>
+                      <p class="u-text u-text-6"><%= LselectOne.getLocation_name() %></p>
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-31 u-layout-cell-3">
                     <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-5">
                       <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-7">레슨 설명</h4>
-                      <p class="u-text u-text-default u-text-8"><%=list.get(0).getLesson_info()%></p>
+                      <p class="u-text u-text-default u-text-8"><%=LselectOne.getLesson_info()%></p>
                     </div>
                   </div>
                 </div>
@@ -194,7 +203,7 @@
                       <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-9">포트폴리오</h2>
                       <div class="u-clearfix u-custom-html u-custom-html-1">
                         <style></style>
-                        <p><%=list.get(0).getPortfolio() %></p>
+                        <p><%=LselectOne.getPortfolio() %></p>
                       </div>
                     </div>
                   </div>
@@ -205,9 +214,9 @@
         </div>
         <div class="u-container-style u-group u-shape-rectangle u-group-3">
           <div class="u-container-layout u-container-layout-7">
-            <a href="https://nicepage.com/c/video-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">목록</a>
-            <a href="https://nicepage.com/c/video-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-17">삭제</a>
-            <a href="https://nicepage.com/c/video-website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-18">수정</a>
+            <a href="DjLessonPage.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">목록</a>
+            <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-17">삭제</a>
+            <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-18">수정</a>
             <a href="LessonRequest.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
               <span style="font-size: 1.875rem;">레슨 신청</span>
               <br>
