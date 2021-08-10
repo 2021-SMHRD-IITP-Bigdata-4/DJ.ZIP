@@ -125,14 +125,16 @@
           </div>
         </div>
       </div></header> 
+<!-- Áß¾Ó±Û¾¾ -->
     <section class="u-clearfix u-image u-shading u-section-1" id="sec-7b2f" data-image-width="1100" data-image-height="618">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-align-center u-custom-font u-text u-text-default u-text-1">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1" >
+        <h1 class="u-align-center u-custom-font u-text u-text-default u-text-1" style="margin-top : 30%">
           <span style="font-size: 3.75rem;">Build Up<br>
           </span>and<br>&nbsp;<span style="font-size: 3.75rem;">Drop</span>&nbsp;
         </h1>
       </div>
     </section>
+<!-- dj·¹½¼ -->
     <section class="u-clearfix u-section-2" id="carousel_c476">
       <h1 class="u-align-center u-custom-font u-font-oswald u-text u-text-1">DJ LESSON</h1>
       <div class="u-expanded-width u-shape u-shape-rectangle u-shape-1"></div>
