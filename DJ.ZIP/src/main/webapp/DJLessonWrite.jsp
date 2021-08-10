@@ -24,7 +24,7 @@
     
     
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
+		"@context": "http://schema.org",.
 		"@type": "Organization",
 		"name": ""
 }</script>
@@ -53,9 +53,9 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">·¹½¼¸ñ·Ï</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">³»°¡ ¾´±Û</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a>
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
@@ -70,9 +70,9 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link">·¹½¼¸ñ·Ï</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">³»°¡ ¾´±Û</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</a>
 </li></ul>
 </div>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
@@ -87,9 +87,9 @@
         </p>
         <div class="u-align-right u-container-style u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <!-- ·Î±×ÀÎ ½Ã ´Ð³×ÀÓ Ãâ·Â -->
+            <!-- ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>´Ô&nbsp;<span style="font-weight: 700;"></span>È¯¿µÇÕ´Ï´Ù</p>
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>ï¿½ï¿½&nbsp;<span style="font-weight: 700;"></span>È¯ï¿½ï¿½ï¿½Õ´Ï´ï¿½</p>
         <%}%>
           </div>
         </div>
@@ -99,20 +99,20 @@
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-1">DJ LESSON</h4>
         <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <input type="submit" value="ÀüÃ¼" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
-            <input type="submit" value="¼­¿ï"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">
-            <input type="submit" value="ÀÎÃµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">
-            <input type="submit" value="´ëÀü"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">
-            <input type="submit" value="¼¼Á¾"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">
-            <input type="submit" value="ºÎ»ê"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">
-            <input type="submit" value="¿ï»ê"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">
-            <input type="submit" value="´ë±¸"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">
-            <input type="submit" value="Á¦ÁÖ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover -grey-70 u-radius-6 u-btn-9">
-            <input type="submit" value="°æ±âµµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">
-            <input type="submit" value="ÃæÃ»µµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">
-            <input type="submit" value="Àü¶óµµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">
-            <input type="submit" value="°æ»óµµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">
-            <input type="submit" value="°­¿øµµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">
+            <input type="submit" value="ï¿½ï¿½Ã¼" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-1">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-2">
+            <input type="submit" value="ï¿½ï¿½Ãµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-3">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-4">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-5">
+            <input type="submit" value="ï¿½Î»ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-6">
+            <input type="submit" value="ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-7">
+            <input type="submit" value="ï¿½ë±¸"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-8">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover -grey-70 u-radius-6 u-btn-9">
+            <input type="submit" value="ï¿½ï¿½âµµ"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-10">
+            <input type="submit" value="ï¿½ï¿½Ã»ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-11">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">
+            <input type="submit" value="ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">
+            <input type="submit" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
@@ -127,8 +127,8 @@
               </button>
               <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
             </form>
-            <h5 class="u-text u-text-default u-text-2">Ä«Å×°í¸® ¸í </h5>
-            <a href="DJLessonWriter.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">±Û ÀÛ¼º</a>
+            <h5 class="u-text u-text-default u-text-2">Ä«ï¿½×°ï¿½ ï¿½ï¿½ </h5>
+            <a href="DJLessonWriter.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">ï¿½ï¿½ ï¿½Û¼ï¿½</a>
           </div>
         </div>
         <div class="u-list u-list-1">
@@ -140,7 +140,7 @@
             <div class="u-align-center u-container-style u-expanded-width u-group u-group-4">
             <form action="LessonWriteService.do" method="POST" enctype="multipart/form-data">
               <div class="u-container-layout u-container-layout-4">
-                <h5 class="u-text u-text-default u-text-4">¸ÞÀÎ ÀÌ¹ÌÁö ÆÄÀÏ Ã·ºÎ</h5><br>
+                <h5 class="u-text u-text-default u-text-4">ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½</h5><br>
                 <input type="file" name="img" accept="image/*" value="image">
               </div>
               
@@ -149,48 +149,48 @@
         </div>
         <div class="u-form u-form-1">
             <div class="u-form-group u-form-name u-form-group-1">
-              <label for="name-3b9a" class="u-label u-label-1">±Û Á¦¸ñ</label>
+              <label for="name-3b9a" class="u-label u-label-1">ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</label>
               <input type="text" id="name-3b9a" name="LessonTitle" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" required="" maxlength="100">
             </div>
             <div class="u-form-group u-form-select u-form-group-2">
-              <label for="select-7dfb" class="u-label u-label-2">Áö¿ª</label>
+              <label for="select-7dfb" class="u-label u-label-2">ï¿½ï¿½ï¿½ï¿½</label>
               <div class="u-form-select-wrapper">
                 <select id="select-7dfb" name="select" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-2">
-                  <option value="¼­¿ï">¼­¿ï</option>
-                  <option value="ÀÎÃµ">ÀÎÃµ</option>
-                  <option value="´ëÀü">´ëÀü</option>
-                  <option value="¼¼Á¾">¼¼Á¾</option>
-                  <option value="ºÎ»ê">ºÎ»ê</option>
-                  <option value="¿ï»ê">¿ï»ê</option>
-                  <option value="´ë±¸">´ë±¸</option>
-                  <option value="Á¦ÁÖ">Á¦ÁÖ</option>
-                  <option value="°æ±â">°æ±â</option>
-                  <option value="ÃæÃ»">ÃæÃ»</option>
-                  <option value="Àü¶ó">Àü¶ó</option>
-                  <option value="°æ»ó">°æ»ó</option>
-                  <option value="°­¿ø">°­¿ø</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½Ãµ">ï¿½ï¿½Ãµ</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½Î»ï¿½">ï¿½Î»ï¿½</option>
+                  <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ë±¸">ï¿½ë±¸</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½Ã»">ï¿½ï¿½Ã»</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>
+                  <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
             </div>
             <div class="u-form-group u-form-message u-form-group-3">
-              <label for="message-3b9a" class="u-label u-label-3">·¹½¼ ¼³¸í</label>
+              <label for="message-3b9a" class="u-label u-label-3">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</label>
               <textarea rows="15" cols="50" id="message-3b9a" name="Lesson" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-3" required="" autofocus="autofocus"></textarea>
             </div>
             <div class="u-form-group u-form-textarea u-form-group-4">
-              <label for="textarea-c5a6" class="u-label u-label-4">Æ÷Æ®Æú¸®¿À</label>
+              <label for="textarea-c5a6" class="u-label u-label-4">ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</label>
               <textarea rows="15" cols="50" id="textarea-c5a6" name="portpol" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-4" required=""></textarea>
             </div>ex
             <div class="u-form-group u-form-textarea u-form-group-5">
-              <label for="textarea-da7c" class="u-label u-label-5">Àå¼Ò</label>
+              <label for="textarea-da7c" class="u-label u-label-5">ï¿½ï¿½ï¿½</label>
               <textarea rows="4" cols="50" id="textarea-da7c" name="area" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-5" required=""></textarea>
             </div>
             <div class="u-form-group u-form-textarea u-form-group-6">
-              <label for="textarea-a316" class="u-label u-label-6">Ãë¼Ò ¹× È¯ºÒ±ÔÁ¤</label>
+              <label for="textarea-a316" class="u-label u-label-6">ï¿½ï¿½ï¿½ ï¿½ï¿½ È¯ï¿½Ò±ï¿½ï¿½ï¿½</label>
               <textarea rows="7" cols="50" id="textarea-a316" name="cancel" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
             </div>
             <div class="u-align-center u-form-group u-form-submit">
-              <input type ="submit" value = "±Û ÀÛ¼º" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">
+              <input type ="submit" value = "ï¿½ï¿½ ï¿½Û¼ï¿½" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">
               
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
@@ -209,7 +209,7 @@
         <h1 class="u-custom-font u-text u-text-default u-text-1">
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-15 u-text-hover-grey-15 u-text-white u-btn-1" href="Home.jsp" data-page-id="904221268">DJ.ZIP</a>
         </h1>
-        <p class="u-text u-text-default u-text-2">±¤ÁÖ±¤¿ª½Ã µ¿±¸ ¿¹¼ú±æ 31-15 3Ãþ (ÁÖ)½º¸¶Æ®ÀÎÀç°³¹ß¿ø</p>
+        <p class="u-text u-text-default u-text-2">ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 31-15 3ï¿½ï¿½ (ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ç°³ï¿½ß¿ï¿½</p>
       </div></footer>
     
   </body>
