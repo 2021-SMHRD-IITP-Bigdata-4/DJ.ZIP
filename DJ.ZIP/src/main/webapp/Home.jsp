@@ -1,3 +1,5 @@
+<%@page import="model.mixset_board_DTO"%>
+<%@page import="model.mixset_board_DAO"%>
 <%@page import="model.board_DTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.board_DAO"%>
@@ -26,21 +28,23 @@
     
     
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": ""
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
-       	
-       	<%
-       	member_DTO info = (member_DTO)session.getAttribute("info");
-       	board_DAO dao = new board_DAO();
-       	ArrayList<board_DTO> list = dao.BoardRank();
-       	%>
+          
+          <%
+          member_DTO info = (member_DTO)session.getAttribute("info");
+          board_DAO dao = new board_DAO();
+          ArrayList<board_DTO> list = dao.BoardRank();
+          mixset_board_DAO m_dao = new mixset_board_DAO();
+          ArrayList<mixset_board_DTO> m_list = m_dao.mixsetRank();
+          %>
        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -58,22 +62,22 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 
 <%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a>
-	<%if(info.getDj_career().equals("1")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ.jsp?id=<%=info.getID()%>">레슨목록</a>
-	<%}else if(info.getDj_career().equals("0")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
-	<%} %>	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">내가 쓴글</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	          </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a>
+   <%if(info.getDj_career().equals("1")) {%>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ.jsp?id=<%=info.getID()%>">레슨목록</a>
+   <%}else if(info.getDj_career().equals("0")) {%>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
+   <%} %>   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">내가 쓴글</a>
+   </li></ul>
+   </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
+   </li></ul>
+             </div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	          </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+   </li></ul>
+             </div>
 <%}%>         
           
           <div class="u-custom-menu u-nav-container-collapse">
@@ -86,22 +90,22 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 
 <%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a>
-	<%if(info.getDj_career().equals("1")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
-	<%}else if(info.getDj_career().equals("0")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
-	<%} %>	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">내가 쓴글</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	</div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a>
+   <%if(info.getDj_career().equals("1")) {%>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
+   <%}else if(info.getDj_career().equals("0")) {%>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
+   <%} %>   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">내가 쓴글</a>
+   </li></ul>
+   </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
+   </li></ul>
+   </div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	</div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+   </li></ul>
+   </div>
 <%}%>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -116,7 +120,7 @@
           <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
             <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getID()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
-		  <%}%>
+        <%}%>
             
           </div>
         </div>
@@ -172,37 +176,39 @@
         <h1 class="u-custom-font u-font-oswald u-text u-text-1">HOT MIXSET</h1><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
         <div class="u-blog u-expanded-width u-blog-1">
           <div class="u-repeater u-repeater-1"><!--blog_post-->
+          
+          
             <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-1">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <a class="u-post-header-link" href="blog/1.html"><!--blog_post_image-->
-                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="images/pexels-photo-167467.jpeg" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
+                <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(0).getNum() %>"><!--blog_post_image-->
+                  <img  alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="./img/<%=m_list.get(0).getImg_name() %>" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-2">
-                  <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content-->제목<!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content--><%=m_list.get(0).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-3"><!--blog_post_content_content-->작성자<!--/blog_post_content_content--></div><!--/blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-3"><!--blog_post_content_content--><%=m_list.get(0).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post--><!--blog_post-->
             <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-2">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_image-->
-                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" src="images/1.jpeg" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
+                <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(1).getNum() %>"><!--blog_post_image-->
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" src="./img/<%=m_list.get(1).getImg_name() %>" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-4">
-                  <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_header_content-->Post 2 Headline<!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_header_content--><%=m_list.get(1).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-5"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-5"><!--blog_post_content_content--><%=m_list.get(1).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post--><!--blog_post-->
             <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-3">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_image-->
-                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-3" src="images/2.jpeg" data-image-width="1600" data-image-height="1067"><!--/blog_post_image-->
+                <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(2).getNum() %>"><!--blog_post_image-->
+                  <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-3" src="./img/<%=m_list.get(2).getImg_name() %>" data-image-width="1600" data-image-height="1067"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-6">
-                  <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_header_content-->Post 3 Headline<!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_header_content--><%=m_list.get(2).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-7"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-7"><!--blog_post_content_content--><%=m_list.get(2).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post-->
           </div>

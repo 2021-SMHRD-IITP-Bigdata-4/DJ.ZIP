@@ -185,18 +185,52 @@ public class mixset_board_DAO {
          return mixset_writeDto;
       }
    
-	public int delete(String num) {
-		conn();
-		String sql = "delete from mixset where num = ?";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, num);
-			cnt = psmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return cnt;
-	}
+   public int delete(String num) {
+      conn();
+      String sql = "delete from mixset where num = ?";
+      try {
+         psmt = conn.prepareStatement(sql);
+         psmt.setString(1, num);
+         cnt = psmt.executeUpdate();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+      return cnt;
+   }
+   
+   public ArrayList<mixset_board_DTO> mixsetRank() {
+      conn();
+      String sql = "select x.num, x.title, x.content, x.id, x.file_name, x.music_length, x.genre_name, x.img_name, x.write_date, x.hits, m.nick_name from mixset x, member m where x.id = m.id order by hits desc";
+      list = new ArrayList<mixset_board_DTO>();
+      try {
+         psmt = conn.prepareStatement(sql);
+         rs = psmt.executeQuery();
+
+         while (rs.next()) {
+            String num = rs.getString(1);
+                  String title = rs.getString(2);
+                  String content = rs.getString(3);
+                  String id = rs.getString(4);
+                  String file_name = rs.getString(5);
+                  String music_length = rs.getString(6);
+                  String genre_name = rs.getString(7);
+                  String img_name = rs.getString(8);
+                  String write_date = rs.getString(9);
+                  String hits = rs.getString(10);
+                  String nick_name = rs.getString(11);
+
+                  mixset_writeDto = new mixset_board_DTO(num, title, content, id, file_name, music_length, genre_name, img_name, write_date, hits, nick_name);
+            list.add(mixset_writeDto);
+
+         }
+
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+      return list;
+   }
 }
