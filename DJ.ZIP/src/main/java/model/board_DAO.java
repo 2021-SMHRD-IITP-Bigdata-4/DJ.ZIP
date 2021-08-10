@@ -137,11 +137,11 @@ public class board_DAO {
 	public ArrayList<board_DTO> selectSearch(String search) {
 		conn();
 
-		String sql = "select * from board where id =?";
+		String sql = "select * from board where id like ?";
 		list = new ArrayList<board_DTO>();
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, search);
+			psmt.setString(1, "%"+search+"%");
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
