@@ -152,7 +152,7 @@
             <div align="center">
               <audio src="./music/<%=list.get(i).getFile_name() %>" width='400' controls="controls"></audio>
             </div>
-            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./img/<%=list.get(i).getFile_name() %>" alt="" data-image-width="253" data-image-height="251">
+            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./img/<%=list.get(i).getImg_name() %>" alt="" data-image-width="253" data-image-height="251">
             
 </g>
 </g></svg></span>
