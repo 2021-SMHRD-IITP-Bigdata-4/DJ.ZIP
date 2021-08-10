@@ -186,7 +186,6 @@
                 <h4 class="u-blog-control u-text u-text-2">
                   <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content--><%=m_list.get(0).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-3"><!--blog_post_content_content--><%=m_list.get(0).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post--><!--blog_post-->
             <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-2">
@@ -197,7 +196,7 @@
                 <h4 class="u-blog-control u-text u-text-4">
                   <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_header_content--><%=m_list.get(1).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-5"><!--blog_post_content_content--><%=m_list.get(1).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-5"><!--blog_post_content_content--><%=m_list.get(1).getId()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post--><!--blog_post-->
             <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white u-repeater-item-3">
@@ -208,7 +207,7 @@
                 <h4 class="u-blog-control u-text u-text-6">
                   <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_header_content--><%=m_list.get(2).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-7"><!--blog_post_content_content--><%=m_list.get(2).getNick_name()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
+                <div class="u-blog-control u-post-content u-text u-text-7"><!--blog_post_content_content--><%=m_list.get(2).getId()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
             </div><!--/blog_post-->
           </div>

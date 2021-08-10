@@ -112,11 +112,11 @@
             <form action="LoginService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;" redirect="true">
               <div class="u-form-group u-form-name">
                 <label for="name-63bb" class="u-form-control-hidden u-label"></label>
-                <input type="text" placeholder="아이디" id="name-63bb" name="id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="">
+                <input type="text" placeholder="아이디" id="name-63bb" name="id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required=""  autofocus="autofocus">
               </div>
               <div class="u-form-group u-form-name u-form-group-2">
                 <label for="name-2252" class="u-form-control-hidden u-label"></label>
-                <input type="text" placeholder="비밀번호" id="name-2252" name="pw" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="" autofocus="autofocus">
+                <input type="text" placeholder="비밀번호" id="name-2252" name="pw" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="">
               </div>
               <div class="u-align-center u-form-group u-form-submit">
                 <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-btn-1">로그인</a>
