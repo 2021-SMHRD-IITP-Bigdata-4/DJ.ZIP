@@ -17,8 +17,10 @@ public class member_DAO {
 	int cnt = 0;
 	member_DTO dto = null;
 	mixset_board_DTO dto1 = null;
+	dj_lesson_DTO dto2 = null;
 	ArrayList<member_DTO> list = null;
 	ArrayList<mixset_board_DTO> list1 = null;
+	ArrayList<dj_lesson_DTO> list2 = null;
 	
 	member_DTO loginDto = null;
 	
@@ -177,6 +179,50 @@ public class member_DAO {
 		}
 		return list1;
     }
+	
+	public ArrayList<dj_lesson_DTO> lessonList(String id) {
+		conn();
+		try {
+		String sql = "select l.num, l.lesson_title, l.lesson_info from lesson_list t, lesson l where t.num = l.num and t.id = ?";
+		psmt = conn.prepareStatement(sql);
+		psmt.setString(1, id);
+		rs = psmt.executeQuery();
+		list2 = new ArrayList<dj_lesson_DTO>();
+		
+		while(rs.next()) {
+			String num = rs.getString(1);
+			String lesson_title = rs.getString(2);
+			String lesson_info = rs.getString(3);
+			
+			dto2 = new dj_lesson_DTO(num, lesson_title, lesson_info);
+			list2.add(dto2);
+		}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list2;
+    }
+	
+	public int insert(String num, String id) {
+	      
+	      conn();
+	      String sql = "insert into like_list values(like_list_seq.nextval, ?, ?)";
+	      try {
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, id);
+	         psmt.setString(2, num);
+	         cnt = psmt.executeUpdate();
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+	      return cnt;
+	      
+	   }
 	
 	public int delete(String num) {
 		conn();

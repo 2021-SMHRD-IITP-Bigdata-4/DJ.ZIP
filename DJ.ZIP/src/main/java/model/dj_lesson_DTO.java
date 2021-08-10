@@ -25,6 +25,17 @@ public class dj_lesson_DTO {
 		this.spot = spot;
 	}
 	
+
+
+	public dj_lesson_DTO(String num, String lesson_title, String lesson_info) {
+		super();
+		this.num = num;
+		this.lesson_title = lesson_title;
+		this.lesson_info = lesson_info;
+	}
+
+
+
 	public String getNum() {
 		return num;
 	}

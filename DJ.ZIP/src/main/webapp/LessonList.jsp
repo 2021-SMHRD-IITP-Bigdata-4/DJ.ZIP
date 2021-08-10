@@ -1,3 +1,6 @@
+<%@page import="model.dj_lesson_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.member_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +33,12 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <% 
+        	member_DTO info = (member_DTO)session.getAttribute("info");
+        	member_DAO dao = new member_DAO();
+        	String id = request.getParameter("id");
+		    ArrayList<dj_lesson_DTO> list = dao.lessonList(id);
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -43,7 +51,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-custom-font u-font-oswald u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="DjLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 <%if(info != null) {%>
@@ -133,21 +141,25 @@
         </div>
         <h4 class="u-custom-font u-font-oswald u-text u-text-default u-text-6">레슨 신청 목록</h4>
         <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
+        <%if(info != null) {%>
+        	<%if(list != null) {%>
+				<%for(int i=0; i<list.size(); i++) {%>
         <div class="u-container-style u-product u-product-1">
           <div class="u-container-layout u-valign-bottom u-container-layout-5"><!--product_image-->
             <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="images/35144535-8aaf-1bf7-89eb-153e47df0227.jpg"><!--/product_image-->
             <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-valign-top u-container-layout-6"><!--product_title-->
                 <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-7">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="DjLessonPage.jsp?num=<%=list.get(i).getNum()%>"><!--product_title_content--><%=list.get(i).getLesson_title()%><!--/product_title_content--></a>
                 </h2><!--/product_title--><!--product_content-->
                 <div class="u-product-control u-product-desc u-text u-text-default u-text-8"><!--product_content_content-->
-                  <p>Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p><!--/product_content_content-->
+                  <p><%=list.get(i).getLesson_info() %></p><!--/product_content_content-->
                 </div><!--/product_content-->
               </div>
             </div>
           </div>
         </div><!--/product_item--><!--/product-->
+        <%}}} %>
       </div>
     </section>
     
