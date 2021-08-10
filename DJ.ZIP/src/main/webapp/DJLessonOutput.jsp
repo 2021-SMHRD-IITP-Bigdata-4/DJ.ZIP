@@ -41,7 +41,7 @@
         dj_lesson_DTO LselectOne = dao.LselectOne(num2);
         
        	String Lscate= request.getParameter("location");
-
+		String img = request.getParameter("img");
        	ArrayList<dj_lesson_DTO> LsList = (ArrayList<dj_lesson_DTO>)session.getAttribute("LsList");
         
         
@@ -171,7 +171,7 @@
                 <div class="u-layout-row">
                   <div class="u-align-left u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-3">
-                      <h3 class="u-custom-font u-font-oswald u-text u-text-3">><%=LselectOne.getLesson_title() %></h3>
+                      <h3 class="u-custom-font u-font-oswald u-text u-text-3"><%="["+LselectOne.getLocation_name()+"]"%><%=LselectOne.getLesson_title() %></h3>
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
                       <p class="u-text u-text-4"><%=LselectOne.getId() +" | "+ LselectOne.getWrite_date() %> </p>
                     </div>
@@ -182,10 +182,10 @@
                 <div class="u-layout-row">
                   <div class="u-container-style u-layout-cell u-size-29 u-layout-cell-2">
                     <div class="u-border-2 u-border-grey-75 u-container-layout u-container-layout-4">
-                      <img class="u-image u-image-default u-image-1" src="images/8c76c73bc23cc9796bbbbeacc52faa4a1b4e511718b2d265aa1d9a6702b3df8855b54532c80b9f6c6054cd94b9fb42bf3b4e034aae24c942ee9968_1280.jpg" alt="" data-image-width="1280" data-image-height="720">
+                      <img class="u-image u-image-default u-image-1" src="./Lessonimg/<%=img %>" alt="" data-image-width="1280" data-image-height="720">
                       <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                       <h5 class="u-custom-font u-font-oswald u-text u-text-default u-text-5">∑πΩº ¿Âº“</h5>
-                      <p class="u-text u-text-6"><%= LselectOne.getLocation_name() %></p>
+                      <p class="u-text u-text-6"><%= LselectOne.getSpot()%></p>
                     </div>
                   </div>
                   <div class="u-container-style u-layout-cell u-size-31 u-layout-cell-3">

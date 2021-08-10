@@ -171,15 +171,18 @@ public class dj_lesson_DAO {
 
 			if (rs.next()) {
 				String num = rs.getString(1);
-				String title = rs.getString(2);
-				String content = rs.getString(3);
-				String cate = rs.getString(4);
-				String id = rs.getString(5);
+				String lesson_title = rs.getString(2);
+				String id = rs.getString(3);
+				String lesson_info = rs.getString(4);
+				String portfolio = rs.getString(5);
 				String write_date = rs.getString(6);
-				String hits = rs.getString(7);
-				String recom = rs.getString(8);
-
-				dto = new dj_lesson_DTO(num, title, id, id, hits, write_date, cate, recom);
+				String location_name = rs.getString(7);
+				String spot = rs.getString(8);
+				String week = rs.getString(9);
+				String hour = rs.getString(10);
+				String img_file = rs.getString(11);
+				String cancel = rs.getString(12);
+				dto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, portfolio, write_date, location_name, spot, week, hour, img_file, cancel);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

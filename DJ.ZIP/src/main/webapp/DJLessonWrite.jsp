@@ -147,7 +147,7 @@
             <form action="LessonWriteService.do?id=<%=info.getID() %>" method="POST" accept-charset="EUC-KR" enctype="multipart/form-data">
               <div class="u-container-layout u-container-layout-4">
                 <h5 class="u-text u-text-default u-text-4">메인 이미지 파일 첨부</h5><br>
-                <input type="file" name="img" accept="image/*" value="image">
+                <input type="file" name="Lessonimg" accept="Lessonimg/*" value="Lessonimg">
               </div>
               
             </div>
@@ -205,10 +205,7 @@
               <label for="textarea-a316" class="u-label u-label-6" >레슨 가능 시간</label>
               <textarea rows="7" cols="50" id="textarea-a316" name="hour" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
             </div>
-            <div class="u-form-group u-form-textarea u-form-group-6">
-              <label for="textarea-a316" class="u-label u-label-6">취소 및 환불규정</label>
-              <textarea rows="7" cols="50" id="textarea-a316" name="cancel" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-6" required=""></textarea>
-            </div>
+            
             <div class="u-align-center u-form-group u-form-submit">
               <input type ="submit" value = "글 작성" class="u-border-2 u-border-black u-btn u-btn-rectangle u-btn-submit u-button-style u-none u-btn-17">
               
