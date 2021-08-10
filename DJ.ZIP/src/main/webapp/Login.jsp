@@ -69,8 +69,8 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Community.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Community.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Community</a>
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link">레슨목록</a>
@@ -127,6 +127,7 @@
               <input type="hidden" value="" name="recaptchaResponse">
             </form>
           </div>
+<!-- id/pw, join -->
           <a href="#" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-white u-btn u-button-style u-login-control u-login-forgot-password u-none u-text-body-color u-btn-2">ID/PW 찾기</a>
           <a href="Join2.jsp" data-page-id="2686012162" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-white u-btn u-button-style u-login-control u-login-create-account u-none u-text-body-color u-btn-3">회원가입</a>
         </div>

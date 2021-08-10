@@ -175,6 +175,7 @@
     </section>
     <section class="u-align-center u-clearfix u-white u-section-3" id="carousel_841b">
       <div class="u-clearfix u-sheet u-sheet-1">
+<!-- ¹Í½º¼Â -->
         <h1 class="u-custom-font u-font-oswald u-text u-text-1">HOT MIXSET</h1><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
         <div class="u-blog u-expanded-width u-blog-1">
           <div class="u-repeater u-repeater-1"><!--blog_post-->
@@ -186,7 +187,7 @@
                   <img  alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-1" src="./img/<%=m_list.get(0).getImg_name() %>" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-2">
-                  <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content--><%=m_list.get(0).getTitle()%><!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(0).getNum() %>"><!--blog_post_header_content--><%=m_list.get(0).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
               </div>
             </div><!--/blog_post--><!--blog_post-->
@@ -196,7 +197,7 @@
                   <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-2" src="./img/<%=m_list.get(1).getImg_name() %>" data-image-width="626" data-image-height="417"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-4">
-                  <a class="u-post-header-link" href="blog/post-1.html"><!--blog_post_header_content--><%=m_list.get(1).getTitle()%><!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(1).getNum() %>"><!--blog_post_header_content--><%=m_list.get(1).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
                 <div class="u-blog-control u-post-content u-text u-text-5"><!--blog_post_content_content--><%=m_list.get(1).getId()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
@@ -207,7 +208,7 @@
                   <img alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-3" src="./img/<%=m_list.get(2).getImg_name() %>" data-image-width="1600" data-image-height="1067"><!--/blog_post_image-->
                 </a><!--blog_post_header-->
                 <h4 class="u-blog-control u-text u-text-6">
-                  <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_header_content--><%=m_list.get(2).getTitle()%><!--/blog_post_header_content--></a>
+                  <a class="u-post-header-link" href="MixSetIn.jsp?num=<%=m_list.get(2).getNum() %>"><!--blog_post_header_content--><%=m_list.get(2).getTitle()%><!--/blog_post_header_content--></a>
                 </h4><!--/blog_post_header--><!--blog_post_content-->
                 <div class="u-blog-control u-post-content u-text u-text-7"><!--blog_post_content_content--><%=m_list.get(2).getId()%><!--/blog_post_content_content--></div><!--/blog_post_content-->
               </div>
