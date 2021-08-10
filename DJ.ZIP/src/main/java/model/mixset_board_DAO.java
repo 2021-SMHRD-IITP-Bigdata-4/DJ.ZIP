@@ -135,14 +135,14 @@ public class mixset_board_DAO {
    public int update(mixset_board_DTO dto) {
       conn();
    try {
-      String sql = "update mixset set title = ?, content = ?, file_name = ?, music_length = ?, genre_name = ?, img_name = ? where num = ?";
+      String sql = "update mixset set title = ?, content = ?, file_name = ?, genre_name = ?, img_name = ?, write_date = sysdate where num = ?";
       psmt = conn.prepareStatement(sql);
       psmt.setString(1, dto.getTitle());
       psmt.setString(2, dto.getContent());
       psmt.setString(3, dto.getFile_name());
-      psmt.setString(4, dto.getMusic_length());
-      psmt.setString(5, dto.getGenre_name());
-      psmt.setString(6, dto.getImg_name());
+      psmt.setString(4, dto.getGenre_name());
+      psmt.setString(5, dto.getImg_name());
+      psmt.setString(6, dto.getNum());
       cnt = psmt.executeUpdate();
       
    } catch (SQLException e) {

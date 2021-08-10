@@ -1,6 +1,3 @@
-<%@page import="model.mixset_board_DTO"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="model.mixset_board_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -12,9 +9,9 @@
     <meta name="keywords" content="DJ.ZIP">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>MIXSET</title>
+    <title>MixsetUpdate</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="MIXSET.css" media="screen">
+<link rel="stylesheet" href="MixsetUpload.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.21.3, nicepage.com">
@@ -28,14 +25,13 @@
       "name": ""
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="MIXSET">
+    <meta property="og:title" content="MixsetUpload">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
         <% member_DTO info = (member_DTO)session.getAttribute("info");
-        mixset_board_DAO dao = new mixset_board_DAO();
-        ArrayList<mixset_board_DTO> list = dao.SelectAll();
+        String num = request.getParameter("num");
         %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -73,13 +69,13 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonPage.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">DJ LESSON</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 <%if(info != null) {%>
    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
-   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="lessonList.jsp">레슨목록</a>
-   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp">LIKE MIXSET</a>
-   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">내가 쓴글</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link">레슨목록</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">내가 쓴글</a>
    </li></ul>
    </div>
    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
@@ -127,44 +123,53 @@
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-1"></div>
-        <h5 class="u-text u-text-default u-text-2">카테고리 명 </h5>
-        <form action="#" method="get" class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
-          <button class="u-search-button" type="submit">
-            <span class="u-search-icon u-spacing-10">
-              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9868"></use></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-9868" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg>
-            </span>
-          </button>
-          <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
-        </form>
-        <a href="MixsetUpload.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 작성</a>
-        <%if(list != null){%>
-               <%for(int i=0; i<list.size(); i++){ %>
-        <div class="u-border-2 u-border-grey-75 u-container-style u-group u-shape-rectangle u-group-2">
-        
+        <h5 class="u-text u-text-default u-text-2">MIXSET/MUSIC 업로드</h5>
+        <div class="u-border-2 u-border-grey-75 u-container-style u-group u-radius-10 u-shape-round u-group-2">
           <div class="u-container-layout u-container-layout-2">
-            <div class="u-container-style u-group u-group-3">
-              <div class="u-container-layout u-container-layout-3">
-                <h6 class="u-text u-text-default u-text-3"><a href="MixSetIn.jsp?num=<%=list.get(i).getNum() %>"><%=list.get(i).getTitle() %></h6>
-                <p class="u-text u-text-default u-text-grey-50 u-text-4"><%=list.get(i).getId() %></p>
-              </div>
-            </div>
-            <div align="center">
-              <audio src="./music/<%=list.get(i).getFile_name() %>" width='400' controls="controls"></audio>
-            </div>
-            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./img/<%=list.get(i).getFile_name() %>" alt="" data-image-width="253" data-image-height="251">
+          <form action="MixsetUpdateService.do?ID=<%=info.getID() %>&num=<%=num %>" method ="post" enctype="multipart/form-data">
+            <img class="u-image u-image-round u-radius-10 u-image-1" src="images/d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
+           <br>
+            이미지 <input type="file" name="imgfile"accept="image/*" value="image">
+            <br>
+            음악 <input type="file" name="file" accept="/*">
             
-</g>
-</g></svg></span>
-            <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">LIKE</a>
-            <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">SHARE</a>
-</g></svg></span>
+            <div class="u-form u-form-1">
+                <div class="u-form-name u-form-group">
+                  <label for="email-3138" class="u-label-3 u-label">글 제목</label>
+                  <input type="text" id="email-3138" name="title" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                </div>
+                
+                <div>
+                <select name="select" size="1">
+                <option value="HOUSE">HOUSE</option>
+                <option value="HARD">HARD</option>
+                <option value="D N B">D N B</option>
+                <option value="DubStep">DubStep</option>
+                <option value="TRAP">TRAP</option>
+                <option value="BASS">BASS</option>
+                <option value="BigRoom">BigRoom</option>
+                <option value="DISCO">DISCO</option>
+                <option value="TRANCE">TRANCE</option>
+                <option value="BOUNCE">BOUNCE</option>
+                </select>
+                </div>
+                
+                <div class="u-form-group u-form-message">
+                  <label for="message-3138" class="u-label u-label-3">글 내용</label>
+                  <textarea rows="4" cols="50" id="message-3138" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                  <a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-grey-70 u-radius-10 u-btn-14">글 등록<br>
+                  </a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                </div>
+                <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                <input type="hidden" value="hidden" name="recaptchaResponse">
+            </div>
+              </form>
           </div>
-          <br>
-         
         </div>
-          
-           <%}} %>
       </div>
     </section>
     
