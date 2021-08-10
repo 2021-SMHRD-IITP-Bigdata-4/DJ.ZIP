@@ -147,7 +147,7 @@
             </div>
           </div>
         </div>
-        <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 삭제</a>
+        <a href="MixsetDeleteService.do?num=<%=num %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 삭제</a>
         <a href="MixsetUpdate.jsp?num=<%=num %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">글 수정</a>
         <a href="like_listInsertService.do?id=<%=info.getID() %>&num=<%=num %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">LIKE</a>
         <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">SHARE</a>

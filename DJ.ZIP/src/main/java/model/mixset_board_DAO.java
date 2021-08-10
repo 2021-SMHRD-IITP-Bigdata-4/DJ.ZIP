@@ -185,4 +185,18 @@ public class mixset_board_DAO {
          return mixset_writeDto;
       }
    
+	public int delete(String num) {
+		conn();
+		String sql = "delete from mixset where num = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 }

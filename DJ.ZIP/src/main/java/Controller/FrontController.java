@@ -19,6 +19,7 @@ import Front.LessonCate;
 import Front.LessonWriteService;
 import Front.LoginService;
 import Front.LogoutService;
+import Front.MixsetDeleteService;
 import Front.MixsetUpdateService;
 import Front.MixsetWriteService;
 import Front.UpdateService;
@@ -119,7 +120,11 @@ public class FrontController extends HttpServlet {
 
           com = new MixsetUpdateService();
     
-       }
+       }else if (resultURI.equals("MixsetDeleteService.do")) {
+
+           com = new MixsetDeleteService();
+     
+        }
       
       com.execute(request, response);
 
