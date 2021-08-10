@@ -275,7 +275,7 @@ public class board_DAO {
 	
 	public ArrayList<board_DTO> BoardRank() {
 		conn();
-		String sql = "select * from board where rownum <=5 order by hits desc ";
+		String sql = "select * from (select * from board order by hits desc) where rownum <=5";
 		list = new ArrayList<board_DTO>();
 		try {
 			psmt = conn.prepareStatement(sql);

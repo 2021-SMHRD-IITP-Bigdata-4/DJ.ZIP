@@ -15,3 +15,5 @@ drop table member cascade constraints;
 insert into member values('song','5462','mush','song2319','1','4478','cat');
 
 select * from lesson;
+
+select * from (select * from board order by hits desc) where rownum <=5;
