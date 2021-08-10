@@ -22,97 +22,102 @@ import Front.LogoutService;
 import Front.MixsetWriteService;
 import Front.UpdateService;
 import Front.like_listDeleteService;
+import Front.like_listInsertService;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response)
+         throws ServletException, IOException {
 
-		String path = request.getContextPath();
-		String reqURI = request.getRequestURI();
-		String resultURI = reqURI.substring(path.length() + 1);
-//		System.out.println(resultURI + reqURI);
+      String path = request.getContextPath();
+      String reqURI = request.getRequestURI();
+      String resultURI = reqURI.substring(path.length() + 1);
+//      System.out.println(resultURI + reqURI);
 
-		Command com = null;
+      Command com = null;
 
-		if (resultURI.equals("JoinService.do")) {
+      if (resultURI.equals("JoinService.do")) {
 
-			com = new JoinService();
+         com = new JoinService();
 
-		} else if (resultURI.equals("LoginService.do")) {
+      } else if (resultURI.equals("LoginService.do")) {
 
-			com = new LoginService();
+         com = new LoginService();
 
-		} else if (resultURI.equals("LogoutService.do")) {
+      } else if (resultURI.equals("LogoutService.do")) {
 
-			com = new LogoutService();
+         com = new LogoutService();
 
-		} else if (resultURI.equals("UpdateService.do")) {
+      } else if (resultURI.equals("UpdateService.do")) {
 
-			com = new UpdateService();
+         com = new UpdateService();
 
-		} else if (resultURI.equals("BoardWriteService.do")) {
+      } else if (resultURI.equals("BoardWriteService.do")) {
 
-			com = new BoardWriteService();
+         com = new BoardWriteService();
 
-		} else if (resultURI.equals("BoardUpdateService.do")) {
+      } else if (resultURI.equals("BoardUpdateService.do")) {
 
-			com = new BoardUpdateService();
+         com = new BoardUpdateService();
 
-		} else if (resultURI.equals("BoardDeleteService.do")) {
+      } else if (resultURI.equals("BoardDeleteService.do")) {
 
-			com = new BoardDeleteService();
+         com = new BoardDeleteService();
 
-		} else if (resultURI.equals("Board_replyWriteService.do")) {
+      } else if (resultURI.equals("Board_replyWriteService.do")) {
 
-			com = new Board_replyWriteService();
+         com = new Board_replyWriteService();
 
-		} else if (resultURI.equals("Board_replyUpdateService.do")) {
+      } else if (resultURI.equals("Board_replyUpdateService.do")) {
 
-			com = new BoardUpdateService();
+         com = new BoardUpdateService();
 
-		} else if (resultURI.equals("Board_replyDeleteService.do")) {
+      } else if (resultURI.equals("Board_replyDeleteService.do")) {
 
-			com = new BoardUpdateService();
+         com = new BoardUpdateService();
 
-		} else if (resultURI.equals("BoardDeleteService.do")) {
+      } else if (resultURI.equals("BoardDeleteService.do")) {
 
-			com = new BoardUpdateService();
+         com = new BoardUpdateService();
 
-		} else if (resultURI.equals("CategoryService.do")) {
+      } else if (resultURI.equals("CategoryService.do")) {
 
-			com = new CategoryService();
+         com = new CategoryService();
 
-		} else if (resultURI.equals("MixsetWriteService.do")) {
+      } else if (resultURI.equals("MixsetWriteService.do")) {
 
-			com = new MixsetWriteService();
+         com = new MixsetWriteService();
 
-		} else if (resultURI.equals("BoardSearchService.do")) {
+      } else if (resultURI.equals("BoardSearchService.do")) {
 
-			com = new BoardSearchService();
+         com = new BoardSearchService();
 
-		} else if (resultURI.equals("LessonWriteService.do")) {
+      } else if (resultURI.equals("LessonWriteService.do")) {
 
-			com = new LessonWriteService();
+         com = new LessonWriteService();
 
-		} else if (resultURI.equals("LessonCate.do")) {
+      } else if (resultURI.equals("LessonCate.do")) {
 
-			com = new LessonCate();
+         com = new LessonCate();
 
-		} else if (resultURI.equals("like_listDeleteService.do")) {
+      } else if (resultURI.equals("like_listDeleteService.do")) {
 
-			com = new like_listDeleteService();
+         com = new like_listDeleteService();
 
-		} else if (resultURI.equals("BoardRecomService.do")) {
+      } else if (resultURI.equals("BoardRecomService.do")) {
 
-			com = new BoardRecomService();
-			
-		}
+         com = new BoardRecomService();
+         
+      } else if (resultURI.equals("like_listInsertService.do")) {
 
-		com.execute(request, response);
+         com = new like_listInsertService();
+   
+      }
+      
+      com.execute(request, response);
 
-	}
+   }
 
 }

@@ -22,9 +22,9 @@
     
     
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": ""
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="MixSetIn">
@@ -33,11 +33,11 @@
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
         <% 
-        	member_DTO info = (member_DTO)session.getAttribute("info"); 
-        	String num = request.getParameter("num");
-        	mixset_board_DAO dao = new mixset_board_DAO();
-        	mixset_board_DTO selectOne = dao.selectOne(num);
-        
+           member_DTO info = (member_DTO)session.getAttribute("info"); 
+           String num = request.getParameter("num");
+           mixset_board_DAO dao = new mixset_board_DAO();
+           mixset_board_DTO selectOne = dao.selectOne(num);
+           
         %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -55,19 +55,19 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 <%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">레슨목록</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">내가 쓴글</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	          </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.html">MyPage</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">레슨목록</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.html">LIKE MIXSET</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.html">내가 쓴글</a>
+   </li></ul>
+   </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
+   </li></ul>
+             </div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	          </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+   </li></ul>
+             </div>
 <%}%>  
 
           <div class="u-custom-menu u-nav-container-collapse">
@@ -79,19 +79,19 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MIXSET.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">MIXSET</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CommunityList.html" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">CommunityList</a>
 <%if(info != null) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link">레슨목록</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">내가 쓴글</a>
-	</li></ul>
-	</div>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
-	</li></ul>
-	</div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.html">MyPage</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link">레슨목록</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.html">LIKE MIXSET</a>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.html">내가 쓴글</a>
+   </li></ul>
+   </div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LogoutService.do" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Logout</a>
+   </li></ul>
+   </div>
 <%}else{%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
-	</li></ul>
-	</div>
+   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.jsp" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">Login</a>
+   </li></ul>
+   </div>
 <%}%>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -106,7 +106,7 @@
             <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
             <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
-		  <%}%>
+        <%}%>
             
           </div>
         </div>
@@ -131,25 +131,25 @@
           </div>
         </div>
         <div class="u-border-3 u-border-grey-40 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-line u-line-horizontal u-line-2"></div>
-        <h5 class="u-text u-text-default u-text-2">카테고리 명 </h5>
+        <h5 class="u-text u-text-default u-text-2"><%=selectOne.getGenre_name()%></h5>
         <div class="u-container-style u-group u-shape-rectangle u-group-2">
           <div class="u-container-layout u-container-layout-2">
-            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/1-removebg-preview1.png" alt="" data-image-width="253" data-image-height="251"><span class="u-border-2 u-border-grey-75 u-icon u-icon-circle u-spacing-10 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 47.607 47.607" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cb69"></use></svg><svg class="u-svg-content" viewBox="0 0 47.607 47.607" x="0px" y="0px" id="svg-cb69" style="enable-background:new 0 0 47.607 47.607;"><g><path d="M17.991,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631C4.729,2.969,7.698,0,11.36,0   l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path><path d="M42.877,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631   C29.616,2.969,32.585,0,36.246,0l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path>
+            <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./img/<%=selectOne.getImg_name() %>" alt="" data-image-width="253" data-image-height="251"><span class="u-border-2 u-border-grey-75 u-icon u-icon-circle u-spacing-10 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 47.607 47.607" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cb69"></use></svg><svg class="u-svg-content" viewBox="0 0 47.607 47.607" x="0px" y="0px" id="svg-cb69" style="enable-background:new 0 0 47.607 47.607;"><g><path d="M17.991,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631C4.729,2.969,7.698,0,11.36,0   l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path><path d="M42.877,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631   C29.616,2.969,32.585,0,36.246,0l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path>
 </g></svg></span><span class="u-border-2 u-border-grey-75 u-icon u-icon-circle u-spacing-10 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 494.148 494.148" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2c6d"></use></svg><svg class="u-svg-content" viewBox="0 0 494.148 494.148" x="0px" y="0px" id="svg-2c6d" style="enable-background:new 0 0 494.148 494.148;"><g><g><path d="M405.284,201.188L130.804,13.28C118.128,4.596,105.356,0,94.74,0C74.216,0,61.52,16.472,61.52,44.044v406.124    c0,27.54,12.68,43.98,33.156,43.98c10.632,0,23.2-4.6,35.904-13.308l274.608-187.904c17.66-12.104,27.44-28.392,27.44-45.884    C432.632,229.572,422.964,213.288,405.284,201.188z"></path>
 </g>
 </g></svg></span>
-            <h6 class="u-text u-text-3">글제목</h6>
-            <p class="u-text u-text-grey-50 u-text-4">글쓴이</p>
+            <h6 class="u-text u-text-3"><%=selectOne.getTitle() %></h6>
+            <p class="u-text u-text-grey-50 u-text-4"><%=info.getNick_name() %></p>
             <div class="u-video u-video-contain u-video-1">
               <div class="embed-responsive embed-responsive-1">
-                <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/B9YKnNtFqds?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
+                <audio src="./music/<%=selectOne.getFile_name()%>"></audio>
               </div>
             </div>
           </div>
         </div>
         <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 삭제</a>
         <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">글 수정</a>
-        <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">LIKE</a>
+        <a href="like_listInsertService.do?id=<%=info.getID() %>&num=<%=num %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">LIKE</a>
         <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">SHARE</a>
         <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
@@ -157,14 +157,15 @@
               <div class="u-align-center u-container-style u-layout-cell u-size-12 u-layout-cell-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
                 <div class="u-container-layout u-container-layout-3">
                   <div class="u-expanded-width u-image u-image-circle u-preserve-proportions u-image-2" alt="" data-image-width="197" data-image-height="197"></div>
-                  <h6 class="u-text u-text-5">닉네임</h6>
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./profile/<%=info.getFile_name()%>" data-image-width="120" data-image-height="120">
+                  <h6 class="u-text u-text-5"><%=info.getNick_name() %></h6>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-4">
                   <div class="u-container-style u-expanded-width u-group u-group-3">
                     <div class="u-container-layout u-container-layout-5">
-                      <p class="u-text u-text-6">글내용</p>
+                      <p class="u-text u-text-6"><%=selectOne.getContent() %></p>
                     </div>
                   </div>
                   <p class="u-text u-text-7">COMMNET()</p><span class="u-icon u-icon-circle u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.012 512.012" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-49db"></use></svg><svg class="u-svg-content" viewBox="0 0 512.012 512.012" id="svg-49db"><g><path d="m333.201 115.038c-28.905-59.021-89.37-98.042-157.193-98.042-97.047 0-176 78.505-176 175 0 26.224 5.63 51.359 16.742 74.794l-16.451 82.265c-2.094 10.472 7.144 19.728 17.618 17.656l83.279-16.465c11.213 5.319 22.813 9.364 34.732 12.151-26.717-126.541 69.199-245.321 197.273-247.359z"></path><path d="m495.266 394.79c2.874-6.061 5.373-12.237 7.511-18.514h-.549c37.448-109.917-41.305-225.441-157.567-231.066-.002-.006-.003-.012-.005-.018-100.036-4.61-183.148 75.486-183.148 174.804 0 96.414 78.361 174.857 174.743 174.997 26.143-.035 51.201-5.663 74.568-16.747 91.207 18.032 84.094 16.75 86.189 16.75 9.479 0 16.56-8.686 14.709-17.941z"></path>
@@ -192,8 +193,7 @@
                 <div class="u-container-layout u-container-layout-6">
                   <div class="u-align-center u-container-style u-group u-group-4">
                     <div class="u-container-layout">
-                      <img class="u-expanded-width u-image u-image-round u-radius-10 u-image-3" src="images/d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
-                      <p class="u-text u-text-default u-text-8">제목</p>
+                      <p class="u-text u-text-default u-text-8"></p>
                     </div>
                   </div>
                 </div>
@@ -224,7 +224,6 @@
         </div>
       </div>
     </section>
-    
     
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-text-1">
