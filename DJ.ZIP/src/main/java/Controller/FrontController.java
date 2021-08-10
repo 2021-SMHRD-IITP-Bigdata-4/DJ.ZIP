@@ -19,6 +19,7 @@ import Front.LessonCate;
 import Front.LessonWriteService;
 import Front.LoginService;
 import Front.LogoutService;
+import Front.MixsetUpdateService;
 import Front.MixsetWriteService;
 import Front.UpdateService;
 import Front.like_listDeleteService;
@@ -114,7 +115,11 @@ public class FrontController extends HttpServlet {
 
          com = new like_listInsertService();
    
-      }
+      } else if (resultURI.equals("MixsetUpdateService.do")) {
+
+          com = new MixsetUpdateService();
+    
+       }
       
       com.execute(request, response);
 

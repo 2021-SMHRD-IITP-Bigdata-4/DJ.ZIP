@@ -30,11 +30,11 @@ public class like_listInsertService implements Command {
       
       if (cnt > 0) {
          System.out.println("like_list 추가 성공!");
-         response.sendRedirect("MixSetIn.jsp?id="+id);
+         response.sendRedirect("MixSetIn.jsp?num="+num);
          
       } else {
          System.out.println("like_list 추가 실패!");
-         response.sendRedirect("MixSetIn.jsp?id="+id);
+         response.sendRedirect("MixSetIn.jsp?num="+num);
       }
       
    }

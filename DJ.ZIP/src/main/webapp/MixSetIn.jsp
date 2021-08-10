@@ -142,13 +142,13 @@
             <p class="u-text u-text-grey-50 u-text-4"><%=info.getNick_name() %></p>
             <div class="u-video u-video-contain u-video-1">
               <div class="embed-responsive embed-responsive-1">
-                <audio src="./music/<%=selectOne.getFile_name()%>"></audio>
+                <audio src="./music/<%=selectOne.getFile_name() %>" width='400' controls="controls"></audio>
               </div>
             </div>
           </div>
         </div>
         <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-12">글 삭제</a>
-        <a href="https://nicepage.com/website-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">글 수정</a>
+        <a href="MixsetUpdate.jsp?num=<%=num %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">글 수정</a>
         <a href="like_listInsertService.do?id=<%=info.getID() %>&num=<%=num %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">LIKE</a>
         <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">SHARE</a>
         <div class="u-clearfix u-layout-wrap u-layout-wrap-1">

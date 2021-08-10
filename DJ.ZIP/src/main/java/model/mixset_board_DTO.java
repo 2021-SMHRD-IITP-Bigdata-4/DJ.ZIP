@@ -13,6 +13,19 @@ public class mixset_board_DTO {
 	private String hits;
 	
 	
+	
+	public mixset_board_DTO(String num, String title, String content, String file_name, String genre_name,
+			String img_name, String write_date) {
+		super();
+		this.num = num;
+		this.title = title;
+		this.content = content;
+		this.file_name = file_name;
+		this.genre_name = genre_name;
+		this.img_name = img_name;
+		this.write_date = write_date;
+	}
+
 	public mixset_board_DTO(String num, String title, String content, String id, String file_name, String music_length,
 			String genre_name, String img_name, String write_date, String hits) {
 		this.num = num;
