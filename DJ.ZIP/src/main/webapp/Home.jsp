@@ -59,7 +59,7 @@
 
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">·¹½¼¸ñ·Ï</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href = "LessonList.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">³»°¡ ¾´±Û</a>
 	</li></ul>
@@ -84,8 +84,8 @@
 
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link">·¹½¼¸ñ·Ï</a>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp">LIKE MIXSET</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href = "LessonList.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">³»°¡ ¾´±Û</a>
 	</li></ul>
 	</div>
