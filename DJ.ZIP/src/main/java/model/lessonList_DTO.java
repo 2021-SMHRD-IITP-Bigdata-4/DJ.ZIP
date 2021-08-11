@@ -7,6 +7,7 @@ public class lessonList_DTO {
 	private String apply_date;
 	private String tel;
 	private String email;
+	private String f_num;
 	
 	
 	public lessonList_DTO(String l_num, String id, String num) {
@@ -17,6 +18,18 @@ public class lessonList_DTO {
 	}
 
 	
+
+	public lessonList_DTO(String id, String num, String apply_date, String tel, String email, String f_num) {
+		super();
+		this.id = id;
+		this.num = num;
+		this.apply_date = apply_date;
+		this.tel = tel;
+		this.email = email;
+		this.f_num = f_num;
+	}
+
+
 
 	public lessonList_DTO(String id, String num, String apply_date, String tel, String email) {
 		super();
@@ -34,9 +47,11 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setL_num(String l_num) {
 		this.l_num = l_num;
 	}
+
 
 
 	public String getId() {
@@ -44,9 +59,11 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 
 
 	public String getNum() {
@@ -54,9 +71,11 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setNum(String num) {
 		this.num = num;
 	}
+
 
 
 	public String getApply_date() {
@@ -64,9 +83,11 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setApply_date(String apply_date) {
 		this.apply_date = apply_date;
 	}
+
 
 
 	public String getTel() {
@@ -74,9 +95,11 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
 
 
 	public String getEmail() {
@@ -84,10 +107,22 @@ public class lessonList_DTO {
 	}
 
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	
-	
+
+
+	public String getF_num() {
+		return f_num;
+	}
+
+
+
+	public void setF_num(String f_num) {
+		this.f_num = f_num;
+	}
+
+
 }

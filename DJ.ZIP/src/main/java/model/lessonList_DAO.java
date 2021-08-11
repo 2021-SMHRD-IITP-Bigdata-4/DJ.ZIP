@@ -73,4 +73,19 @@ public class lessonList_DAO {
 		}
 		return list;
     }
+	
+	public int delete(String f_num) {
+		conn();
+		String sql = "delete from lesson_list where f_num = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, f_num);
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 }

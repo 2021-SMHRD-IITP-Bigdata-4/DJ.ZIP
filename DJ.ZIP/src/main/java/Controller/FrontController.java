@@ -53,7 +53,11 @@ public class FrontController extends HttpServlet {
 
          com = new LogoutService();
 
-      } else if (resultURI.equals("UpdateService.do")) {
+      }else if (resultURI.equals("DeleteService.do")) {
+
+          com = new LogoutService();
+
+       } else if (resultURI.equals("UpdateService.do")) {
 
          com = new UpdateService();
 
