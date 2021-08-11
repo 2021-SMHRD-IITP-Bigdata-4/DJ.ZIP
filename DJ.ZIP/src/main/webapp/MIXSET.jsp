@@ -84,7 +84,7 @@
 						<div class="u-nav-popup">
 								<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a></li>
-									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white">·¹½¼¸ñ·Ï</a></li>
+									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp">LIKE MIXSET</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">³»°¡ ¾´±Û</a></li>
 								</ul>
@@ -115,7 +115,7 @@
 						<div class="u-nav-popup">
 								<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a></li>
-									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="lessonList.jsp">·¹½¼¸ñ·Ï</a></li>
+									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp">LIKE MIXSET</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">³»°¡ ¾´±Û</a></li>
 								</ul>
@@ -218,8 +218,8 @@
 					</g>
 					</g>
 					</svg>
-					</span> <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13" style="margin-top: 15px;margin-bottom: 15px;">LIKE</a>
-					<a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14" style="margin-top: -40px;margin-bottom: 15px;">SHARE</a>
+					</span> <a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13" style="margin-top: 15px;margin-bottom: 15px;">LIKE</a>
+					<a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14" style="margin-top: -40px;margin-bottom: 15px;">SHARE</a>
 					</g>
 					</svg>
 					</span>

@@ -52,7 +52,7 @@ public class JoinService implements Command {
 		
 		member_DTO dto = new member_DTO(id, pw, nick_name, email, dj_career, tel, file_name);
 		member_DAO dao = new member_DAO();
-		int cnt = dao.join(dto);
+		
 		int a = 0;
 		ArrayList<member_DTO> list = dao.SelectAll();
 		for (int i = 0; i < list.size(); i++) {
@@ -60,6 +60,8 @@ public class JoinService implements Command {
 				a++;
 			}
 		}
+
+		int cnt = dao.join(dto);
 		
 		HttpSession session = request.getSession();
 		if(cnt > 0 && a<1) {

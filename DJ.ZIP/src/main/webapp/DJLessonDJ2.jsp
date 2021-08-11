@@ -104,7 +104,7 @@
            
            <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getID()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
 		  <%}%>
            
           </div>
