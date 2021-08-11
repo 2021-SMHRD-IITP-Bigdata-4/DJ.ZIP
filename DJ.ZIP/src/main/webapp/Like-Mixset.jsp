@@ -42,7 +42,6 @@
 			String id = request.getParameter("id");
 		    ArrayList<mixset_board_DTO> list1 = dao1.likeList(id);
         %>
-        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
             <a class="u-button-style u-custom-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -167,31 +166,35 @@
                 <img class="u-expanded-width u-image u-image-default u-image-1" src="https://pixabay.com/get/g9ecfbeb193d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
               </div>
             </div>
+            
+            
             <div class="u-align-center u-list u-list-1">
               <div class="u-repeater u-repeater-1">
-                <div class="u-container-style u-list-item u-repeater-item">
+                <button class="u-container-style u-list-item u-repeater-item" id = "play-pre">
                   <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-7"><span class="u-icon u-icon-circle u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 13.68 13.68" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-403e"></use></svg><svg class="u-svg-content" viewBox="0 0 13.68 13.68" x="0px" y="0px" id="svg-403e" style="enable-background:new 0 0 13.68 13.68;"><g><path style="fill:currentColor;" d="M13.268,1.662c-0.247-0.128-0.548-0.106-0.775,0.06L7.706,5.197V3.946V2.329   c0-0.283-0.159-0.538-0.411-0.667c-0.248-0.128-0.549-0.106-0.776,0.06L0.306,6.233C0.115,6.374,0,6.598,0,6.838   s0.114,0.465,0.306,0.604l6.213,4.512c0.128,0.094,0.283,0.145,0.439,0.145c0.114,0,0.23-0.03,0.337-0.083   c0.252-0.129,0.411-0.388,0.411-0.665V9.732V8.478l4.787,3.477c0.129,0.094,0.283,0.145,0.439,0.145   c0.113,0,0.229-0.03,0.336-0.083c0.253-0.129,0.412-0.388,0.412-0.665V9.733V3.947V2.329C13.68,2.047,13.521,1.791,13.268,1.662z"></path>
 </g></svg></span>
                   </div>
-                </div>
-                <div class="u-container-style u-list-item u-repeater-item">
+                </button>
+                <button class="u-container-style u-list-item u-repeater-item" id = "play">
                   <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-8"><span class="u-icon u-icon-circle u-text-black u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 342.4 342.4" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4f3e"></use></svg><svg class="u-svg-content" viewBox="0 0 342.4 342.4" x="0px" y="0px" id="svg-4f3e" style="enable-background:new 0 0 342.4 342.4;"><g><g><path d="M171.2,0C76.4,0,0,76.8,0,171.2s76.8,171.2,171.2,171.2s171.2-76.8,171.2-171.2S266,0,171.2,0z M248,184.4l-50.8,29.2    c-0.4,0-0.4,0.4-0.8,0.4l-50.8,29.2c-2.4,1.6-5.6,2.8-8.8,2.8c-8.4,0-15.6-6.8-15.6-15.6v-59.2v-59.6c0-2.8,0.8-5.2,2-7.6    c4.4-7.2,13.6-10,21.2-5.6L196,128l51.2,29.6c2.4,1.2,4.4,3.2,6,5.6C258,170.8,255.6,180.4,248,184.4z"></path>
 </g>
 </g></svg></span>
                   </div>
-                </div>
-                <div class="u-align-left u-container-style u-list-item u-repeater-item">
+                </button>
+                <button class="u-align-left u-container-style u-list-item u-repeater-item" id = "stop">
                   <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-9"><span class="u-icon u-icon-circle u-text-black u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 47.607 47.607" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9674"></use></svg><svg class="u-svg-content" viewBox="0 0 47.607 47.607" x="0px" y="0px" id="svg-9674" style="enable-background:new 0 0 47.607 47.607;"><g><path d="M17.991,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631C4.729,2.969,7.698,0,11.36,0   l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path><path d="M42.877,40.976c0,3.662-2.969,6.631-6.631,6.631l0,0c-3.662,0-6.631-2.969-6.631-6.631V6.631   C29.616,2.969,32.585,0,36.246,0l0,0c3.662,0,6.631,2.969,6.631,6.631V40.976z"></path>
 </g></svg></span>
                   </div>
-                </div>
-                <div class="u-container-style u-list-item u-repeater-item">
-                  <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-10"><span class="u-icon u-icon-circle u-text-black u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 18.909 18.909" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e40e"></use></svg><svg class="u-svg-content" viewBox="0 0 18.909 18.909" x="0px" y="0px" id="svg-e40e" style="enable-background:new 0 0 18.909 18.909;"><g><path style="fill:currentColor;" d="M10.193,8.311L1.887,1.714C1.484,1.511,1.003,1.533,0.619,1.766C0.233,1.998,0,2.412,0,2.856v13.198   c0,0.443,0.233,0.856,0.619,1.089c0.208,0.126,0.444,0.19,0.683,0.19c0.201,0,0.401-0.046,0.586-0.138l8.306-6.599   c0.4-0.376,0.716-0.658,0.716-1.143S10.641,8.707,10.193,8.311z"></path><path style="fill:currentColor;" d="M18.193,8.311L9.887,1.714C9.484,1.511,9.002,1.533,8.618,1.766   c-0.386,0.232-0.619,0.646-0.619,1.09v13.198c0,0.443,0.233,0.856,0.619,1.089c0.208,0.126,0.444,0.19,0.683,0.19   c0.201,0,0.401-0.046,0.586-0.138l8.306-6.599c0.4-0.376,0.716-0.658,0.716-1.143S18.641,8.707,18.193,8.311z"></path>
+                </button>
+                <button class="u-container-style u-list-item u-repeater-item" id = "play-next">
+                  <div class="u-container-layout u-similar-container u-valign-middle u-container-layout-10"><span class="u-icon u-icon-circle u-text-black u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 18.909 18.909" style="" id= "play-next"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e40e"></use></svg><svg class="u-svg-content" viewBox="0 0 18.909 18.909" x="0px" y="0px" id="svg-e40e" style="enable-background:new 0 0 18.909 18.909;"><g><path style="fill:currentColor;" d="M10.193,8.311L1.887,1.714C1.484,1.511,1.003,1.533,0.619,1.766C0.233,1.998,0,2.412,0,2.856v13.198   c0,0.443,0.233,0.856,0.619,1.089c0.208,0.126,0.444,0.19,0.683,0.19c0.201,0,0.401-0.046,0.586-0.138l8.306-6.599   c0.4-0.376,0.716-0.658,0.716-1.143S10.641,8.707,10.193,8.311z"></path><path style="fill:currentColor;" d="M18.193,8.311L9.887,1.714C9.484,1.511,9.002,1.533,8.618,1.766   c-0.386,0.232-0.619,0.646-0.619,1.09v13.198c0,0.443,0.233,0.856,0.619,1.089c0.208,0.126,0.444,0.19,0.683,0.19   c0.201,0,0.401-0.046,0.586-0.138l8.306-6.599c0.4-0.376,0.716-0.658,0.716-1.143S18.641,8.707,18.193,8.311z"></path>
 </g></svg></span>
                   </div>
-                </div>
+                </button>
               </div>
             </div>
+            
+            
             <div class="u-table u-table-responsive u-table-1">
               <table class="u-table-entity">
                 <colgroup>
@@ -230,6 +233,16 @@
       </div>
     </section>
     
+    <audio id = "myaudio">
+    <source id = "main">
+    <%-- <%for(int i = 0; i<list1.size(); i++) {%>
+    	<source src="./music/<%= list1.get(i).getFile_name() %>">
+    <%} %> --%>
+    <%for(int i = 1; i<11; i++) {%>
+    	<source src="./music/<%=i %>.mp3">
+    <%} %>
+    </audio>
+    
     
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-text-1">
@@ -248,5 +261,56 @@
         <span>Website Builder Software</span>
       </a>. 
     </section>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+    	var index = 1;
+    	$('#play-next').click(function(){
+    		index++;
+    		if(index > 10){
+    			index = 2;
+    		}
+    		console.log(index + '번째 소스 재생');
+    		
+    		$('#myaudio source#main').attr('src',
+    			$('#myaudio source:nth-child('+index+')').attr('src'));
+    		$('#myaudio')[0].load();
+    		$('#myaudio')[0].play();
+    		
+    	});
+    	$('#play-pre').click(function(){
+    		index--;
+    		if(index < 1){
+    			index = 10;
+    		}
+    		console.log(index + '번째 소스 재생');
+    		
+    		$('#myaudio source#main').attr('src',
+    			$('#myaudio source:nth-child('+index+')').attr('src'));
+    		$('#myaudio')[0].load();
+    		$('#myaudio')[0].play();
+    		
+    	});
+    	$('#play').click(function(){
+    		console.log(index + '번째 소스 재생');
+    		
+    		$('#myaudio source#main').attr('src',
+    			$('#myaudio source:nth-child('+index+')').attr('src'));
+    		$('#myaudio')[0].load();
+    		$('#myaudio')[0].play();
+    		
+    	});
+    	$('#stop').click(function(){
+    		console.log(index + '번째 소스 정지');
+    		
+    		$('#myaudio source#main').attr('src',
+    			$('#myaudio source:nth-child('+index+')').attr('src'));
+    		$('#myaudio')[0].load();
+    		$('#myaudio')[0].stop();
+    		
+    	});
+
+    	
+    </script>
+    
   </body>
 </html>

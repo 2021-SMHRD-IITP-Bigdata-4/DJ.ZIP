@@ -157,7 +157,7 @@ public class member_DAO {
 	public ArrayList<mixset_board_DTO> likeList(String id1) {
 		conn();
 		try {
-		String sql = "select m.genre_name, m.title, m.id, m.num from like_list l, mixset m where l.num = m.num and l.id = ?";
+		String sql = "select m.genre_name, m.title, m.id, m.num, m.file_name from like_list l, mixset m where l.num = m.num and l.id = ?";
 		psmt = conn.prepareStatement(sql);
 		psmt.setString(1, id1);
 		rs = psmt.executeQuery();
@@ -168,8 +168,9 @@ public class member_DAO {
 			String title = rs.getString(2);
 			String id = rs.getString(3);
 			String num = rs.getString(4);
+			String file_name = rs.getString(5);
 			
-			dto1 = new mixset_board_DTO(title, id, num, genre_name);
+			dto1 = new mixset_board_DTO(num, title, id, file_name, genre_name);
 			list1.add(dto1);
 		}
 		}catch (SQLException e) {
