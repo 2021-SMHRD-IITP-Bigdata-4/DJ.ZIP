@@ -144,11 +144,6 @@
           <div class="u-container-layout u-container-layout-2">
             <form action="#" method="get" class="u-search u-search-left u-white u-search-1">
             </form>
-           <%if(Lscate != null){ %>
-            <h5 class="u-text u-text-default u-text-2"><%=Lscate %></h5>
-            <%}else{ %>
-            <h5 class="u-text u-text-default u-text-2">전체 </h5>
-            <%} %>
             <% if(info != null){%>
             <a href="DJLessonWrite.jsp?id=<%=info.getID() %>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-15">글 작성</a>
             <%} %>
@@ -210,15 +205,19 @@
             <a href="DjLessonPage.jsp" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">목록</a>
             <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-17">삭제</a>
             <a href="#" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-18">수정</a>
-            <a href="DJLessonDJ2.jsp?id=<%=info.getID()%>&num=<%=num2 %>&location=<%=Lscate%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
-              <span style="font-size: 1.875rem;">레슨 신청</span>
+            <%if(info.getDj_career().equals("1")) {%>
+            	<a href="DJLessonDJ2.jsp?id=<%=info.getID()%>&num=<%=num2 %>&location=<%=Lscate%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
+                <span style="font-size: 1.875rem;">레슨 신청</span>
+            <%}else if(info.getDj_career().equals("0")) {%>
+                <a href="LessonList.jsp?id=<%=info.getID()%>&num=<%=num2 %>&location=<%=Lscate%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-19">
+                <span style="font-size: 1.875rem;">레슨 신청</span>
+            <%} %>
               <br>
             </a>
           </div>
         </div>
       </div>
     </section>
-    
     
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-text-1">

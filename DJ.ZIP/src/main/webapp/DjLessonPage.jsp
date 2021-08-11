@@ -173,19 +173,17 @@
 			<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
                   <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./Lessonimg/<%=LsList.get(i).getImg_file() %>" alt="" data-image-width="253" data-image-height="251">
-                  <h4 class="u-align-center u-text u-text-default u-text-3"><%="["+LsList.get(i).getLocation_name()+"]"%><%=LsList.get(i).getLesson_title() %></h4>
+                  <h4 class="u-align-center u-text u-text-default u-text-3"><a href="DJLessonOutput.jsp?num=<%=LsList.get(i).getNum()%>&location=<%=list.get(i).getSpot()%>&img=<%=list.get(i).getImg_file()%>"><%="["+LsList.get(i).getLocation_name()+"]"%><%=LsList.get(i).getLesson_title() %></a></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=LsList.get(i).getLocation_name() %></p>
-                  <a href="DJLessonOutput.jsp?num=<%=LsList.get(i).getNum()%>&location=<%=list.get(i).getSpot()%>&img=<%=list.get(i).getImg_file()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
                 </div>
               </div>
 			<%}}else{%>
 			<%for(int i =list.size()-1;i>=0;i--){%>
 				<div class="u-align-center u-container-style u-layout-cell u-size-15-lg u-size-15-xl u-size-16-sm u-size-16-xs u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-3">
-                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./Lessonimg/<%=list.get(i).getImg_file() %>" alt="" data-image-width="253" data-image-height="251">
-                  <h4 class="u-align-center u-text u-text-default u-text-3"><%="["+list.get(i).getLocation_name()+"]"%><%=list.get(i).getLesson_title() %></h4>
+                  <img class="u-image u-image-default u-preserve-proportions u-image-1" src="./Lessonimg/<%=list.get(i).getImg_file() %>" alt="" data-image-width="253" data-image-height="251" >
+                  <h4 class="u-align-center u-text u-text-default u-text-3"><a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>&location=<%=list.get(i).getSpot()%>&img=<%=list.get(i).getImg_file()%>"><%="["+list.get(i).getLocation_name()+"]"%><%=list.get(i).getLesson_title() %></a></h4>
                   <p class="u-align-center u-text u-text-default u-text-4"><%=list.get(i).getLocation_name() %></p>
-                  <a href="DJLessonOutput.jsp?num=<%=list.get(i).getNum()%>&location=<%=list.get(i).getSpot()%>&img=<%=list.get(i).getImg_file()%>" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-16">내용보기</a>
                 </div>
               </div>
 			<%}}%>
