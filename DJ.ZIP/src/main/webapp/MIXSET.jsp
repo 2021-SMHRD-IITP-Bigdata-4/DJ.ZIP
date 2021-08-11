@@ -207,6 +207,7 @@
 						<div class="u-container-layout u-container-layout-3">
 							<h6 class="u-text u-text-default u-text-3">
 								<a href="MixSetIn.jsp?num=<%=list.get(i).getNum()%>"><%=list.get(i).getTitle()%>
+								
 							</h6>
 							<p class="u-text u-text-default u-text-grey-50 u-text-4"><%=list.get(i).getId()%></p>
 						</div>
@@ -246,7 +247,7 @@
 					</g>
 					</g>
 					</svg>
-					</span> <a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">LIKE</a>
+					</span> <a href="like_InsertService.do?id=<%=info.getID() %>&num=<%=list.get(i).getNum() %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13">LIKE</a>
 					<a href="https://nicepage.com/k/presentation-html-templates" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14">SHARE</a>
 					</g>
 					</svg>
