@@ -218,7 +218,7 @@
 					</g>
 					</g>
 					</svg>
-					</span> <a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13" style="margin-top: 15px;margin-bottom: 15px;">LIKE</a>
+					</span> <a href="like_InsertService.do?id=<%=info.getID() %>&num=<%=list.get(i).getNum() %>" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-13" style="margin-top: 15px;margin-bottom: 15px;">LIKE</a>
 					<a href="#" class="u-active-grey-70 u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-70 u-radius-6 u-btn-14" style="margin-top: -40px;margin-bottom: 15px;">SHARE</a>
 					</g>
 					</svg>
