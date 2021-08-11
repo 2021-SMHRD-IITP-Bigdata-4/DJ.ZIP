@@ -163,10 +163,14 @@
             <div class="u-container-style u-group u-group-2">
               <div class="u-container-layout u-container-layout-6">
                 <div class="u-absolute-hcenter u-expanded u-radius-10 u-shape u-shape-round u-white"></div>
-                <img class="u-expanded-width u-image u-image-default u-image-1" src="https://pixabay.com/get/g9ecfbeb193d15f75b9085a03f85a87899aea8dc1373bd36c81354727e1442e72b75cdb2b11f93d73e28a1cbd0947b9229e43f3e6bf2fc0032192b28d2ea7a65a_1280.jpg" alt="" data-image-width="1280" data-image-height="853">
+                	<div id = "main1">
+	                	<img class="u-expanded-width u-image u-image-default u-image-1" id = "main2" src="./img/<%=list1.get(0).getImg_name()%>" alt="" data-image-width="1280" data-image-height="853">
+	                	<%for(int i = 0; i<list1.size(); i++) {%>
+	    					<source src="./img/<%=list1.get(i).getImg_name()%>">
+	    				<%} %> 
+                	</div>
               </div>
             </div>
-            
             
             <div class="u-align-center u-list u-list-1">
               <div class="u-repeater u-repeater-1">
@@ -235,11 +239,8 @@
     
     <audio id = "myaudio">
     <source id = "main">
-    <%-- <%for(int i = 0; i<list1.size(); i++) {%>
+    <%for(int i = 0; i<list1.size(); i++) {%>
     	<source src="./music/<%= list1.get(i).getFile_name() %>">
-    <%} %> --%>
-    <%for(int i = 1; i<11; i++) {%>
-    	<source src="./music/<%=i %>.mp3">
     <%} %>
     </audio>
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
@@ -251,9 +252,10 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script>
     	var index = 1;
+    	
     	$('#play-next').click(function(){
     		index++;
-    		if(index > 10){
+    		if(index > <%=list1.size()%>+1){
     			index = 2;
     		}
     		console.log(index + '번째 소스 재생');
@@ -262,12 +264,14 @@
     			$('#myaudio source:nth-child('+index+')').attr('src'));
     		$('#myaudio')[0].load();
     		$('#myaudio')[0].play();
+    		$('#main1 img#main2').attr('src',
+        		$('#main1 source:nth-child('+index+')').attr('src')); 
     		
     	});
     	$('#play-pre').click(function(){
     		index--;
-    		if(index < 1){
-    			index = 10;
+    		if(index < 2){
+    			index = <%=list1.size()%>+1;
     		}
     		console.log(index + '번째 소스 재생');
     		
@@ -275,9 +279,14 @@
     			$('#myaudio source:nth-child('+index+')').attr('src'));
     		$('#myaudio')[0].load();
     		$('#myaudio')[0].play();
+    		$('#main1 img#main2').attr('src',
+            	$('#main1 source:nth-child('+index+')').attr('src')); 
     		
     	});
     	$('#play').click(function(){
+    		if(index == 1){
+    			index++;
+    		}
     		console.log(index + '번째 소스 재생');
     		
     		$('#myaudio source#main').attr('src',
@@ -287,12 +296,15 @@
     		
     	});
     	$('#stop').click(function(){
+    		if(index == 1){
+    			index++;
+    		}
     		console.log(index + '번째 소스 정지');
     		
     		$('#myaudio source#main').attr('src',
     			$('#myaudio source:nth-child('+index+')').attr('src'));
     		$('#myaudio')[0].load();
-    		$('#myaudio')[0].stop();
+    		$('#myaudio')[0].pause();
     		
     	});
 

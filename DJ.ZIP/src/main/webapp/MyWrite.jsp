@@ -199,7 +199,7 @@
 			  	<%for(int i=0; i<list1.size(); i++) {%>
 			  		<%if(list1.get(i).getId().equals(info.getID())) {%>
           <div class="u-container-layout u-container-layout-5"><!--blog_post_image-->
-            <img alt="" class="u-blog-control u-image u-image-default u-image-1" src="images/pexels-photo-167467.jpeg"><!--/blog_post_image--><!--blog_post_header-->
+            <img alt="" class="u-blog-control u-image u-image-default u-image-1" src="./img/<%=list1.get(i).getImg_name() %>"><!--/blog_post_image--><!--blog_post_header-->
             <h2 class="u-blog-control u-text u-text-8">
               <a class="u-post-header-link" href="blog/1.html"><!--blog_post_header_content--><a href="MixSetIn.jsp?num=<%=list1.get(i).getNum() %>"><%=list1.get(i).getTitle() %></a><!--/blog_post_header_content--></a>
             </h2><!--/blog_post_header--><!--blog_post_content-->

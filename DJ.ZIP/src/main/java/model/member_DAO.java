@@ -154,32 +154,37 @@ public class member_DAO {
 		return list;
 	}
 	
-	public ArrayList<mixset_board_DTO> likeList(String id1) {
-		conn();
-		try {
-		String sql = "select m.genre_name, m.title, m.id, m.num, m.file_name from like_list l, mixset m where l.num = m.num and l.id = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setString(1, id1);
-		rs = psmt.executeQuery();
-		list1 = new ArrayList<mixset_board_DTO>();
-		
-		while(rs.next()) {
-			String genre_name = rs.getString(1);
-			String title = rs.getString(2);
-			String id = rs.getString(3);
-			String num = rs.getString(4);
-			String file_name = rs.getString(5);
-			
-			dto1 = new mixset_board_DTO(num, title, id, file_name, genre_name);
-			list1.add(dto1);
-		}
-		}catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-		return list1;
-    }
+	   public ArrayList<mixset_board_DTO> likeList(String id1) {
+		      conn();
+		      try {
+		      String sql = "select m.genre_name, m.title, m.id, m.num, m.file_name, m.img_name, m.content, m.music_length, m.write_date, m.hits from like_list l, mixset m where l.num = m.num and l.id = ?";
+		      psmt = conn.prepareStatement(sql);
+		      psmt.setString(1, id1);
+		      rs = psmt.executeQuery();
+		      list1 = new ArrayList<mixset_board_DTO>();
+		      
+		      while(rs.next()) {
+		         String genre_name = rs.getString(1);
+		         String title = rs.getString(2);
+		         String id = rs.getString(3);
+		         String num = rs.getString(4);
+		         String file_name = rs.getString(5);
+		         String img_name = rs.getString(6);
+		         String content = rs.getString(7);
+		         String music_length = rs.getString(8);
+		         String write_date = rs.getString(9);
+		         String hits = rs.getString(10);
+		         
+		         dto1 = new mixset_board_DTO(num, title, content, id, file_name, music_length, genre_name, img_name, write_date, hits);
+		         list1.add(dto1);
+		      }
+		      }catch (SQLException e) {
+		         e.printStackTrace();
+		      }finally {
+		         close();
+		      }
+		      return list1;
+		    }
 	
 	public ArrayList<dj_lesson_DTO> lessonList(String id) {
 		conn();
@@ -239,5 +244,6 @@ public class member_DAO {
 		}
 		return cnt;
 	}
+	
 	
 }

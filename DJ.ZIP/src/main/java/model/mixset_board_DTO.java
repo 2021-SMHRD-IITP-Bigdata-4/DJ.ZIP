@@ -84,6 +84,8 @@ public class mixset_board_DTO {
 		this.file_name = file_name;
 		this.genre_name = genre_name;
 	}
+	
+	
 
 	public String getNum() {
 		return num;

@@ -36,7 +36,7 @@
         <% 
         	member_DTO info = (member_DTO)session.getAttribute("info");
         	lessonList_DAO dao = new lessonList_DAO();
-        	String id = request.getParameter("id1");
+        	String id = request.getParameter("id");
         	ArrayList<lessonList_DTO> list = dao.lesson_apply(id);
         %>
         
@@ -118,22 +118,30 @@
             <div class="u-layout-row">
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-text u-text-default u-text-2">개인정보수정</h1>
+                  <h1 class="u-text u-text-default u-text-2"><a href = "MyPage.jsp">개인정보수정</a></h1>
                 </div>
               </div>
+              <%if(info.getDj_career().equals("1")) {%>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h1 class="u-text u-text-default u-text-3" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</h1>
+                <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-middle u-container-layout-2">
+                  <h1 class="u-text u-text-default u-text-3"><a href = "DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</a></h1>
                 </div>
               </div>
+              <%}else if(info.getDj_career().equals("0")) {%>
+              <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-2">
+                <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-middle u-container-layout-2">
+                  <h1 class="u-text u-text-default u-text-3"><a href = "LessonList.jsp?id=<%=info.getID()%>">레슨목록</a></h1>
+                </div>
+              </div>
+              <%} %>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-3">
                 <div class="u-container-layout u-valign-middle u-container-layout-3">
-                  <h1 class="u-text u-text-default u-text-4">Like MIXSET</h1>
+                  <h1 class="u-text u-text-default u-text-4"><a href = "Like-Mixset.jsp?id=<%=info.getID()%>">Like MIXSET</a></h1>
                 </div>
               </div>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-4">
                 <div class="u-container-layout u-valign-middle u-container-layout-4">
-                  <h1 class="u-text u-text-default u-text-5">내가 쓴 글</h1>
+                  <h1 class="u-text u-text-default u-text-5"><a href = "MyWrite.jsp">내가 쓴 글</a></h1>
                 </div>
               </div>
             </div>
@@ -143,11 +151,11 @@
         <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
         <div class="u-container-style u-product u-product-1">
           <div class="u-container-layout u-container-layout-5"><!--product_image-->
-            <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="images/35144535-8aaf-1bf7-89eb-153e47df0227.jpg"><!--/product_image-->
+            <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="./img/<%=info.getFile_name()%>"><!--/product_image-->
             <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
               <div class="u-container-layout u-container-layout-6"><!--product_title-->
                 <h2 class="u-align-center u-custom-font u-font-merriweather u-product-control u-text u-text-7">
-                  <a class="u-product-title-link" href="#"><!--product_title_content-->Sample Product<!--/product_title_content--></a>
+                  <a class="u-product-title-link" href="#"><!--product_title_content--><%=info.getNick_name()%><!--/product_title_content--></a>
                 </h2><!--/product_title-->
               </div>
             </div>
@@ -160,8 +168,6 @@
               <col width="19.7%">
               <col width="21.6%">
               <col width="17.4%">
-              <col width="16.4%">
-              <col width="7%">
             </colgroup>
             <thead class="u-align-center u-black u-table-header u-table-header-1">
               <tr style="height: 46px;">
@@ -169,8 +175,6 @@
                 <th class="u-border-2 u-border-grey-40 u-table-cell">연락처</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">이메일</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">신청날짜</th>
-                <th class="u-border-2 u-border-grey-40 u-table-cell u-table-cell-5">레슨진행</th>
-                <th class="u-border-2 u-border-grey-40 u-table-cell">선택</th>
               </tr>
             </thead>
             <% if(info != null) {%>
@@ -179,18 +183,15 @@
             <tbody class="u-table-body">
               <tr style="height: 35px;">
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getId() %></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getTel() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getEmail() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getApply_date() %></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell"><input type = "checkbox"></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getTel() %></td>
               </tr>
             </tbody>
             <%}}} %>
           </table>
         </div>
-        <a href="https://nicepage.com/c/counter-html-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-2">신청거절</a>
-        <a href="https://nicepage.com/html5-template" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-1">Button</a>
+        
       </div>
     </section>
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
