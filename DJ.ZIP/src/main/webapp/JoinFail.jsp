@@ -115,33 +115,29 @@
         <div class="u-form u-form-1">
           <form action="JoinService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true" enctype="multipart/form-data">
             <div class="u-form-group u-form-group-1">
-              <label for="text-c521" class="u-custom-font u-label u-text-font u-label-1">아이디</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="text-c521" class="u-custom-font u-label u-text-font u-label-1">아이디</label><span class = "join_warn">* 이미 쓰고 있는 아이디입니다.</span>
               <input type="text" id="text-c521" name="id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
             </div>
-            
-            <%if(list != null) {%>
-            	<%for(int i = 0; i<list.size(); i++) {%>
-            <%}} %>
             <div class="u-form-group u-form-name u-form-group-2">
-              <label for="name-3bdf" class="u-custom-font u-label u-text-font u-label-2">비밀번호</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="name-3bdf" class="u-custom-font u-label u-text-font u-label-2">비밀번호</label>
               <input type="text" id="name-3bdf" name="pw" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="">
             </div>
             <div class="u-form-group u-form-group-3">
-              <label for="text-a017" class="u-custom-font u-label u-text-font u-label-3">비밀번호확인</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="text-a017" class="u-custom-font u-label u-text-font u-label-3">비밀번호확인</label>
               <input type="text" id="text-a017" name="pw2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
             </div>
             <div class="u-form-group u-form-group-4">
-              <label for="text-57d3" class="u-custom-font u-label u-text-font u-label-4">닉네임</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="text-57d3" class="u-custom-font u-label u-text-font u-label-4">닉네임</label>
               <input type="text" id="text-57d3" name="nick_name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
             </div>
             <div class="u-form-group u-form-group-5">
-              <label for="text-1f66" class="u-custom-font u-label u-text-font u-label-5">연락처</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="text-1f66" class="u-custom-font u-label u-text-font u-label-5">연락처</label>
               <input type="text" id="text-1f66" name="tel" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
             </div>  
             
             <div class="u-form-group u-form-radiobutton u-form-group-6">
               <div class="u-form-radio-button-wrapper">
-                <label for="text-57d3" class="u-label u-label-9">DJ 경력</label><span class = "join_warn">* 필수 정보입니다.</span>
+                <label for="text-57d3" class="u-label u-label-9">DJ 경력</label>
                 <br>
                 <input type="radio" name="dj_career" value="1">
                 <label class="u-custom-font u-label u-text-font u-label-6" for="radiobutton">있음</label>
@@ -151,12 +147,12 @@
             </div>
      
             <div class="u-form-group u-form-group-7">
-              <label for="text-b2ba" class="u-custom-font u-label u-text-font u-label-8">E-Mail</label><span class = "join_warn">* 필수 정보입니다.</span>
+              <label for="text-b2ba" class="u-custom-font u-label u-text-font u-label-8">E-Mail
               <input type="text" placeholder="" id="text-b2ba" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
             </div>
             
             <div class="u-form-group u-form-group-8">
-            	<label for="text-b2ba" class="u-custom-font u-label u-text-font u-label-9">프로필</label><span class = "join_warn">* 필수 정보입니다.</span>
+            	<label for="text-b2ba" class="u-custom-font u-label u-text-font u-label-9">프로필</label>
      			<input type="file" name="imgfile" accept="image/*" value="image">
      		</div>
      		

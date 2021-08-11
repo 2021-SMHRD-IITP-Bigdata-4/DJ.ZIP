@@ -1,3 +1,6 @@
+<%@page import="model.lessonList_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.lessonList_DAO"%>
 <%@page import="model.member_DTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -30,7 +33,12 @@
   </head>
   <body class="u-body"><header class="u-align-center u-black u-clearfix u-header u-header" id="sec-bcb0"><div class="u-clearfix u-sheet u-sheet-1">
         
-        <% member_DTO info = (member_DTO)session.getAttribute("info"); %>
+        <% 
+        	member_DTO info = (member_DTO)session.getAttribute("info");
+        	lessonList_DAO dao = new lessonList_DAO();
+        	String id = request.getParameter("id1");
+        	ArrayList<lessonList_DTO> list = dao.lesson_apply(id);
+        %>
         
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse u-custom-font u-font-oswald" style="font-size: 1.125rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700;">
@@ -149,35 +157,38 @@
           <table class="u-table-entity">
             <colgroup>
               <col width="17.9%">
-              <col width="16.4%">
-              <col width="17.4%">
-              <col width="21.6%">
               <col width="19.7%">
+              <col width="21.6%">
+              <col width="17.4%">
+              <col width="16.4%">
               <col width="7%">
             </colgroup>
             <thead class="u-align-center u-black u-table-header u-table-header-1">
               <tr style="height: 46px;">
                 <th class="u-border-2 u-border-grey-40 u-table-cell">아이디(닉네임)</th>
-                <th class="u-border-2 u-border-grey-40 u-table-cell">레슨 가능 요일</th>
-                <th class="u-border-2 u-border-grey-40 u-table-cell">레슨 가능 시간</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">연락처</th>
+                <th class="u-border-2 u-border-grey-40 u-table-cell">이메일</th>
+                <th class="u-border-2 u-border-grey-40 u-table-cell">신청날짜</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell u-table-cell-5">레슨진행</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">선택</th>
               </tr>
             </thead>
+            <% if(info != null) {%>
+            	<% if(list != null) {%>
+            		<% for(int i = 0; i<list.size(); i++) {%>
             <tbody class="u-table-body">
               <tr style="height: 35px;">
-                <td class="u-border-1 u-border-grey-30 u-table-cell">아이디(닉네임)</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">요일</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">시간</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">전화번호</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">체크</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getId() %></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getTel() %></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getEmail() %></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getApply_date() %></td>
+        		<a href="https://nicepage.com/html5-template" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-1">Button</a>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><input type = "checkbox"></td>
               </tr>
             </tbody>
+            <%}}} %>
           </table>
         </div>
-        <a href="https://nicepage.com/html5-template" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-1">Button</a>
         <a href="https://nicepage.com/c/counter-html-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-2">신청거절</a>
       </div>
     </section>

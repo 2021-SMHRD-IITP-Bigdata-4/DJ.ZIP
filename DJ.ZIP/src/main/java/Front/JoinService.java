@@ -53,9 +53,16 @@ public class JoinService implements Command {
 		member_DTO dto = new member_DTO(id, pw, nick_name, email, dj_career, tel, file_name);
 		member_DAO dao = new member_DAO();
 		int cnt = dao.join(dto);
+		int a = 0;
+		ArrayList<member_DTO> list = dao.SelectAll();
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getID().equals(id)) {
+				a++;
+			}
+		}
 		
 		HttpSession session = request.getSession();
-		if(cnt > 0) {
+		if(cnt > 0 && a<1) {
 			System.out.println("회원가입성공!");
 			session.setAttribute("info", dto);
 			response.sendRedirect("Home.jsp");

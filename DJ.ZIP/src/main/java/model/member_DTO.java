@@ -21,6 +21,16 @@ public class member_DTO {
 		this.tel = tel;
 		this.file_name = file_name;
 	}
+	
+	
+
+	public member_DTO(String iD, String email, String tel) {
+		ID = iD;
+		this.email = email;
+		this.tel = tel;
+	}
+
+
 
 	public member_DTO(String iD, String pW) {
 		ID = iD;
