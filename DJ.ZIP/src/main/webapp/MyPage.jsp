@@ -50,7 +50,7 @@
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-hover-grey-15 u-text-white" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a>
 	
 	<%if(info.getDj_career().equals("1")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ.jsp?id=<%=info.getID()%>">레슨목록</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</a>
 	<%}else if(info.getDj_career().equals("0")) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
 	<%} %>
@@ -77,7 +77,7 @@
 <%if(info != null) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px; text-shadow: 2px 2px 8px rgba(128,128,128,1);">My Page</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a>
 	<%if(info.getDj_career().equals("1")) {%>
-	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
+	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</a>
 	<%}else if(info.getDj_career().equals("0")) {%>
 	</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="LessonList.jsp?id=<%=info.getID()%>">레슨목록</a>
 	<%} %>
@@ -105,7 +105,7 @@
             
             <!-- 로그인 시 닉네임 출력 -->
           <%if(info != null) {%>
-            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getNick_name()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
+            <p class="u-text u-text-2"><span style="font-weight: 700;"></span><%=info.getID()%>님&nbsp;<span style="font-weight: 700;"></span>환영합니다</p>
 		  <%}%>
             
           </div>
@@ -152,7 +152,7 @@
           <div class="u-container-layout">
             <p class="u-align-center u-large-text u-text u-text-default u-text-variant u-text-6">개인정보수정</p>
             <div class="u-align-center u-expanded-width u-form u-form-1">
-              <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
+              <form action="UpdateService.do" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;" redirect="true">
                 <div class="u-form-group u-form-group-1">
                   <label for="text-c521" class="u-custom-font u-label u-text-font u-label-1">아이디</label>
                   <input type="text" id="text-c521" name="id" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
@@ -188,8 +188,7 @@
                   <input type="text" placeholder="" id="text-b2ba" name="text-3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-10 u-white" required="required">
                 </div>
                 <div class="u-align-center u-form-checkbox u-form-group u-form-submit">
-                  <a href="#" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-text-active-grey-10 u-text-hover-grey-10 u-btn-1">회원정보수정<br>
-                  </a>
+                  <input type="submit" class="u-black u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-10 u-text-active-grey-10 u-text-hover-grey-10 u-btn-1" value="회원정보수정"><br>
                   <input type="checkbox" value="회원가입" class="u-form-control-hidden">
                 </div>
                 <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
@@ -201,24 +200,11 @@
         </div>
       </div>
     </section>
-    
-    
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
         <h1 class="u-custom-font u-text u-text-default u-text-1">
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-grey-15 u-text-hover-grey-15 u-text-white u-btn-1" href="Home.jsp" data-page-id="904221268">DJ.ZIP</a>
         </h1>
         <p class="u-text u-text-default u-text-2">광주광역시 동구 예술길 31-15 3층 (주)스마트인재개발원</p>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/css-templates" target="_blank">
-        <span>CSS Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
   </body>
 </html>
