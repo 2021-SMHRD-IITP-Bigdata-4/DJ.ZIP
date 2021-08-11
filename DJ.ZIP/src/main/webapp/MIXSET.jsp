@@ -85,7 +85,7 @@
 								<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyPage.jsp">MyPage</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</a></li>
-									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp">LIKE MIXSET</a></li>
+									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-hover-grey-70 u-white" href="MyWrite.jsp">내가 쓴글</a></li>
 								</ul>
 							</div></li>
@@ -116,7 +116,7 @@
 								<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-4">
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyPage.jsp">MyPage</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="DJLessonDJ2.jsp?id=<%=info.getID()%>">레슨목록</a></li>
-									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp">LIKE MIXSET</a></li>
+									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="Like-Mixset.jsp?id=<%=info.getID()%>">LIKE MIXSET</a></li>
 									<li class="u-nav-item"><a class="u-button-style u-nav-link" href="MyWrite.jsp">내가 쓴글</a></li>
 								</ul>
 							</div></li>
