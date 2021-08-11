@@ -182,7 +182,7 @@
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getTel() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getEmail() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getApply_date() %></td>
-        		<a href="https://nicepage.com/html5-template" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-1">Button</a>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><input type = "checkbox"></td>
               </tr>
             </tbody>
@@ -190,6 +190,7 @@
           </table>
         </div>
         <a href="https://nicepage.com/c/counter-html-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-2">신청거절</a>
+        <a href="https://nicepage.com/html5-template" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-1">Button</a>
       </div>
     </section>
     
