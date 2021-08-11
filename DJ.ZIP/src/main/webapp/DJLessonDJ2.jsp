@@ -168,6 +168,7 @@
               <col width="19.7%">
               <col width="21.6%">
               <col width="17.4%">
+              <col width="7%">
             </colgroup>
             <thead class="u-align-center u-black u-table-header u-table-header-1">
               <tr style="height: 46px;">
@@ -175,6 +176,7 @@
                 <th class="u-border-2 u-border-grey-40 u-table-cell">연락처</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">이메일</th>
                 <th class="u-border-2 u-border-grey-40 u-table-cell">신청날짜</th>
+                <th class="u-border-2 u-border-grey-40 u-table-cell">선택</th>
               </tr>
             </thead>
             <% if(info != null) {%>
@@ -186,12 +188,13 @@
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getEmail() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getApply_date() %></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><%=list.get(i).getTel() %></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><input type = "checkbox"></td>
               </tr>
             </tbody>
             <%}}} %>
           </table>
         </div>
-        
+        <a href="https://nicepage.com/c/counter-html-templates" class="u-black u-border-none u-btn u-btn-round u-button-style u-hover-grey-75 u-radius-6 u-btn-2">신청거절</a>
       </div>
     </section>
     <footer class="u-align-center u-black u-clearfix u-footer u-footer" id="sec-d7f7"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
