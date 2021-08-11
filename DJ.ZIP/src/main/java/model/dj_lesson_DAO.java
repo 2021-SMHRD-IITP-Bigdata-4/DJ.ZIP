@@ -191,5 +191,39 @@ public class dj_lesson_DAO {
 		}
 		return dto;
 	}
+	public ArrayList<dj_lesson_DTO> lessonnews() {
+		conn();
+		String sql = "select l.num, l.lesson_title, l.id, l.lesson_info, l.portfolio, l.write_date, l.location_name, l.spot, l.week, l.hour, l.img_file, l.cancel, m.nick_name from lesson l, member m where l.id = m.id order by l.num desc";
+		list = new ArrayList<dj_lesson_DTO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String num = rs.getString(1);
+				String lesson_title = rs.getString(2);
+				String id = rs.getString(3);
+				String lesson_info = rs.getString(4);
+				String portfolio = rs.getString(5);
+				String write_date = rs.getString(6);
+				String location_name = rs.getString(7);
+				String spot = rs.getString(8);
+				String week = rs.getString(9);
+				String hour = rs.getString(10);
+				String img_file = rs.getString(11);
+				String cancel = rs.getString(12);
+				String nick_name = rs.getString(13);
+
+				lesson_writeDto = new dj_lesson_DTO(num, lesson_title, id, lesson_info, portfolio, write_date, location_name, spot, week, hour, img_file, cancel, nick_name);
+				list.add(lesson_writeDto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
 }
 

@@ -14,9 +14,31 @@ public class dj_lesson_DTO {
 	private String hour;
 	private String img_file;
 	private String cancel;
+	private String nick_name;
 	
 	
 	
+	public dj_lesson_DTO(String num, String lesson_title, String id, String lesson_info, String portfolio,
+			String write_date, String location_name, String spot, String week, String hour, String img_file,
+			String cancel, String nick_name) {
+		super();
+		this.num = num;
+		this.lesson_title = lesson_title;
+		this.id = id;
+		this.lesson_info = lesson_info;
+		this.portfolio = portfolio;
+		this.write_date = write_date;
+		this.location_name = location_name;
+		this.spot = spot;
+		this.week = week;
+		this.hour = hour;
+		this.img_file = img_file;
+		this.cancel = cancel;
+		this.nick_name = nick_name;
+	}
+
+
+
 	public dj_lesson_DTO(String lesson_title, String id, String lesson_info, String portfolio, String location_name,
 			String spot, String week, String hour, String img_file, String cancel) {
 		
@@ -219,6 +241,17 @@ public class dj_lesson_DTO {
 		this.cancel = cancel;
 	}
 
+
+
+	public String getNick_name() {
+		return nick_name;
+	}
+
+
+
+	public void setNick_name(String nick_name) {
+		this.nick_name = nick_name;
+	}
 }
 
 

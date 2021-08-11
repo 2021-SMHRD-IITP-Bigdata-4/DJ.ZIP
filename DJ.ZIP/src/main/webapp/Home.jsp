@@ -1,3 +1,5 @@
+<%@page import="model.dj_lesson_DTO"%>
+<%@page import="model.dj_lesson_DAO"%>
 <%@page import="model.mixset_board_DTO"%>
 <%@page import="model.mixset_board_DAO"%>
 <%@page import="model.board_DTO"%>
@@ -40,6 +42,8 @@
           ArrayList<board_DTO> list = dao.BoardRank();
           mixset_board_DAO m_dao = new mixset_board_DAO();
           ArrayList<mixset_board_DTO> m_list = m_dao.mixsetRank();
+          dj_lesson_DAO l_dao = new dj_lesson_DAO();
+          ArrayList<dj_lesson_DTO> l_list = l_dao.lessonnews();
           %>
        
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -138,32 +142,32 @@
         <div class="u-repeater u-repeater-1">
           <div class="u-align-center u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
-              <h5 class="u-text u-text-2">24 jul</h5>
-              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-3">Internet Radio</h4>
-              <img alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-1" data-image-width="1631" data-image-height="1080" src="images/pexels-photo-167467.jpeg">
+              <h5 class="u-text u-text-2"><%=l_list.get(0).getLesson_title() %></h5>
+              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-3"><%=l_list.get(0).getNick_name() %></h4>
+              <img href="DJLessonOutput.jsp?num=<%=l_list.get(0).getNum() %>" alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-1" data-image-width="1631" data-image-height="1080" src="./lessonimg/<%=l_list.get(0).getImg_file()%>">
               <div class="u-align-center-sm u-align-center-xs u-border-1 u-border-grey-dark-1 u-expanded-width-xl u-line u-line-horizontal u-line-1"></div>
-              <p class="u-text u-text-4">DJ LESSON</p>
-              <a href="https://nicepage.com/k/ranking-website-templates" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-1">learn more</a>
+              <p class="u-text u-text-4"><%=l_list.get(0).getLocation_name() %></p>
+              <a  href="DJLessonOutput.jsp?num=<%=l_list.get(0).getNum() %>" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-1">learn more</a>
             </div>
           </div>
           <div class="u-align-center u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
-              <h5 class="u-text u-text-5">06 sept</h5>
-              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-6">Why Us?</h4>
-              <img alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-2" data-image-width="1620" data-image-height="1080" src="images/pexels-photo-1434623.jpeg">
+              <h5 class="u-text u-text-5"><%=l_list.get(1).getLesson_title() %></h5>
+              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-6"><%=l_list.get(1).getNick_name() %></h4>
+              <img href="DJLessonOutput.jsp?num=<%=l_list.get(1).getNum() %>" alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-2" data-image-width="1620" data-image-height="1080" src="./lessonimg/<%=l_list.get(1).getImg_file()%>">
               <div class="u-align-center-sm u-align-center-xs u-border-1 u-border-grey-dark-1 u-expanded-width-xl u-line u-line-horizontal u-line-2"></div>
-              <p class="u-text u-text-7">DJ LESSON</p>
-              <a href="https://nicepage.com/css-templates" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-2">learn more</a>
+              <p class="u-text u-text-7"><%=l_list.get(1).getLocation_name() %></p>
+              <a href="DJLessonOutput.jsp?num=<%=l_list.get(1).getNum() %>" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-2">learn more</a>
             </div>
           </div>
           <div class="u-align-center u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
-              <h5 class="u-text u-text-8">15 oct</h5>
-              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-9">Radio Station</h4>
-              <img alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-3" data-image-width="1620" data-image-height="1080" src="images/pexels-photo-811838.jpeg">
+              <h5 class="u-text u-text-8"><%=l_list.get(2).getLesson_title() %></h5>
+              <h4 class="u-align-center-sm u-align-center-xs u-text u-text-9"><%=l_list.get(2).getNick_name() %></h4>
+              <img href="DJLessonOutput.jsp?num=<%=l_list.get(2).getNum() %>" alt="" class="u-align-center-sm u-align-center-xs u-image u-image-default u-image-3" data-image-width="1620" data-image-height="1080" src="./lessonimg/<%=l_list.get(2).getImg_file()%>">
               <div class="u-align-center-sm u-align-center-xs u-border-1 u-border-grey-dark-1 u-expanded-width-xl u-line u-line-horizontal u-line-3"></div>
-              <p class="u-text u-text-10">DJ LESSON</p>
-              <a href="https://nicepage.com/c/text-button-html-templates" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-3">learn more</a>
+              <p class="u-text u-text-10"><%=l_list.get(2).getLocation_name() %></p>
+              <a href="DJLessonOutput.jsp?num=<%=l_list.get(2).getNum() %>" class="u-align-center-sm u-align-center-xs u-border-10 u-border-active-palette-2-dark-1 u-border-black u-border-hover-palette-2-dark-1 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-text-hover-palette-2-base u-btn-3">learn more</a>
             </div>
           </div>
         </div>
