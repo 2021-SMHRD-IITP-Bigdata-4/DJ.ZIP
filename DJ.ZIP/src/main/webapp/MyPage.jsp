@@ -125,7 +125,7 @@
               <%if(info.getDj_career().equals("1")) {%>
               <div class="u-black u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-2">
                 <div class="u-border-2 u-border-grey-75 u-container-layout u-valign-middle u-container-layout-2">
-                  <h1 class="u-text u-text-default u-text-3"><a href = "DJLessonDJ.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a></h1>
+                  <h1 class="u-text u-text-default u-text-3"><a href = "DJLessonDJ2.jsp?id=<%=info.getID()%>">·¹½¼¸ñ·Ï</a></h1>
                 </div>
               </div>
               <%}else if(info.getDj_career().equals("0")) {%>
